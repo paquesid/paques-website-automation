@@ -1,0 +1,6 @@
+.env
+target
+rerun
+.idea
+.vscode
+reports
