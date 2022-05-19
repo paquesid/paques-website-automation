@@ -66,7 +66,7 @@ public class TestInstrument {
         return element;
     }
 
-    public WebElement clickButton(WebElement locator) {
+    public static WebElement clickButton(WebElement locator) {
         try {
             // element = (WebElement) setElementProperties(locator);
             // element.click();
