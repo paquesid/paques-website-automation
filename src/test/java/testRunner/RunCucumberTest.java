@@ -15,6 +15,7 @@ import io.cucumber.junit.CucumberOptions;
                 "json:target/cucumber.json",
         },
         glue = {
+                "config",
                 "stepdefinitions"
         })
 
