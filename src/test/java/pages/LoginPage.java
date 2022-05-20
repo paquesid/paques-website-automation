@@ -1,6 +1,6 @@
 package pages;
 
-import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -18,6 +18,11 @@ public class LoginPage extends LoginPagesElement {
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 20), this);
     }
 
+    public void isOnLoginPage() {
+        String actual = driver.getTitle();
+        assertEquals("Paques | Smart Data Lake", actual);
+    }
+
     public void setName(String username) {
         enterText(LOGINPAGE_USERNAME_TEXT, username);
     }
@@ -26,12 +31,12 @@ public class LoginPage extends LoginPagesElement {
         enterText(LOGINPAGE_PASSWORD_TEXT, password);
     }
 
+    public void setCaptcha() {
+        enterText(LOGINPAGE_CAPCHA_TEXT, "12345");
+    }
+
     public void clickButtonLogin() {
-        try {
-            LOGINPAGE_LOGIN_BUTTON.click();
-        } catch (Exception e) {
-            delay(2);
-        }
+        clickButton(LOGINPAGE_LOGIN_BUTTON);
     }
 
     public void messageLogin(String message, String value) {
@@ -53,7 +58,7 @@ public class LoginPage extends LoginPagesElement {
                     System.out.println(message);
                     break;
             }
-        } catch (ElementClickInterceptedException e) {
+        } catch (ElementNotInteractableException e) {
             refreshPage();
         }
     }

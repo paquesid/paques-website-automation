@@ -1,0 +1,59 @@
+name: Paques-Web-Automation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths-ignore:
+        - '**.md'
+  pull_request:
+    types:
+      - opened
+      - synchronize
+  schedule:
+    - cron: '0 12 * * 1-5'
+
+env:
+  CI: true
+
+jobs:
+  automation-test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Declarative Checkout SCM
+        uses: actions/checkout@v3
+
+  build-macos:
+    needs: automation-test
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ macos-latest ]
+
+    steps:
+      - name: Declarative Checkout SCM
+        uses: actions/checkout@v3
+
+      - name: SCM
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Populate ENV
+        run: cp env/env.sample .env
+
+      - name: Build with Maven
+        run: mvn clean verify -Dcucumber.filter.tags="@Forgot-Password"
+
+      - name: Stash Report
+        run: cp ./target/cucumber-reports/cucumber-html-reports/overview-features.html ./target/cucumber-reports/cucumber-html-reports/index.html
+
+      - name: Declarative Post Actions
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/cucumber-reports/cucumber-html-reports
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

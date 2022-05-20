@@ -17,7 +17,7 @@ public class LoginPagesElement {
     protected
     WebElement LOGINPAGE_CAPCHA_TEXT;
 
-    @FindBy(id = "")
+    @FindBy(css = "button[type='submit']")
     protected
     WebElement LOGINPAGE_LOGIN_BUTTON;
 

@@ -1,18 +1,18 @@
-package config;
+package helper;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import helper.Constant;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class Base {
 
-    protected static RemoteWebDriver redrive;
     protected static WebDriver driver;
     protected static Dotenv dotenv = Dotenv.load();
 
@@ -24,6 +24,10 @@ public class Base {
 
             case "Firefox":
                 getFirefoxDriver();
+                break;
+
+            case "Safari":
+                getSafariDriver();
                 break;
                 
             default:
@@ -55,19 +59,19 @@ public class Base {
     }
 
     private static void getChromeDriver(){
-        System.setProperty(Constant.WEBDRIVER_CHROME, Constant.CHROME_PATH);
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        
-        options.addArguments("--incognito");
+        options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
         driver = new ChromeDriver(options);
     }
 
-    // public void getRemoteDriver(){
-    //     DesiredCapabilities caps = new DesiredCapabilities();
-
-    // }
-
     private static void getFirefoxDriver(){
-        System.out.println("Firefox");
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+    }
+
+    private static void getSafariDriver(){
+        WebDriverManager.safaridriver().setup();
+        driver = new SafariDriver();
     }
 }
