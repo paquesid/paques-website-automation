@@ -18,7 +18,7 @@ env:
 
 jobs:
   automation-test:
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
       - name: Declarative Checkout SCM
@@ -30,7 +30,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ windows-latest ] # ubuntu-latest, windows-latest, macos-lastest
 
     steps:
       - name: Declarative Checkout SCM
@@ -45,7 +45,7 @@ jobs:
         run: cp env/env.sample .env
 
       - name: Build with Maven
-        run: mvn clean verify -Dcucumber.filter.tags="@Forgot-Password"
+        run: mvn clean verify
 
       - name: Stash Report
         run: cp ./target/cucumber-reports/cucumber-html-reports/overview-features.html ./target/cucumber-reports/cucumber-html-reports/index.html

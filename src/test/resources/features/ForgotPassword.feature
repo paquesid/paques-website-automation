@@ -8,7 +8,7 @@ Feature: Forgot Password PDS
         When user filled in email as "dika.brenda@paques.id"
         Then user should be able to reset password successfully
 
-    @regression @negative-scenario 
+    @regression @positive-scenario
     Scenario: user forgot password using invalid email in PDS Application
         Given user is on login page PDS
         And user click forgot password button
