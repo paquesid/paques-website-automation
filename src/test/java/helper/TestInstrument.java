@@ -4,6 +4,8 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import utils.LogUtils;
@@ -18,6 +20,7 @@ import java.net.MalformedURLException;
 public class TestInstrument {
 
     protected static WebDriver driver;
+    protected static WebDriverWait wait;
     protected static CucumberPages paques;
     public static WebElement element;
 
@@ -69,6 +72,10 @@ public class TestInstrument {
     public WebDriver setupBrowser() throws MalformedURLException {
         driver = Base.startApplication(CHROME, PRODUCTION);
         return driver;
+    }
+
+    public static void waitForVisibility(WebElement elementLocator) {
+        wait.until(ExpectedConditions.visibilityOf(elementLocator));
     }
 
     public void pageObj(){
