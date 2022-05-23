@@ -1,7 +1,11 @@
-package helper;
+package utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+/**
+ * Created by Dika Brenda Angkasa on 23/05/2022
+ */
 
 public class LogUtils {
     
