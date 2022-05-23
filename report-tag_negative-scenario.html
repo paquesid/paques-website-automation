@@ -42,7 +42,7 @@ $(document).ready(function() {
 
 
   
-<title>Cucumber Reports (no 1) - Tag: @positive-scenario</title>
+<title>Cucumber Reports (no 1) - Tag: @negative-scenario</title>
 
 </head>
 <body>
@@ -129,19 +129,19 @@ $(document).ready(function() {
 
         <tbody>
         <tr>
-          <td class="tagname">@positive-scenario</td>
+          <td class="tagname">@negative-scenario</td>
                     <td >0</td>
           <td >0</td>
-          <td     class="skipped"   >13</td>
+          <td     class="skipped"   >15</td>
           <td >0</td>
           <td >0</td>
-          <td class="total">13</td>
+          <td class="total">15</td>
 
           <td >0</td>
           <td  class="failed"    >3</td>
           <td class="total">3</td>
 
-          <td class="duration" data-value="1244000">0.001</td>
+          <td class="duration" data-value="999800">0.000</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -174,26 +174,26 @@ $(document).ready(function() {
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_classpath-features-ForgotPassword-feature.html">Forgot Password PDS</a>
+      <a href="report-feature_classpath-features-Login-feature.html">Login PDS</a>
     </div>
   
   
 <div class="tags indention">
       <b>Tags:</b>
-           <a href="report-tag_Forgot-Password.html">@Forgot-Password</a>
-           <a href="report-tag_regression.html">@regression</a>
-           <a href="report-tag_positive-scenario.html">@positive-scenario</a>
+           <a href="report-tag_Login.html">@Login</a>
+           <a href="report-tag_sanity.html">@sanity</a>
+           <a href="report-tag_negative-scenario.html">@negative-scenario</a>
       </div>
 
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
     
 <div class="brief failed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">user want to forgot password in PDS Application</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">as a user, i want to login with an invalid credentials</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -223,7 +223,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">36.075</span>
+  <span class="lead-duration duration">21.933</span>
 
           </div>
 
@@ -240,9 +240,9 @@ $(document).ready(function() {
 Build info: version: '4.1.2', revision: '9a5a329c5a'
 System info: host: 'fv-az206-869', ip: '10.1.0.109', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [79d80f5a0ace8fa0cd4e27bbc69f3e56, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49943}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49943/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
+Command: [1c68123560b20251684a8c7504b0d231, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49978}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49978/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1c68123560b20251684a8c7504b0d231
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -274,7 +274,7 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
                         
-  <span class="lead-duration duration">0.006</span>
+  <span class="lead-duration duration">0.000</span>
 
           </div>
 
@@ -321,10 +321,10 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
           <div class="step">
         
 <div class="brief skipped">
-  <span class="keyword indention">Given</span>
-  <span class="name">user is on login page PDS</span>
+  <span class="keyword indention">And</span>
+  <span class="name">user filled in invalid username</span>
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
   </div>
 
@@ -343,7 +343,28 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
-  <span class="name">user click forgot password button</span>
+  <span class="name">user filled in invalid password</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled in capcha</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -364,7 +385,7 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
         
 <div class="brief skipped">
   <span class="keyword indention">When</span>
-  <span class="name">user filled in email as &quot;dika.brenda@paques.id&quot;</span>
+  <span class="name">user click button login</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -385,7 +406,7 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
         
 <div class="brief skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">user should be able to reset password successfully</span>
+  <span class="name">user should have an alert &quot;user email or password is wrong&quot; invalid login with &quot;&lt;state&gt;&quot;</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -426,7 +447,7 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
             <span class="keyword indention">After</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
           </div>
 
@@ -448,15 +469,15 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_classpath-features-ForgotPassword-feature.html">Forgot Password PDS</a>
+      <a href="report-feature_classpath-features-Login-feature.html">Login PDS</a>
     </div>
   
   
 <div class="tags indention">
       <b>Tags:</b>
-           <a href="report-tag_Forgot-Password.html">@Forgot-Password</a>
-           <a href="report-tag_regression.html">@regression</a>
-           <a href="report-tag_positive-scenario.html">@positive-scenario</a>
+           <a href="report-tag_Login.html">@Login</a>
+           <a href="report-tag_sanity.html">@sanity</a>
+           <a href="report-tag_negative-scenario.html">@negative-scenario</a>
       </div>
 
   
@@ -466,8 +487,8 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-7">
     
 <div class="brief failed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">user forgot password using invalid email in PDS Application</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">as a user, i want to login with an invalid credentials</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -497,7 +518,7 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">22.029</span>
+  <span class="lead-duration duration">21.972</span>
 
           </div>
 
@@ -514,9 +535,9 @@ Session ID: 79d80f5a0ace8fa0cd4e27bbc69f3e56
 Build info: version: '4.1.2', revision: '9a5a329c5a'
 System info: host: 'fv-az206-869', ip: '10.1.0.109', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7134a7ff29c8c2d2c427d6a3f690ac6a, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49960}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49960/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
+Command: [8bbf40c5fb42186d149ffd6a9c5356b5, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49997}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49997/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8bbf40c5fb42186d149ffd6a9c5356b5
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -595,8 +616,8 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
           <div class="step">
         
 <div class="brief skipped">
-  <span class="keyword indention">Given</span>
-  <span class="name">user is on login page PDS</span>
+  <span class="keyword indention">And</span>
+  <span class="name">user filled in invalid username</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -617,7 +638,28 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
-  <span class="name">user click forgot password button</span>
+  <span class="name">user filled in invalid password</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled in capcha</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -638,7 +680,7 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
         
 <div class="brief skipped">
   <span class="keyword indention">When</span>
-  <span class="name">user filled in notFound email as &quot;dikabrenda@gmail.com&quot;</span>
+  <span class="name">user click button login</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -659,7 +701,7 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
         
 <div class="brief skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">user Not able to reset password in PDS application</span>
+  <span class="name">user should have an alert &quot;user not found&quot; invalid login with &quot;&lt;state&gt;&quot;</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -729,8 +771,8 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
 <div class="tags indention">
       <b>Tags:</b>
            <a href="report-tag_Login.html">@Login</a>
-           <a href="report-tag_regression.html">@regression</a>
-           <a href="report-tag_positive-scenario.html">@positive-scenario</a>
+           <a href="report-tag_sanity.html">@sanity</a>
+           <a href="report-tag_negative-scenario.html">@negative-scenario</a>
       </div>
 
   
@@ -740,8 +782,8 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-13">
     
 <div class="brief failed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">as a user, i want to login with a valid credentials</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">as a user, i want to login with an invalid credentials</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -771,7 +813,7 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">22.002</span>
+  <span class="lead-duration duration">21.945</span>
 
           </div>
 
@@ -788,9 +830,9 @@ Session ID: 7134a7ff29c8c2d2c427d6a3f690ac6a
 Build info: version: '4.1.2', revision: '9a5a329c5a'
 System info: host: 'fv-az206-869', ip: '10.1.0.109', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [372492749cf9565e5dc776e9679370c0, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50032}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50032/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 372492749cf9565e5dc776e9679370c0
+Command: [9fee17a52a8e82ced3fc4e5f122ec882, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50015}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50015/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9fee17a52a8e82ced3fc4e5f122ec882
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -870,7 +912,7 @@ Session ID: 372492749cf9565e5dc776e9679370c0
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
-  <span class="name">user filled in valid username</span>
+  <span class="name">user filled in invalid username</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -891,7 +933,7 @@ Session ID: 372492749cf9565e5dc776e9679370c0
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
-  <span class="name">user filled in valid password</span>
+  <span class="name">user filled in invalid password</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -954,7 +996,7 @@ Session ID: 372492749cf9565e5dc776e9679370c0
         
 <div class="brief skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">user should be able to login successfully</span>
+  <span class="name">user should have an alert &quot;user not found&quot; invalid login with &quot;&lt;state&gt;&quot;</span>
   
   <span class="lead-duration duration">0.000</span>
 

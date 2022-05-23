@@ -53,7 +53,7 @@ $(document).ready(function() {
             data: [
                 0,
                 0,
-                14,
+                32,
                 0,
                 0
             ],
@@ -94,7 +94,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 14) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 32) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -108,7 +108,7 @@ $(document).ready(function() {
         datasets: [{
             data: [
                 0,
-                3
+                6
             ],
             backgroundColor: [
                 "#00B000",
@@ -144,7 +144,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 3) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 6) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -234,7 +234,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Paques Web Automation Report</td>
               <td>1</td>
-            <td>22 May 2022, 15:29</td>
+            <td>23 May 2022, 07:28</td>
     </tr>
   </tbody>
 </table>
@@ -342,7 +342,7 @@ $(document).ready(function() {
         <td  class="failed"    >2</td>
         <td class="total">2</td>
 
-        <td class="duration" data-value="0">0.000</td>
+        <td class="duration" data-value="1013800">0.001</td>
         <td class="failed">Failed</td>
       </tr>
           <tr>
@@ -350,16 +350,16 @@ $(document).ready(function() {
         
         <td >0</td>
         <td >0</td>
-        <td     class="skipped"   >6</td>
+        <td     class="skipped"   >24</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">6</td>
+        <td class="total">24</td>
 
         <td >0</td>
-        <td  class="failed"    >1</td>
-        <td class="total">1</td>
+        <td  class="failed"    >4</td>
+        <td class="total">4</td>
 
-        <td class="duration" data-value="1000000">0.001</td>
+        <td class="duration" data-value="2228900">0.002</td>
         <td class="failed">Failed</td>
       </tr>
       </tbody>
@@ -369,16 +369,16 @@ $(document).ready(function() {
       <td></td>
             <td>0</td>
       <td>0</td>
-      <td>14</td>
+      <td>32</td>
       <td>0</td>
       <td>0</td>
-      <td>14</td>
+      <td>32</td>
 
       <td>0</td>
-      <td>3</td>
-      <td>3</td>
+      <td>6</td>
+      <td>6</td>
 
-      <td class="duration">0.001</td>
+      <td class="duration">0.003</td>
       <td>2</td>
     </tr>
     <tr>
