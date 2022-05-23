@@ -4,11 +4,13 @@ import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-
 import elements.ForgotPasswordElement;
-import helper.LogUtils;
-
+import utils.LogUtils;
 import static helper.TestInstrument.*;
+
+/**
+ * Created by Dika Brenda Angkasa on 23/05/2022
+ */
 
 public class ForgotPasswordPage extends ForgotPasswordElement {
     

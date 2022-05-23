@@ -29,8 +29,7 @@ public class LoginSteps extends TestInstrument implements En{
         });
 
         Then("^user should be able to login successfully$", () -> {
-            // paques.loginPage().messageLogin(message);
-            System.out.println("success login");
+            paques.loginPage().successLogin("Hi, Dika");
         });
 
         And("^user filled in invalid username$", (String InvalidUsername) -> {

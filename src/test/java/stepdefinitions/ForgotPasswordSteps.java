@@ -3,6 +3,10 @@ package stepdefinitions;
 import helper.TestInstrument;
 import io.cucumber.java8.En;
 
+/**
+ * Created by Dika Brenda Angkasa on 23/05/2022
+ */
+
 public class ForgotPasswordSteps extends TestInstrument implements En{
     
     public ForgotPasswordSteps(){
