@@ -63,7 +63,7 @@ public class Base {
     private static void getChromeDriver(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
+        options.addArguments("--incognito", "--headless", "--window-size=1388x720"); // "--headless", "--window-size=1325x744"
         options.setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
     }
