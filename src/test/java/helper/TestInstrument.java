@@ -1,12 +1,19 @@
 package helper;
 
-
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import utils.LogUtils;
+
 import static helper.Constant.*;
 import java.net.MalformedURLException;
+
+/**
+ * Created by Dika Brenda Angkasa on 23/05/2022
+ */
 
 public class TestInstrument {
 
@@ -25,7 +32,12 @@ public class TestInstrument {
     }
 
     public static void assertEquals(Object expected, Object actual) {
-        Assert.assertEquals(expected, actual);
+        try {
+            delay(2);
+            Assert.assertEquals(expected, actual);
+        } catch (ElementNotVisibleException e) {
+            LogUtils.error("Element not Founded : " + e.getMessage());
+        }
     }
 
     public static WebElement clickButton(WebElement locator) {
@@ -48,6 +60,10 @@ public class TestInstrument {
 
     public static void refreshPage(){
         driver.navigate().refresh();
+    }
+
+    public static void backButton(){
+        driver.navigate().back();
     }
 
     public WebDriver setupBrowser() throws MalformedURLException {
