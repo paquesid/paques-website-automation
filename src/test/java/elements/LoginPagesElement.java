@@ -3,6 +3,10 @@ package elements;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * Created by Dika Brenda Angkasa on 23/05/2022
+ */
+
 public class LoginPagesElement {
     
     @FindBy(name = "username")
@@ -24,4 +28,8 @@ public class LoginPagesElement {
     @FindBy(css = "")
     protected
     WebElement LOGINPAGE_ALERT_MESSAGE;
+
+    @FindBy(xpath = "//span[normalize-space()='Hi, Dika']")
+    protected
+    WebElement LOGINPAGE_SUCCESS_LOGIN_TEXT;
 }

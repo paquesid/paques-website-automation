@@ -9,6 +9,10 @@ import elements.LoginPagesElement;
 
 import static helper.TestInstrument.*;
 
+/**
+ * Created by Dika Brenda Angkasa on 23/05/2022
+ */
+
 public class LoginPage extends LoginPagesElement {
 
     protected WebDriver driver;
@@ -37,6 +41,11 @@ public class LoginPage extends LoginPagesElement {
 
     public void clickButtonLogin() {
         clickButton(LOGINPAGE_LOGIN_BUTTON);
+    }
+
+    public void successLogin(String expected) {
+        String actual = LOGINPAGE_SUCCESS_LOGIN_TEXT.getText();
+        assertEquals(expected, actual);
     }
 
     public void messageLogin(String message, String value) {

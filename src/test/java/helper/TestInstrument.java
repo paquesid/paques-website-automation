@@ -1,16 +1,26 @@
 package helper;
 
-
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import utils.LogUtils;
+
 import static helper.Constant.*;
 import java.net.MalformedURLException;
+
+/**
+ * Created by Dika Brenda Angkasa on 23/05/2022
+ */
 
 public class TestInstrument {
 
     protected static WebDriver driver;
+    protected static WebDriverWait wait;
     protected static CucumberPages paques;
     public static WebElement element;
 
@@ -25,7 +35,12 @@ public class TestInstrument {
     }
 
     public static void assertEquals(Object expected, Object actual) {
-        Assert.assertEquals(expected, actual);
+        try {
+            delay(2);
+            Assert.assertEquals(expected, actual);
+        } catch (ElementNotVisibleException e) {
+            LogUtils.error("Element not Founded : " + e.getMessage());
+        }
     }
 
     public static WebElement clickButton(WebElement locator) {
@@ -50,9 +65,17 @@ public class TestInstrument {
         driver.navigate().refresh();
     }
 
+    public static void backButton(){
+        driver.navigate().back();
+    }
+
     public WebDriver setupBrowser() throws MalformedURLException {
         driver = Base.startApplication(CHROME, PRODUCTION);
         return driver;
+    }
+
+    public static void waitForVisibility(WebElement elementLocator) {
+        wait.until(ExpectedConditions.visibilityOf(elementLocator));
     }
 
     public void pageObj(){
