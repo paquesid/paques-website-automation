@@ -18,21 +18,16 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Base {
 
-    protected static WebDriver driver;
     protected static Dotenv dotenv = Dotenv.load();
 
-    public static WebDriver startApplication(String browserName, String appURL) throws MalformedURLException {
+    public static WebDriver startApplication(WebDriver driver, String browserName, String appURL) throws MalformedURLException {
         switch (browserName) {
             case "Chrome":
-                getChromeDriver();
-                break;
-
-            case "Firefox":
-                getFirefoxDriver();
-                break;
-
-            case "Safari":
-                getSafariDriver();
+                System.setProperty(Constant.WEBDRIVER_CHROME, Constant.CHROME_PATH);
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
+                options.setAcceptInsecureCerts(true);
+                driver = new ChromeDriver(options);
                 break;
                 
             default:
@@ -61,23 +56,5 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(4));
 
         return driver;
-    }
-
-    private static void getChromeDriver(){
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito", "--headless", "--window-size=1388x720"); // "--headless", "--window-size=1325x744"
-        options.setAcceptInsecureCerts(true);
-        driver = new ChromeDriver(options);
-    }
-
-    private static void getFirefoxDriver(){
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-    }
-
-    private static void getSafariDriver(){
-        WebDriverManager.safaridriver().setup();
-        driver = new SafariDriver();
     }
 }
