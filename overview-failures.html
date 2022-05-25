@@ -78,7 +78,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Paques Web Automation Report</td>
               <td>1</td>
-            <td>25 May 2022, 05:53</td>
+            <td>25 May 2022, 07:36</td>
     </tr>
   </tbody>
 </table>
@@ -287,7 +287,7 @@ $(document).ready(function() {
   </div>
 
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-3">
@@ -324,7 +324,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">53.275</span>
+  <span class="lead-duration duration">21.544</span>
 
           </div>
 
@@ -336,28 +336,27 @@ $(document).ready(function() {
           <a>Error message</a>
       </div>
       <div id="msg-5" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0ef10234cc69f66e7d30effa560aa3e1, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50089}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50089/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0ef10234cc69f66e7d30effa560aa3e1
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -521,7 +520,7 @@ Session ID: 0ef10234cc69f66e7d30effa560aa3e1
   <span class="keyword indention">Then</span>
   <span class="name">Result Message &quot;New role successfully added&quot; will be displayed</span>
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
   </div>
 
@@ -788,7 +787,7 @@ Session ID: 0ef10234cc69f66e7d30effa560aa3e1
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">27.564</span>
+  <span class="lead-duration duration">0.640</span>
 
           </div>
 
@@ -800,28 +799,27 @@ Session ID: 0ef10234cc69f66e7d30effa560aa3e1
           <a>Error message</a>
       </div>
       <div id="msg-12" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c7e3f55d890b81ae3bda20747f673aa4, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50111}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50111/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c7e3f55d890b81ae3bda20747f673aa4
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -1215,7 +1213,7 @@ Session ID: c7e3f55d890b81ae3bda20747f673aa4
   </div>
 
   
-  <span class="lead-duration duration">0.002</span>
+  <span class="lead-duration duration">0.005</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-17">
@@ -1252,7 +1250,7 @@ Session ID: c7e3f55d890b81ae3bda20747f673aa4
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">21.911</span>
+  <span class="lead-duration duration">0.699</span>
 
           </div>
 
@@ -1264,28 +1262,27 @@ Session ID: c7e3f55d890b81ae3bda20747f673aa4
           <a>Error message</a>
       </div>
       <div id="msg-19" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f41549620b223643acdfa547129a6e47, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50132}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50132/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f41549620b223643acdfa547129a6e47
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -1407,7 +1404,7 @@ Session ID: f41549620b223643acdfa547129a6e47
   <span class="keyword indention">And</span>
   <span class="name">User check button as &quot;Check All&quot;</span>
   
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.003</span>
 
   </div>
 
@@ -1428,7 +1425,7 @@ Session ID: f41549620b223643acdfa547129a6e47
   <span class="keyword indention">When</span>
   <span class="name">User click on Save button</span>
   
-  <span class="lead-duration duration">0.002</span>
+  <span class="lead-duration duration">0.001</span>
 
   </div>
 
@@ -1679,7 +1676,7 @@ Session ID: f41549620b223643acdfa547129a6e47
   </div>
 
   
-  <span class="lead-duration duration">0.002</span>
+  <span class="lead-duration duration">0.000</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-24">
@@ -1716,7 +1713,7 @@ Session ID: f41549620b223643acdfa547129a6e47
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">35.429</span>
+  <span class="lead-duration duration">0.947</span>
 
           </div>
 
@@ -1728,28 +1725,27 @@ Session ID: f41549620b223643acdfa547129a6e47
           <a>Error message</a>
       </div>
       <div id="msg-26" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c29e3fc1aff9dece852788adf7e95dd2, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50150}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50150/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c29e3fc1aff9dece852788adf7e95dd2
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -1787,7 +1783,7 @@ Session ID: c29e3fc1aff9dece852788adf7e95dd2
   <span class="keyword indention">And</span>
   <span class="name">user empty Role Name as &quot;Role111&quot;</span>
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
   </div>
 
@@ -1913,7 +1909,7 @@ Session ID: c29e3fc1aff9dece852788adf7e95dd2
   <span class="keyword indention">Then</span>
   <span class="name">Result Message &quot;Please check at least 1 scope&quot; will be displayed</span>
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
   </div>
 
@@ -2023,7 +2019,7 @@ Session ID: c29e3fc1aff9dece852788adf7e95dd2
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">26.405</span>
+  <span class="lead-duration duration">0.731</span>
 
           </div>
 
@@ -2035,28 +2031,27 @@ Session ID: c29e3fc1aff9dece852788adf7e95dd2
           <a>Error message</a>
       </div>
       <div id="msg-31" class="collapse collapsable-details ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3c8901de7d7b27010c98582557ccc81e, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50169}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50169/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3c8901de7d7b27010c98582557ccc81e
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -2196,7 +2191,7 @@ Session ID: 3c8901de7d7b27010c98582557ccc81e
             <span class="keyword indention">After</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
                         
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
           </div>
 
@@ -2267,7 +2262,7 @@ Session ID: 3c8901de7d7b27010c98582557ccc81e
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">23.301</span>
+  <span class="lead-duration duration">0.702</span>
 
           </div>
 
@@ -2279,28 +2274,27 @@ Session ID: 3c8901de7d7b27010c98582557ccc81e
           <a>Error message</a>
       </div>
       <div id="msg-36" class="collapse collapsable-details ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [69d9626c44b8541bd95537dc9d9bc060, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50188}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50188/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 69d9626c44b8541bd95537dc9d9bc060
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -2588,7 +2582,7 @@ Session ID: 69d9626c44b8541bd95537dc9d9bc060
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">23.570</span>
+  <span class="lead-duration duration">0.648</span>
 
           </div>
 
@@ -2600,28 +2594,27 @@ Session ID: 69d9626c44b8541bd95537dc9d9bc060
           <a>Error message</a>
       </div>
       <div id="msg-43" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [efa941e75c6faab8b3af89389b1c864e, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50206}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50206/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: efa941e75c6faab8b3af89389b1c864e
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -2930,7 +2923,7 @@ Session ID: efa941e75c6faab8b3af89389b1c864e
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">23.525</span>
+  <span class="lead-duration duration">0.636</span>
 
           </div>
 
@@ -2942,28 +2935,27 @@ Session ID: efa941e75c6faab8b3af89389b1c864e
           <a>Error message</a>
       </div>
       <div id="msg-50" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [407cdd77d5d3a36a6a90599dbc3903e8, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50224}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50224/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 407cdd77d5d3a36a6a90599dbc3903e8
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -3272,7 +3264,7 @@ Session ID: 407cdd77d5d3a36a6a90599dbc3903e8
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">23.294</span>
+  <span class="lead-duration duration">0.634</span>
 
           </div>
 
@@ -3284,28 +3276,27 @@ Session ID: 407cdd77d5d3a36a6a90599dbc3903e8
           <a>Error message</a>
       </div>
       <div id="msg-57" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8728440ee736cf1ca424595e78ec6458, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50241}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50241/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 8728440ee736cf1ca424595e78ec6458
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
@@ -3614,7 +3605,7 @@ Session ID: 8728440ee736cf1ca424595e78ec6458
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
                         
-  <span class="lead-duration duration">22.136</span>
+  <span class="lead-duration duration">0.715</span>
 
           </div>
 
@@ -3626,28 +3617,27 @@ Session ID: 8728440ee736cf1ca424595e78ec6458
           <a>Error message</a>
       </div>
       <div id="msg-64" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=101.0.4951.67)
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
+Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az365-532', ip: '10.1.0.124', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d26dd664f194e45c4e44ada071271bc0, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50261}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50261/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d26dd664f194e45c4e44ada071271bc0
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:54)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at helper.Base.startApplication(Base.java:30)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
 	at config.Hooks.lambda$new$0(Hooks.java:11)
 </pre>
       </div>
