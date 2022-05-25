@@ -78,7 +78,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Paques Web Automation Report</td>
               <td>1</td>
-            <td>25 May 2022, 07:36</td>
+            <td>25 May 2022, 12:38</td>
     </tr>
   </tbody>
 </table>
@@ -322,9 +322,9 @@ $(document).ready(function() {
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">21.544</span>
+  <span class="lead-duration duration">48.022</span>
 
           </div>
 
@@ -336,28 +336,59 @@ $(document).ready(function() {
           <a>Error message</a>
       </div>
       <div id="msg-5" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [2d4c3f5027d8159f6e9ceb1ae6990bf4, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59871}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59871/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d4c3f5027d8159f6e9ceb1ae6990bf4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.002</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-6">
+          <a>Error message</a>
+      </div>
+      <div id="msg-6" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -375,7 +406,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-6">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-7">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -387,7 +418,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-6" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-7" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -541,7 +572,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-7">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-8">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -553,11 +584,11 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-7" class="inner-level collapse collapsable-details ">
+    <div id="after-8" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
@@ -592,7 +623,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-8">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-9">
     
 <div class="brief failed">
   <span class="keyword indention">Background</span>
@@ -605,13 +636,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-8" class="collapse collapsable-details  in ">
+  <div id="element-9" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-9">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-10">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -623,7 +654,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-9" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-10" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -753,7 +784,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-10">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-11">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
@@ -766,10 +797,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-10" class="collapse collapsable-details  in ">
+  <div id="element-11" class="collapse collapsable-details  in ">
     
   <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-11">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-12">
       
 <div class="brief failed">
   <span class="keyword indention">Hooks</span>
@@ -781,13 +812,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="before-11" class="inner-level collapse collapsable-details  in ">
+    <div id="before-12" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.640</span>
+  <span class="lead-duration duration">22.233</span>
 
           </div>
 
@@ -795,32 +826,63 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-12">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-13">
           <a>Error message</a>
       </div>
-      <div id="msg-12" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+      <div id="msg-13" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [8845da1e7ed4cc409a5af5e1c18f63a3, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59891}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59891/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8845da1e7ed4cc409a5af5e1c18f63a3
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-14">
+          <a>Error message</a>
+      </div>
+      <div id="msg-14" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -838,7 +900,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-13">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-15">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -850,7 +912,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-13" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-15" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -1004,7 +1066,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-14">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-16">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1016,11 +1078,11 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-14" class="inner-level collapse collapsable-details ">
+    <div id="after-16" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
@@ -1055,7 +1117,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-15">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-17">
     
 <div class="brief failed">
   <span class="keyword indention">Background</span>
@@ -1068,13 +1130,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-15" class="collapse collapsable-details  in ">
+  <div id="element-17" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-16">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-18">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -1086,7 +1148,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-16" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-18" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -1213,10 +1275,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </div>
 
   
-  <span class="lead-duration duration">0.005</span>
+  <span class="lead-duration duration">0.002</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-17">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-19">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1229,10 +1291,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-17" class="collapse collapsable-details  in ">
+  <div id="element-19" class="collapse collapsable-details  in ">
     
   <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-18">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-20">
       
 <div class="brief failed">
   <span class="keyword indention">Hooks</span>
@@ -1244,13 +1306,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="before-18" class="inner-level collapse collapsable-details  in ">
+    <div id="before-20" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.699</span>
+  <span class="lead-duration duration">21.982</span>
 
           </div>
 
@@ -1258,32 +1320,63 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-19">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-21">
           <a>Error message</a>
       </div>
-      <div id="msg-19" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+      <div id="msg-21" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [0f0f2ad394447ef44cdd25adc1119e0f, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59911}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59911/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f0f2ad394447ef44cdd25adc1119e0f
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-22">
+          <a>Error message</a>
+      </div>
+      <div id="msg-22" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -1301,7 +1394,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-20">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-23">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -1313,7 +1406,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-20" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-23" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -1404,7 +1497,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="keyword indention">And</span>
   <span class="name">User check button as &quot;Check All&quot;</span>
   
-  <span class="lead-duration duration">0.003</span>
+  <span class="lead-duration duration">0.002</span>
 
   </div>
 
@@ -1425,7 +1518,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="keyword indention">When</span>
   <span class="name">User click on Save button</span>
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
   </div>
 
@@ -1467,7 +1560,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-21">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-24">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1479,11 +1572,11 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-21" class="inner-level collapse collapsable-details ">
+    <div id="after-24" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
@@ -1518,7 +1611,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-22">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-25">
     
 <div class="brief failed">
   <span class="keyword indention">Background</span>
@@ -1531,13 +1624,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-22" class="collapse collapsable-details  in ">
+  <div id="element-25" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-23">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-26">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -1549,7 +1642,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-23" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-26" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -1676,10 +1769,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </div>
 
   
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-24">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-27">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1692,10 +1785,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-24" class="collapse collapsable-details  in ">
+  <div id="element-27" class="collapse collapsable-details  in ">
     
   <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-25">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-28">
       
 <div class="brief failed">
   <span class="keyword indention">Hooks</span>
@@ -1707,13 +1800,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="before-25" class="inner-level collapse collapsable-details  in ">
+    <div id="before-28" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.947</span>
+  <span class="lead-duration duration">21.948</span>
 
           </div>
 
@@ -1721,32 +1814,63 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-26">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-29">
           <a>Error message</a>
       </div>
-      <div id="msg-26" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+      <div id="msg-29" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [fcdf392d96ee4fb79acfd87138410078, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59928}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59928/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: fcdf392d96ee4fb79acfd87138410078
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-30">
+          <a>Error message</a>
+      </div>
+      <div id="msg-30" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -1764,7 +1888,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-27">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-31">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -1776,14 +1900,14 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-27" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-31" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
   <span class="name">user empty Role Name as &quot;Role111&quot;</span>
   
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
   </div>
 
@@ -1930,7 +2054,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-28">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-32">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1942,11 +2066,11 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-28" class="inner-level collapse collapsable-details ">
+    <div id="after-32" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
@@ -1985,7 +2109,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-29">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-33">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario</span>
@@ -1998,10 +2122,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-29" class="collapse collapsable-details  in ">
+  <div id="element-33" class="collapse collapsable-details  in ">
     
   <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-30">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-34">
       
 <div class="brief failed">
   <span class="keyword indention">Hooks</span>
@@ -2013,13 +2137,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="before-30" class="inner-level collapse collapsable-details  in ">
+    <div id="before-34" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.731</span>
+  <span class="lead-duration duration">22.144</span>
 
           </div>
 
@@ -2027,32 +2151,63 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-31">
+      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-35">
           <a>Error message</a>
       </div>
-      <div id="msg-31" class="collapse collapsable-details ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+      <div id="msg-35" class="collapse collapsable-details ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [f70922a2677cac187e485ee5a6d14dc1, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59947}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59947/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f70922a2677cac187e485ee5a6d14dc1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-36">
+          <a>Error message</a>
+      </div>
+      <div id="msg-36" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -2070,7 +2225,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-32">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-37">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -2082,7 +2237,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-32" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-37" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -2173,7 +2328,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-33">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-38">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2185,13 +2340,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-33" class="inner-level collapse collapsable-details ">
+    <div id="after-38" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
           </div>
 
@@ -2228,7 +2383,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-34">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-39">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario</span>
@@ -2241,10 +2396,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-34" class="collapse collapsable-details  in ">
+  <div id="element-39" class="collapse collapsable-details  in ">
     
   <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-35">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-40">
       
 <div class="brief failed">
   <span class="keyword indention">Hooks</span>
@@ -2256,13 +2411,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="before-35" class="inner-level collapse collapsable-details  in ">
+    <div id="before-40" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.702</span>
+  <span class="lead-duration duration">21.924</span>
 
           </div>
 
@@ -2270,32 +2425,63 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-36">
+      <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#msg-41">
           <a>Error message</a>
       </div>
-      <div id="msg-36" class="collapse collapsable-details ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+      <div id="msg-41" class="collapse collapsable-details ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [d2986c0b93af8d05164e47b3ffdf5306, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59964}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59964/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d2986c0b93af8d05164e47b3ffdf5306
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-42">
+          <a>Error message</a>
+      </div>
+      <div id="msg-42" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -2313,7 +2499,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-37">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-43">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -2325,7 +2511,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-37" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-43" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -2416,7 +2602,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-38">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-44">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2428,11 +2614,11 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-38" class="inner-level collapse collapsable-details ">
+    <div id="after-44" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
@@ -2467,7 +2653,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-39">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-45">
     
 <div class="brief failed">
   <span class="keyword indention">Background</span>
@@ -2480,13 +2666,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-39" class="collapse collapsable-details  in ">
+  <div id="element-45" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-40">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-46">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -2498,7 +2684,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-40" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-46" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -2548,7 +2734,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-41">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-47">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
@@ -2561,10 +2747,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-41" class="collapse collapsable-details  in ">
+  <div id="element-47" class="collapse collapsable-details  in ">
     
   <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-42">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-48">
       
 <div class="brief failed">
   <span class="keyword indention">Hooks</span>
@@ -2576,13 +2762,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="before-42" class="inner-level collapse collapsable-details  in ">
+    <div id="before-48" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.648</span>
+  <span class="lead-duration duration">21.934</span>
 
           </div>
 
@@ -2590,32 +2776,33 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-43">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-49">
           <a>Error message</a>
       </div>
-      <div id="msg-43" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+      <div id="msg-49" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [24ccf3e998fac909732101ef88148746, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59982}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59982/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 24ccf3e998fac909732101ef88148746
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
 </pre>
       </div>
     </div>
@@ -2627,303 +2814,12 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
           
   
         </div>
-          </div>
-  </div>
-
-
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-44">
-    
-<div class="brief failed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-  </div>
-
-  <div id="steps-44" class="inner-level collapse collapsable-details  in ">
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">user filled in invalid username</span>
-  
-  <span class="lead-duration duration">0.000</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">user filled in invalid password</span>
-  
-  <span class="lead-duration duration">0.000</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">user filled in capcha</span>
-  
-  <span class="lead-duration duration">0.000</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">When</span>
-  <span class="name">user click button login</span>
-  
-  <span class="lead-duration duration">0.000</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">user should have an alert &quot;user email or password is wrong&quot; invalid login with &quot;&lt;state&gt;&quot;</span>
-  
-  <span class="lead-duration duration">0.000</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-      </div>
-</div>
-
-
-    
-  <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-45">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-    </div>
-
-    <div id="after-45" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
-                        
-  <span class="lead-duration duration">0.000</span>
-
-          </div>
-
-                      
-
-          
-                    
-
-          
-  
-        </div>
-          </div>
-  </div>
-
-  </div>
-</div>
-
-                      
-<div class="element">
-      <div class="indention">
-      <b>Feature:</b>
-      <a href="report-feature_classpath-features-Login-feature.html">Login PDS</a>
-    </div>
-  
-  
-<div class="tags indention">
-  </div>
-
-  
-  <span class="lead-duration duration">0.000</span>
-
-
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-46">
-    
-<div class="brief failed">
-  <span class="keyword indention">Background</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-46" class="collapse collapsable-details  in ">
-    
-
-
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-47">
-    
-<div class="brief failed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-  </div>
-
-  <div id="steps-47" class="inner-level collapse collapsable-details  in ">
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">Given</span>
-  <span class="name">user is on login page PDS</span>
-  
-  <span class="lead-duration duration">0.000</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-      </div>
-</div>
-
-
-    
-
-  </div>
-</div>
-
-                      
-<div class="element">
-      <div class="indention">
-      <b>Feature:</b>
-      <a href="report-feature_classpath-features-Login-feature.html">Login PDS</a>
-    </div>
-  
-  
-<div class="tags indention">
-      <b>Tags:</b>
-           <a href="report-tag_Login.html">@Login</a>
-           <a href="report-tag_sanity.html">@sanity</a>
-           <a href="report-tag_negative-scenario.html">@negative-scenario</a>
-      </div>
-
-  
-  <span class="lead-duration duration">0.000</span>
-
-
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-48">
-    
-<div class="brief failed">
-  <span class="keyword indention">Scenario Outline</span>
-  <span class="name">as a user, i want to login with an invalid credentials</span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-48" class="collapse collapsable-details  in ">
-    
-  <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-49">
-      
-<div class="brief failed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-    </div>
-
-    <div id="before-49" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
                         
-  <span class="lead-duration duration">0.636</span>
+  <span class="lead-duration duration">0.000</span>
 
           </div>
 
@@ -2935,28 +2831,8 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
           <a>Error message</a>
       </div>
       <div id="msg-50" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -3075,7 +2951,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
         
 <div class="brief skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">user should have an alert &quot;user not found&quot; invalid login with &quot;&lt;state&gt;&quot;</span>
+  <span class="name">user should have an alert &quot;user email or password is wrong&quot; invalid login with &quot;&lt;state&gt;&quot;</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -3114,7 +2990,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
@@ -3262,9 +3138,9 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.634</span>
+  <span class="lead-duration duration">21.920</span>
 
           </div>
 
@@ -3276,28 +3152,59 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
           <a>Error message</a>
       </div>
       <div id="msg-57" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [3db186982f1115a1b849b785b589454a, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60001}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60001/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3db186982f1115a1b849b785b589454a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-58">
+          <a>Error message</a>
+      </div>
+      <div id="msg-58" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -3315,7 +3222,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-58">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-59">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -3327,7 +3234,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-58" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-59" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -3439,7 +3346,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-59">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-60">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -3451,11 +3358,11 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-59" class="inner-level collapse collapsable-details ">
+    <div id="after-60" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
@@ -3490,7 +3397,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-60">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-61">
     
 <div class="brief failed">
   <span class="keyword indention">Background</span>
@@ -3503,13 +3410,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-60" class="collapse collapsable-details  in ">
+  <div id="element-61" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-61">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-62">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -3521,7 +3428,379 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-61" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-62" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Given</span>
+  <span class="name">user is on login page PDS</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_classpath-features-Login-feature.html">Login PDS</a>
+    </div>
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_Login.html">@Login</a>
+           <a href="report-tag_sanity.html">@sanity</a>
+           <a href="report-tag_negative-scenario.html">@negative-scenario</a>
+      </div>
+
+  
+  <span class="lead-duration duration">0.000</span>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-63">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">as a user, i want to login with an invalid credentials</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-63" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-64">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-64" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
+                        
+  <span class="lead-duration duration">22.035</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-65">
+          <a>Error message</a>
+      </div>
+      <div id="msg-65" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f38433fdd6a86f766b720702c5f49b15, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60019}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60019/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f38433fdd6a86f766b720702c5f49b15
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-66">
+          <a>Error message</a>
+      </div>
+      <div id="msg-66" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-67">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-67" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled in invalid username</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled in invalid password</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled in capcha</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user click button login</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">user should have an alert &quot;user not found&quot; invalid login with &quot;&lt;state&gt;&quot;</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-68">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-68" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                      
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_classpath-features-Login-feature.html">Login PDS</a>
+    </div>
+  
+  
+<div class="tags indention">
+  </div>
+
+  
+  <span class="lead-duration duration">0.000</span>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-69">
+    
+<div class="brief failed">
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-69" class="collapse collapsable-details  in ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-70">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-70" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -3571,7 +3850,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   <span class="lead-duration duration">0.000</span>
 
 
-    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-62">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-71">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario</span>
@@ -3584,10 +3863,10 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
   </span>
   <div class="description indention"></div>
 
-  <div id="element-62" class="collapse collapsable-details  in ">
+  <div id="element-71" class="collapse collapsable-details  in ">
     
   <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-63">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-72">
       
 <div class="brief failed">
   <span class="keyword indention">Hooks</span>
@@ -3599,13 +3878,13 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="before-63" class="inner-level collapse collapsable-details  in ">
+    <div id="before-72" class="inner-level collapse collapsable-details  in ">
               <div class="hook">
           <div class="brief failed">
             <span class="keyword indention">Before</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:10)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:26)</span>
                         
-  <span class="lead-duration duration">0.715</span>
+  <span class="lead-duration duration">22.106</span>
 
           </div>
 
@@ -3613,32 +3892,63 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-64">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-73">
           <a>Error message</a>
       </div>
-      <div id="msg-64" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 102
-Current browser version is 101.0.4951.67 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+      <div id="msg-73" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=101.0.4951.67)
 Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az269-548', ip: '10.1.0.29', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+System info: host: 'fv-az365-532', ip: '10.1.0.20', os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--incognito, --headless, --window-size=1325x744], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+Command: [a82256de57b8e4ac706d51d1e763b1b4, get {url=https://dev.paques.dev:1111}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\RUNNER~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60037}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60037/devtoo..., se:cdpVersion: 101.0.4951.67, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a82256de57b8e4ac706d51d1e763b1b4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at helper.Base.startApplication(Base.java:30)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:135)
-	at config.Hooks.lambda$new$0(Hooks.java:11)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
+	at helper.Base.startApplication(Base.java:54)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:105)
+	at config.Hooks.lambda$new$0(Hooks.java:27)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:31)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-74">
+          <a>Error message</a>
+      </div>
+      <div id="msg-74" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at config.Hooks.lambda$new$1(Hooks.java:34)
 </pre>
       </div>
     </div>
@@ -3656,7 +3966,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-65">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-75">
     
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -3668,7 +3978,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
   </div>
 
-  <div id="steps-65" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-75" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief skipped">
@@ -3780,7 +4090,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-66">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-76">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -3792,11 +4102,11 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
 
     </div>
 
-    <div id="after-66" class="inner-level collapse collapsable-details ">
+    <div id="after-76" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:15)</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:47)</span>
                         
   <span class="lead-duration duration">0.000</span>
 
