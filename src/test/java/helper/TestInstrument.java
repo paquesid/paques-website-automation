@@ -17,6 +17,7 @@ import utils.LogUtils;
 
 import static helper.Constant.*;
 import java.net.MalformedURLException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
@@ -34,36 +35,7 @@ public class TestInstrument {
     public static WebElement element;
     public static Actions action;
     public static Select select;
-    // public static Properties capabilitiesProperties = getCapabilityProperties();
     public Dotenv dotenv = Dotenv.load();
-
-    // private static Properties getCapabilityProperties(){
-    //     Properties capabilitiesProperties = new Properties();
-    //     try {
-    //         FileInputStream properties = new FileInputStream("capabilities.properties");
-    //         capabilitiesProperties.load(properties);
-    //         properties.close();
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    //     return capabilitiesProperties;
-    // }
-
-    // private static void updateCapabilitiesFromSystemProp() {
-    //     String value;
-    //     for (Map.Entry<Object, Object> e : capabilitiesProperties.entrySet()) {
-    //         value = (String) e.getValue();
-
-    //         if (value.contains("{")) {
-    //             value = value.replace('{', ' ');
-    //             value = value.replace('}', ' ');
-    //             value = System.getProperty(value.trim());
-    //             capabilitiesProperties.setProperty((String) e.getKey(), value);
-    //         }
-    //     }
-
-    //     LogUtils.info(capabilitiesProperties.toString());
-    // }
 
     public static WebElement enterText(WebElement locator, String text) {
         boolean clear = true;
@@ -80,17 +52,30 @@ public class TestInstrument {
             delay(2);
             Assert.assertEquals(expected, actual);
         } catch (ElementNotVisibleException e) {
-            LogUtils.error("Element not Founded : " + e.getMessage());
+            LogUtils.error("Element not Founded : " + e.getCause());
         }
     }
 
     public static WebElement clickButton(WebElement locator) {
         try {
+            isElementExist(locator, 2);
             locator.click();
         } catch (ElementClickInterceptedException e) {
             LogUtils.info("element not exist : " + e.getCause());
         }
+        return locator;
+    }
 
+    public static WebElement doubleClickButton(WebElement locator) {
+        try {
+            for(int i = 0; i < 2; i++) {
+                if(isElementExist(locator, 2)) {
+                    locator.click();
+                }
+            }
+        } catch (AssertionError e) {
+            LogUtils.info("element not exist : " + e.getCause());
+        }
         return locator;
     }
 
@@ -119,8 +104,10 @@ public class TestInstrument {
         return select;
     }
 
-    public static WebElement isElementExist(WebElement elementLocator) {
-        return wait.until(ExpectedConditions.visibilityOf(elementLocator));
+    public static boolean isElementExist(WebElement locator, int timeout) {
+        wait = new WebDriverWait(driver, Duration.ofMinutes(timeout));
+        locator = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return true;
     }
 
     public static void refreshPage(){
@@ -145,7 +132,6 @@ public class TestInstrument {
             driver.quit();
         }
     }
-
 
     /**
      * Method to handle date picker
@@ -177,6 +163,8 @@ public class TestInstrument {
             .ifPresent(WebElement::click);
     }
 
+    // End method Date Picker
+
 
     /**
      * Method to perform Drag and Drop
@@ -196,9 +184,8 @@ public class TestInstrument {
                 LogUtils.info("Source couldn't be dropped to target as expected");
             }
         } catch (ElementClickInterceptedException e) {
-            throw new Error(e.getCause());
+            LogUtils.error("element not founded : " + e.getCause());
         }
-        
     }
 
     public static void dragAndDropByOfset(WebElement source, WebElement target, int timeout) {
