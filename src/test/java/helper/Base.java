@@ -2,7 +2,6 @@ package helper;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
@@ -11,28 +10,32 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-
 /**
  * Created by Dika Brenda Angkasa on 23/05/2022
  */
 
 public class Base {
 
-    protected static WebDriver driver;
     protected static Dotenv dotenv = Dotenv.load();
 
-    public static WebDriver startApplication(String browserName, String appURL) throws MalformedURLException {
+    public static WebDriver startApplication(WebDriver driver, String browserName, String appURL) throws MalformedURLException {
         switch (browserName) {
             case "Chrome":
-                getChromeDriver();
+                WebDriverManager.chromedriver().config();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
+                options.setAcceptInsecureCerts(true);
+                driver = new ChromeDriver(options);
                 break;
 
             case "Firefox":
-                getFirefoxDriver();
+                WebDriverManager.firefoxdriver().config();
+                driver = new FirefoxDriver();
                 break;
 
             case "Safari":
-                getSafariDriver();
+                WebDriverManager.safaridriver().config();
+                driver = new SafariDriver();
                 break;
                 
             default:
@@ -61,23 +64,5 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(4));
 
         return driver;
-    }
-
-    private static void getChromeDriver(){
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito", "--headless", "--window-size=1388x720"); // "--headless", "--window-size=1325x744"
-        options.setAcceptInsecureCerts(true);
-        driver = new ChromeDriver(options);
-    }
-
-    private static void getFirefoxDriver(){
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-    }
-
-    private static void getSafariDriver(){
-        WebDriverManager.safaridriver().setup();
-        driver = new SafariDriver();
     }
 }

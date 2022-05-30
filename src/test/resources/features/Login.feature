@@ -4,7 +4,7 @@ Feature: Login PDS
     Background:
         Given user is on login page PDS
 
-    @sanity @negative-scenario
+    @skip-regression @negative-scenario 
     Scenario Outline: as a user, i want to login with an invalid credentials
         And user filled in invalid username
         And user filled in invalid password
@@ -13,7 +13,7 @@ Feature: Login PDS
         Then user should have an alert "<message>" invalid login with "<state>"
 
         Examples:
-            | message                         | value           |
+            | message                         | state           |
             | user email or password is wrong | invalidPassword |
             | user not found                  | invalidUsername |
             | user not found                  | sqlInjection    |
@@ -25,3 +25,4 @@ Feature: Login PDS
         And user filled in capcha
         When user click button login
         Then user should be able to login successfully
+        And user click button start

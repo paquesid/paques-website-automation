@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import utils.LogUtils;
 
 import static helper.Constant.*;
@@ -33,6 +34,36 @@ public class TestInstrument {
     public static WebElement element;
     public static Actions action;
     public static Select select;
+    // public static Properties capabilitiesProperties = getCapabilityProperties();
+    public Dotenv dotenv = Dotenv.load();
+
+    // private static Properties getCapabilityProperties(){
+    //     Properties capabilitiesProperties = new Properties();
+    //     try {
+    //         FileInputStream properties = new FileInputStream("capabilities.properties");
+    //         capabilitiesProperties.load(properties);
+    //         properties.close();
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    //     return capabilitiesProperties;
+    // }
+
+    // private static void updateCapabilitiesFromSystemProp() {
+    //     String value;
+    //     for (Map.Entry<Object, Object> e : capabilitiesProperties.entrySet()) {
+    //         value = (String) e.getValue();
+
+    //         if (value.contains("{")) {
+    //             value = value.replace('{', ' ');
+    //             value = value.replace('}', ' ');
+    //             value = System.getProperty(value.trim());
+    //             capabilitiesProperties.setProperty((String) e.getKey(), value);
+    //         }
+    //     }
+
+    //     LogUtils.info(capabilitiesProperties.toString());
+    // }
 
     public static WebElement enterText(WebElement locator, String text) {
         boolean clear = true;
@@ -88,9 +119,8 @@ public class TestInstrument {
         return select;
     }
 
-    public static boolean isElementExist(WebElement elementLocator) {
-        wait.until(ExpectedConditions.visibilityOf(elementLocator));
-        return true;
+    public static WebElement isElementExist(WebElement elementLocator) {
+        return wait.until(ExpectedConditions.visibilityOf(elementLocator));
     }
 
     public static void refreshPage(){
@@ -102,7 +132,7 @@ public class TestInstrument {
     }
 
     public WebDriver setupBrowser() throws MalformedURLException {
-        driver = Base.startApplication(CHROME, PRODUCTION);
+        driver = Base.startApplication(driver, CHROME, PRODUCTION);
         return driver;
     }
 
