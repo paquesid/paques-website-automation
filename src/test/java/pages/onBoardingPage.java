@@ -23,9 +23,4 @@ public class onBoardingPage extends onBoardingElement{
         String actual = ONBOARDING_HOME_TITLE.getText();
         assertEquals("Welcome To", actual);
     }
-
-    // public void clickOnboardingSettingButton(){
-    //     clickButton(ONBOARDING_SETTING_BUTTON);
-    //     delay(6000);
-    // }
 }
