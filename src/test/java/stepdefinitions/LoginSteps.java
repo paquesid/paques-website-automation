@@ -12,7 +12,7 @@ import data.PDSData;
 public class LoginSteps extends TestInstrument implements En {
     
     public LoginSteps() {
-        Given("^user login with user \"([^\"]*)\"$", (String credential) -> {
+        Given("^user login with \"([^\"]*)\"$", (String credential) -> {
             String username = dotenv.get(credential.replaceAll(" ", "_").toUpperCase() + "_USERNAME");
             String password = dotenv.get(credential.replaceAll(" ", "_").toUpperCase() + "_PASSWORD");
             
