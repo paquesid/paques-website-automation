@@ -11,7 +11,7 @@ public class UserManagementElement {
 
     /**
      * this element for create user in user management page
-     * @WebElement
+     * @CREATE-USER
      */
 
     @FindBy(css = ".title.f-16")
@@ -29,8 +29,11 @@ public class UserManagementElement {
     @FindBy(xpath = "//h5[normalize-space()='User List']")
     protected WebElement USERMANAGEMENTPAGE_USERTAB_TEXT;
 
+    @FindBy(xpath = "//h4[normalize-space()='User Management']")
+    protected WebElement USERMANAGEMENTPAGE_GOTO_USERMANAGEMENT_BUTTON;
+
     /**
-     * Form Create Users
+     * Form Create Users & Update Users
      * @WebElement
      */
 
@@ -52,8 +55,11 @@ public class UserManagementElement {
     @FindBy(id = "lastname")
     protected WebElement USERMANAGEMENTPAGE_LASTNAME_TEXT;
 
-    @FindBy(id = "mat-select-2")
+    @FindBy(id = "mat-select-1")
     protected WebElement USERMANAGEMENTPAGE_GROUP_DROPDOWN;
+
+    @FindBy(id = "mat-option-65")
+    protected WebElement USERMANAGEMENTPAGE_VALUE_AUTOMATION_TEXT;
 
     @FindBy(xpath = "//button[normalize-space()='Save']")
     protected WebElement USERMANAGEMENTPAGE_FORM_SAVE_BUTTON;
@@ -62,4 +68,55 @@ public class UserManagementElement {
     protected WebElement USERMANAGEMENTPAGE_FORM_CANCEL_BUTTON;
 
     // End of Create User form
+
+    /**
+     * this element for cases in Update Users
+     * @UPDATE-USER
+     */
+
+     @FindBy(css = "button[mattooltip='Edit User']")
+     protected WebElement USERMANAGEMENTPAGE_UPDATE_BUTTON;
+
+     @FindBy(xpath = "//*[normalize-space()='Edit User']")
+     protected WebElement USERMANAGEMENTPAGE_FORM_UPDATEUSER_TITLE;
+
+     @FindBy(css = "input[placeholder='Search user']")
+     protected WebElement USERMANAGEMENTPAGE_SEARCHUSER_TEXT;
+
+     // End of Update User Form
+
+
+
+    /**
+     * this element for error case in form Create Users
+     * @ERROR-MESSAGE
+     */
+
+     @FindBy(id = "mat-error-0")
+     protected WebElement ERROR_USERMANAGEMENTPAGE_USERNAME;
+     // Username is required 
+
+     @FindBy(id = "mat-error-8")
+     protected WebElement ERROR_USERMANAGEMENTPAGE_EMAIL;
+     // Email is required or type must be email 
+
+     @FindBy(id = "mat-error-9")
+     protected WebElement ERROR_USERMANAGEMENTPAGE_PASSWORD;
+     // Password is required 
+
+     @FindBy(id = "mat-error-10")
+     protected WebElement ERROR_USERMANAGEMENTPAGE_REPASSWORD;
+     // Password confirmation is required
+
+     @FindBy(css = "p[role='alert']")
+     protected WebElement ERROR_USERMANAGEMENTPAGE_PASSWORDNOTMATCH;
+     // Passwords do not Match 
+
+     @FindBy(id = "mat-error-11")
+     protected WebElement ERROR_USERMANAGEMENTPAGE_FIRSTNAME;
+     // First name is required 
+
+     @FindBy(id = "mat-error-12")
+     protected WebElement ERROR_USERMANGEMENTPAGE_LASTNAME;
+     // Last name is required 
 }
