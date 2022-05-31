@@ -19,7 +19,7 @@ Feature: User Management - Create Users
         When user click on save button
         Then user should be able to see a message "New user successfully added"
 
-    @a @negative-scenario
+    @regression @negative-scenario
     Scenario Outline: [PDS][Create-User] user can't create new user with an empty data in PDS Application
         Given user login with "PDS_NONADMIN"
         When user click on setting button
