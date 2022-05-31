@@ -6,7 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import elements.LoginPagesElement;
-
 import static helper.TestInstrument.*;
 
 /**
@@ -46,6 +45,18 @@ public class LoginPage extends LoginPagesElement {
     public void successLogin(String expected) {
         String actual = LOGINPAGE_SUCCESS_LOGIN_TEXT.getText();
         assertEquals(expected, actual);
+    }
+
+    public void loginUser(String username, String pwd){
+        try {
+            isOnLoginPage();
+            setName(username);
+            setPassword(pwd);
+            setCaptcha();
+            clickButtonLogin();
+        } catch (AssertionError e) {
+            refreshPage();
+        }
     }
 
     public void messageLogin(String message, String value) {

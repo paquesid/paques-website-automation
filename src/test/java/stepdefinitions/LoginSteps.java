@@ -2,12 +2,31 @@ package stepdefinitions;
 
 import helper.TestInstrument;
 import io.cucumber.java8.En;
-
 import static helper.Constant.*;
+import data.PDSData;
 
-public class LoginSteps extends TestInstrument implements En{
+/**
+ * Created by Dika Brenda Angkasa on 05/30/2022
+ */
+
+public class LoginSteps extends TestInstrument implements En {
     
     public LoginSteps() {
+        Given("^user login with \"([^\"]*)\"$", (String credential) -> {
+            String username = dotenv.get(credential.replaceAll(" ", "_").toUpperCase() + "_USERNAME");
+            String password = dotenv.get(credential.replaceAll(" ", "_").toUpperCase() + "_PASSWORD");
+            
+            // condition when this step reuse as hooks and invoked when user already loggedIn
+            if(!PDSData.isLoggedIn()){
+                paques.loginPage().loginUser(username, password);
+                PDSData.setUsername(username);
+                PDSData.setPassword(password);
+                PDSData.setLoggedIn(true);
+                paques.onboardingPage().clickStartOnboardingPage();
+                paques.homePage().dismissModalInHomePage();
+            }
+        });
+
         Given("^user is on login page PDS$", () -> {
             paques.loginPage().isOnLoginPage();
         });
@@ -29,7 +48,7 @@ public class LoginSteps extends TestInstrument implements En{
         });
 
         Then("^user should be able to login successfully$", () -> {
-            paques.loginPage().successLogin("Hi, Dika");
+            paques.loginPage().successLogin("HI, DIKA");
         });
 
         And("^user filled in invalid username$", (String InvalidUsername) -> {

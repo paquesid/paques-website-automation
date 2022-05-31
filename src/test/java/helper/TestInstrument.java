@@ -1,9 +1,12 @@
 package helper;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.ElementNotSelectableException;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,14 +15,19 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import io.cucumber.java.Scenario;
 import io.github.cdimascio.dotenv.Dotenv;
 import utils.LogUtils;
 
 import static helper.Constant.*;
+
+import java.io.File;
 import java.net.MalformedURLException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 import java.util.TimeZone;
 
 /**
@@ -31,39 +39,12 @@ public class TestInstrument {
     protected static WebDriver driver;
     protected static WebDriverWait wait;
     protected static CucumberPages paques;
+    public static String scenarioName;
     public static WebElement element;
     public static Actions action;
     public static Select select;
-    // public static Properties capabilitiesProperties = getCapabilityProperties();
+    public static Scenario scenario;
     public Dotenv dotenv = Dotenv.load();
-
-    // private static Properties getCapabilityProperties(){
-    //     Properties capabilitiesProperties = new Properties();
-    //     try {
-    //         FileInputStream properties = new FileInputStream("capabilities.properties");
-    //         capabilitiesProperties.load(properties);
-    //         properties.close();
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    //     return capabilitiesProperties;
-    // }
-
-    // private static void updateCapabilitiesFromSystemProp() {
-    //     String value;
-    //     for (Map.Entry<Object, Object> e : capabilitiesProperties.entrySet()) {
-    //         value = (String) e.getValue();
-
-    //         if (value.contains("{")) {
-    //             value = value.replace('{', ' ');
-    //             value = value.replace('}', ' ');
-    //             value = System.getProperty(value.trim());
-    //             capabilitiesProperties.setProperty((String) e.getKey(), value);
-    //         }
-    //     }
-
-    //     LogUtils.info(capabilitiesProperties.toString());
-    // }
 
     public static WebElement enterText(WebElement locator, String text) {
         boolean clear = true;
@@ -71,7 +52,15 @@ public class TestInstrument {
             locator.clear();
         }
         locator.sendKeys(text);
+        return locator;
+    }
 
+    public static WebElement enterTextByKeys(WebElement locator, String text){
+        boolean clear = true;
+        if(clear){
+            locator.clear();
+        }
+        locator.sendKeys(text, Keys.ENTER);
         return locator;
     }
 
@@ -80,17 +69,30 @@ public class TestInstrument {
             delay(2);
             Assert.assertEquals(expected, actual);
         } catch (ElementNotVisibleException e) {
-            LogUtils.error("Element not Founded : " + e.getMessage());
+            LogUtils.error("Element not Founded : " + e.getCause());
         }
     }
 
     public static WebElement clickButton(WebElement locator) {
         try {
+            isElementExist(locator, 2);
             locator.click();
         } catch (ElementClickInterceptedException e) {
             LogUtils.info("element not exist : " + e.getCause());
         }
+        return locator;
+    }
 
+    public static WebElement doubleClickButton(WebElement locator) {
+        try {
+            for(int i = 0; i < 2; i++) {
+                if(isElementExist(locator, 2)) {
+                    locator.click();
+                }
+            }
+        } catch (AssertionError e) {
+            LogUtils.info("element not exist : " + e.getCause());
+        }
         return locator;
     }
 
@@ -108,19 +110,27 @@ public class TestInstrument {
     	js.executeScript("arguments[0].scrollIntoView(true);", elementLocator);
     }
 
-    public static Select dropDownByValue(WebElement locator, String value, int timeOut){
-        delay(timeOut);
+    public static void selectDropDownValue(WebElement locator, String type, String value){
         select = new Select(locator);
-        try {
-            select.selectByValue(value);
-        } catch (ElementNotSelectableException e) {
-            LogUtils.error("element not founded : " + e.getCause());
+        switch (type) {
+            case "index":
+                select.selectByIndex(Integer.parseInt(value));
+                break;
+            case "value":
+                select.selectByValue(value);
+                break;
+            case "text":
+                select.selectByVisibleText(value);
+            default:
+                LogUtils.error("please pass the correct selection criteria ..");
+                break;
         }
-        return select;
     }
 
-    public static WebElement isElementExist(WebElement elementLocator) {
-        return wait.until(ExpectedConditions.visibilityOf(elementLocator));
+    public static boolean isElementExist(WebElement locator, int timeout) {
+        wait = new WebDriverWait(driver, Duration.ofMinutes(timeout));
+        locator = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return true;
     }
 
     public static void refreshPage(){
@@ -140,12 +150,29 @@ public class TestInstrument {
         paques = new CucumberPages(driver);
     }
 
+    public void afterScenario(){
+        scenarioName = scenario.getName();
+
+        if(scenario.isFailed()){
+            String path = System.getProperty("user.dir") + "/screenshots_failed/";
+            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            File imageFile = new File(path + scenarioName + ".png");
+            try {
+                scenario.attach(screenshot, "image/png", "failed screenshot");
+                FileUtils.copyFile(Objects.requireNonNull(srcFile), imageFile);
+                LogUtils.info("Screenshot has taken");
+            } catch (Exception e) {
+                LogUtils.error("Exception while taking screenshot", e);
+            }
+        }
+    }
+
     public void tearDown(){
         if (driver != null){
             driver.quit();
         }
     }
-
 
     /**
      * Method to handle date picker
@@ -177,6 +204,8 @@ public class TestInstrument {
             .ifPresent(WebElement::click);
     }
 
+    // End method Date Picker
+
 
     /**
      * Method to perform Drag and Drop
@@ -196,9 +225,8 @@ public class TestInstrument {
                 LogUtils.info("Source couldn't be dropped to target as expected");
             }
         } catch (ElementClickInterceptedException e) {
-            throw new Error(e.getCause());
+            LogUtils.error("element not founded : " + e.getCause());
         }
-        
     }
 
     public static void dragAndDropByOfset(WebElement source, WebElement target, int timeout) {
