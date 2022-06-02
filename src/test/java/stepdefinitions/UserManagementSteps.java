@@ -3,6 +3,7 @@ package stepdefinitions;
 import helper.TestInstrument;
 import helper.Type;
 import io.cucumber.java8.En;
+import utils.NumbersUtils;
 
 /**
  * Created by Dika Brenda Angkasa on 30/05/2022
@@ -28,10 +29,14 @@ public class UserManagementSteps extends TestInstrument implements En {
         });
 
         And("^user filled username as \"([^\"]*)\" in form create user$", (String username) -> {
-            paques.userManagementPage().setUsername(username);
+            paques.userManagementPage().setUsername(username + NumbersUtils.generateNumber());
         });
 
         And("^user filled email as \"([^\"]*)\" in form create user$", (String email) -> {
+            paques.userManagementPage().setEmail(email + NumbersUtils.generateNumber() + "@mailnesia.com");
+        });
+        
+        And("^user filled email \"([^\"]*)\" in form create user$", (String email) -> {
             paques.userManagementPage().setEmail(email);
         });
 
