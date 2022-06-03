@@ -57,9 +57,8 @@ public class TestInstrument {
 
 
 
-    public static WebElement enterTextByKeys(WebElement locator, String text, int timeout){
+    public static WebElement enterTextByKeys(WebElement locator, String text){
         boolean clear = true;
-        delay(timeout);
         if(clear){
             locator.clear();
         }
@@ -112,7 +111,7 @@ public class TestInstrument {
     public static void delay(long milis) {
         try {
             Thread.sleep(milis);
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             LogUtils.info("Waiting ... : " + e.getCause());
         }
     }
