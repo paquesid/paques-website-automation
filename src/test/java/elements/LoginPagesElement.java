@@ -32,4 +32,14 @@ public class LoginPagesElement {
     @FindBy(xpath = "//span[normalize-space()='Hi, Dika']")
     protected
     WebElement LOGINPAGE_SUCCESS_LOGIN_TEXT;
+
+    /**
+     * @LOG-OUT
+     */
+
+    @FindBy(css = "img[alt='User']")
+    protected WebElement LOGINPAGE_USER_IMAGE;
+
+    @FindBy(xpath = "//h4[normalize-space()='Sign Out']")
+    protected WebElement LOGINPAGE_LOGOUT_BUTTON;
 }
