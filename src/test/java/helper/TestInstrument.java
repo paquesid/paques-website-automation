@@ -55,8 +55,11 @@ public class TestInstrument {
         return locator;
     }
 
-    public static WebElement enterTextByKeys(WebElement locator, String text){
+
+
+    public static WebElement enterTextByKeys(WebElement locator, String text, int timeout){
         boolean clear = true;
+        delay(timeout);
         if(clear){
             locator.clear();
         }
@@ -66,7 +69,6 @@ public class TestInstrument {
 
     public static void assertEquals(Object expected, Object actual) {
         try {
-            delay(2);
             Assert.assertEquals(expected, actual);
         } catch (ElementNotVisibleException e) {
             LogUtils.error("Element not Founded : " + e.getCause());
@@ -75,9 +77,20 @@ public class TestInstrument {
 
     public static WebElement clickButton(WebElement locator) {
         try {
-            isElementExist(locator, 2);
+            isElementExist(locator, 1000);
             locator.click();
         } catch (ElementClickInterceptedException e) {
+            LogUtils.info("element not exist : " + e.getCause());
+        }
+        return locator;
+    }
+
+    public static WebElement clickButtonByKeys(WebElement locator){
+        try {
+            isElementExist(locator, 1000);
+            locator.click();
+            locator.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+        } catch (Exception e) {
             LogUtils.info("element not exist : " + e.getCause());
         }
         return locator;
