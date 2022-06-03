@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import elements.UserManagementElement;
+import elements.UsersElement;
 import utils.LogUtils;
 import static helper.TestInstrument.*;
 
@@ -11,11 +11,11 @@ import static helper.TestInstrument.*;
  * Created by Dika Brenda Angkasa on 30/05/2022
  */
 
-public class UserManagementPage extends UserManagementElement{
+public class UsersPage extends UsersElement{
     
     protected WebDriver driver;
 
-    public UserManagementPage(WebDriver driver){
+    public UsersPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 20), this);
     }
@@ -41,8 +41,43 @@ public class UserManagementPage extends UserManagementElement{
         return true;
     }
 
+    public boolean getTitleFormUpdateUser(String expected){
+        if(isElementExist(USERMANAGEMENTPAGE_FORM_UPDATEUSER_TITLE, 10)){
+            String actual = USERMANAGEMENTPAGE_FORM_UPDATEUSER_TITLE.getText();
+            assertEquals(expected, actual);
+        }
+        return true;
+    }
+
+    public boolean getTitleFormChangePassword(String expected){
+        if(isElementExist(USERMANAGEMENTPAGE_CHANGE_PASSWORD_TITLE, 2000)){
+            String actual = USERMANAGEMENTPAGE_CHANGE_PASSWORD_TITLE.getText();
+            assertEquals(expected, actual);
+        }
+        return true;
+    }
+
+    public boolean getTitleFormDeleteUser(String expected){
+        if(isElementExist(USERMANAGEMENTPAGE_TITLE_DELETE_TEXT, 2000)){
+            String actual = USERMANAGEMENTPAGE_TITLE_DELETE_TEXT.getText();
+            assertEquals(expected, actual);
+        }
+        return true;
+    }
+
     public void searchUser(String name){
+        delay(2000);
         enterTextByKeys(USERMANAGEMENTPAGE_SEARCHUSER_TEXT, name);
+    }
+
+    public void clickChangePasswordButton(String name){
+        try {
+            searchUser(name);
+        } catch (Exception e) {
+            LogUtils.error("cannot search user", e);
+        } finally {
+            clickButton(USERMANAGEMENTPAGE_CHANGE_PASSWORD_BUTTON);
+        }
     }
 
     public void clickEditButton(String name){
@@ -52,6 +87,30 @@ public class UserManagementPage extends UserManagementElement{
             LogUtils.error("cannot search user", e);
         } finally {
             clickButton(USERMANAGEMENTPAGE_UPDATE_BUTTON);
+        }
+    }
+
+    public void clickDeleteButton(String name){
+        try {
+            searchUser(name);
+        } catch (AssertionError e) {
+            LogUtils.error("cannot search user", e);
+        } finally {
+            clickButton(USERMANAGEMENTPAGE_DELETE_BUTTON);
+        }
+    }
+
+    public void messageDeleteExist(String message){
+        if(isElementExist(USERMANAGEMENTPAGE_SUCCESS_MESSAGE_TEXT, 2000)){
+            String actual = USERMANAGEMENTPAGE_SUCCESS_MESSAGE_TEXT.getText();
+            assertEquals(message, actual);
+        }
+    }
+
+    public void userStillExist(String username){
+        if(isElementExist(USERMANAGEMENTPAGE_USERNAME_DATATABLE, 2000)){
+            String actual = USERMANAGEMENTPAGE_USERNAME_DATATABLE.getText();
+            assertEquals(username, actual);
         }
     }
 
@@ -81,8 +140,10 @@ public class UserManagementPage extends UserManagementElement{
 
     public void setGroup(){
         try {
-            clickButton(USERMANAGEMENTPAGE_GROUP_DROPDOWN);
-            clickButton(USERMANAGEMENTPAGE_VALUE_AUTOMATION_TEXT);
+            scrollIntoView(USERMANAGEMENTPAGE_GROUP_DROPDOWN, driver, 1000);
+            if(isElementExist(USERMANAGEMENTPAGE_GROUP_DROPDOWN, 2000)){
+                clickButtonByKeys(USERMANAGEMENTPAGE_GROUP_DROPDOWN);
+            }
         } catch (AssertionError e) {
             LogUtils.error("element not clickable ", e);
         }
@@ -92,12 +153,32 @@ public class UserManagementPage extends UserManagementElement{
         clickButton(USERMANAGEMENTPAGE_FORM_SAVE_BUTTON);
     }
 
+    /**
+     * @DELETE_USERS
+     */
+    
+    public void confirmDeleteUser(){
+        clickButton(USERMANAGEMENTPAGE_CONFIRM_DELETE_BUTTON);
+    }
+
+    public void cancelDeleteUser(){
+        clickButton(USERMANAGEMENTPAGE_CANCEL_DELETE_BUTTON);
+    }
+
+    public void isDeletedUser(String key){
+        if(key.equals("yes")){
+            confirmDeleteUser();
+        } else {
+            cancelDeleteUser();
+        }
+    }
+
     public void getSuccessMessage(String message){
         try {
             String actual = USERMANAGEMENTPAGE_MODAL_SUCCESS_TAB.getText();
-            if(isElementExist(USERMANAGEMENTPAGE_MODAL_SUCCESS_TAB, 4)){
+            if(isElementExist(USERMANAGEMENTPAGE_MODAL_SUCCESS_TAB, 2)){
                 assertEquals(message, actual);
-            } 
+            }
         } catch (AssertionError e) {
             LogUtils.info("element not displayed : " + e.getCause());
         } finally {
