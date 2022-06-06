@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import io.cucumber.java.Scenario;
+import io.cucumber.java8.Scenario;
 import io.github.cdimascio.dotenv.Dotenv;
 import utils.LogUtils;
 
@@ -43,7 +43,6 @@ public class TestInstrument {
     public static WebElement element;
     public static Actions action;
     public static Select select;
-    public static Scenario scenario;
     public Dotenv dotenv = Dotenv.load();
 
     public static WebElement enterText(WebElement locator, String text) {
@@ -133,6 +132,7 @@ public class TestInstrument {
                 break;
             case "text":
                 select.selectByVisibleText(value);
+                break;
             default:
                 LogUtils.error("please pass the correct selection criteria ..");
                 break;
@@ -162,7 +162,7 @@ public class TestInstrument {
         paques = new CucumberPages(driver);
     }
 
-    public void afterScenario(){
+    public void afterScenario(Scenario scenario){
         scenarioName = scenario.getName();
 
         if(scenario.isFailed()){
@@ -177,6 +177,13 @@ public class TestInstrument {
             } catch (Exception e) {
                 LogUtils.error("Exception while taking screenshot", e);
             }
+        }
+    }
+
+    public void takeScreenShotsOnStepFailure(Scenario scenario){
+        if(scenario.isFailed()){
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
         }
     }
 
