@@ -38,12 +38,15 @@ jobs:
       - name: SCM
         uses: actions/setup-java@v3
         with:
-          java-version: 11
+          java-version: 10
           distribution: 'adopt'
           cache: maven
 
       - name: Populate ENV
         run: cp env/env.sample .env
+      
+      - name: ping paques.id
+        run: ping dev.paques.dev
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
