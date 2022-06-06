@@ -30,7 +30,6 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest ] # ubuntu-latest, windows-latest, macos-lastest
-        maven: '3.5.4'
 
     steps:
       - name: Declarative Checkout SCM
