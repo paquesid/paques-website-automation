@@ -37,16 +37,23 @@ jobs:
         uses: actions/checkout@v3
 
       - name: SCM
-        uses: s4u/setup-maven-action@v1.4.0
+        uses: actions/setup-java@v3
         with:
           java-version: 11
-          maven-version: ${{ matrix.maven }}
+          distribution: 'adopt'
+          cache: maven
 
       - name: Populate ENV
         run: cp env/env.sample .env
 
       - name: Build with Maven
-        run: mvn clean verify
+        run: mvn --batch-mode --update-snapshots package
+
+      - run: mkdir dev && cp target/*.jar dev
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Package
+          path: dev
 
       - name: Stash Report
         run: cp ./target/cucumber-reports/cucumber-html-reports/overview-features.html ./target/cucumber-reports/cucumber-html-reports/index.html
