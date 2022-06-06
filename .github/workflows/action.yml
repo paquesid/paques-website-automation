@@ -30,15 +30,17 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest ] # ubuntu-latest, windows-latest, macos-lastest
+        maven: '3.5.4'
 
     steps:
       - name: Declarative Checkout SCM
         uses: actions/checkout@v3
 
       - name: SCM
-        uses: actions/setup-java@v1
+        uses: s4u/setup-maven-action@v1.4.0
         with:
           java-version: 11
+          maven-version: ${{ matrix.maven }}
 
       - name: Populate ENV
         run: cp env/env.sample .env
