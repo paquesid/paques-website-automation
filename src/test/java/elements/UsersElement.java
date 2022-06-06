@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
  * Created by Dika Brenda Angkasa on 30/05/2022
  */
 
-public class UserManagementElement {
+public class UsersElement {
 
     /**
      * this element for create user in user management page
@@ -58,7 +58,7 @@ public class UserManagementElement {
     @FindBy(id = "mat-select-1")
     protected WebElement USERMANAGEMENTPAGE_GROUP_DROPDOWN;
 
-    @FindBy(id = "mat-option-65")
+    @FindBy(xpath = "//span[normalize-space()='automation']")
     protected WebElement USERMANAGEMENTPAGE_VALUE_AUTOMATION_TEXT;
 
     @FindBy(xpath = "//button[normalize-space()='Save']")
@@ -77,7 +77,7 @@ public class UserManagementElement {
      @FindBy(css = "button[mattooltip='Edit User']")
      protected WebElement USERMANAGEMENTPAGE_UPDATE_BUTTON;
 
-     @FindBy(xpath = "//*[normalize-space()='Edit User']")
+     @FindBy(css = ".title.f-16")
      protected WebElement USERMANAGEMENTPAGE_FORM_UPDATEUSER_TITLE;
 
      @FindBy(css = "input[placeholder='Search user']")
@@ -85,6 +85,44 @@ public class UserManagementElement {
 
      // End of Update User Form
 
+
+     /**
+      * this element for cases in Change Password in user datatable
+      * @Change-Password
+      */
+
+    @FindBy(css = ".zmdi.zmdi-key")
+    protected WebElement USERMANAGEMENTPAGE_CHANGE_PASSWORD_BUTTON;
+
+    @FindBy(css = ".title.f-16")
+    protected WebElement USERMANAGEMENTPAGE_CHANGE_PASSWORD_TITLE;
+
+    // end of Change Password
+
+    /**
+     * this element for cases in Delete Password in user datatable
+     * @DELETE-USER
+     */
+
+    @FindBy(css = ".zmdi.zmdi-delete")
+    protected WebElement USERMANAGEMENTPAGE_DELETE_BUTTON;
+
+    @FindBy(css = ".kt-portlet__head-title")
+    protected WebElement USERMANAGEMENTPAGE_TITLE_DELETE_TEXT;
+
+    @FindBy(css = ".mat-button.mat-button-base.mat-primary")
+    protected WebElement USERMANAGEMENTPAGE_CONFIRM_DELETE_BUTTON;
+
+    @FindBy(css = "button[class='mat-button mat-button-base']")
+    protected WebElement USERMANAGEMENTPAGE_CANCEL_DELETE_BUTTON;
+
+    @FindBy(css = ".kt-mat-snackbar__message")
+    protected WebElement USERMANAGEMENTPAGE_SUCCESS_MESSAGE_TEXT;
+
+    @FindBy(css = "")
+    protected WebElement USERMANAGEMENTPAGE_USERNAME_DATATABLE;
+
+    // End of Delete datatable
 
 
     /**

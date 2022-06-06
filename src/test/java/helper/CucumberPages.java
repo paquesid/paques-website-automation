@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import pages.ForgotPasswordPage;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.UserManagementPage;
+import pages.UsersPage;
 import pages.onBoardingPage;
 
 /**
@@ -35,7 +35,7 @@ public class CucumberPages {
         return new onBoardingPage(driver);
     }
 
-    public UserManagementPage userManagementPage(){
-        return new UserManagementPage(driver);
+    public UsersPage userManagementPage(){
+        return new UsersPage(driver);
     }
 }

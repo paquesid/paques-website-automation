@@ -59,6 +59,23 @@ public class LoginPage extends LoginPagesElement {
         }
     }
 
+    public void logOut(int timeout){
+        doubleClickButton(LOGINPAGE_USER_IMAGE);
+            if(isElementExist(LOGINPAGE_LOGOUT_BUTTON, 2000)){
+                clickButton(LOGINPAGE_LOGOUT_BUTTON);
+                delay(timeout);
+            }
+    }
+
+    public void logOutEveryWhere(){
+        try {
+            logOut(2000);
+        } catch (Exception e) {
+            refreshPage();
+            logOut(2000);
+        }
+    }
+
     public void messageLogin(String message, String value) {
         try {
             String actual = LOGINPAGE_ALERT_MESSAGE.getText();

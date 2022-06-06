@@ -10,20 +10,22 @@ import data.PDSData;
  */
 
 public class LoginSteps extends TestInstrument implements En {
-    
+
     public LoginSteps() {
         Given("^user login with \"([^\"]*)\"$", (String credential) -> {
             String username = dotenv.get(credential.replaceAll(" ", "_").toUpperCase() + "_USERNAME");
             String password = dotenv.get(credential.replaceAll(" ", "_").toUpperCase() + "_PASSWORD");
-            
+
             // condition when this step reuse as hooks and invoked when user already loggedIn
-            if(!PDSData.isLoggedIn()){
+            try {
                 paques.loginPage().loginUser(username, password);
                 PDSData.setUsername(username);
                 PDSData.setPassword(password);
                 PDSData.setLoggedIn(true);
                 paques.onboardingPage().clickStartOnboardingPage();
                 paques.homePage().dismissModalInHomePage();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
 
@@ -31,7 +33,7 @@ public class LoginSteps extends TestInstrument implements En {
             paques.loginPage().isOnLoginPage();
         });
 
-        And("user filled in valid username", () -> { 
+        And("user filled in valid username", () -> {
             paques.loginPage().setName(USERNAME);
         });
 
@@ -61,6 +63,10 @@ public class LoginSteps extends TestInstrument implements En {
 
         Then("^user should have an alert \"([^\"]*)\" invalid login with \"([^\"]*)\"$", (String message, String value) -> {
             paques.loginPage().messageLogin(message, value);
+        });
+
+        And("^user signout the application$", () -> {
+            paques.loginPage().logOutEveryWhere();
         });
     }
 }

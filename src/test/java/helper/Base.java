@@ -21,7 +21,7 @@ public class Base {
     public static WebDriver startApplication(WebDriver driver, String browserName, String appURL) throws MalformedURLException {
         switch (browserName) {
             case "Chrome":
-                WebDriverManager.chromedriver().config();
+                WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
                 options.setAcceptInsecureCerts(true);
@@ -29,12 +29,12 @@ public class Base {
                 break;
 
             case "Firefox":
-                WebDriverManager.firefoxdriver().config();
+                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
 
             case "Safari":
-                WebDriverManager.safaridriver().config();
+                WebDriverManager.safaridriver().setup();
                 driver = new SafariDriver();
                 break;
                 

@@ -29,25 +29,33 @@ jobs:
 
     strategy:
       matrix:
-        os: [ windows-latest ] # ubuntu-latest, windows-latest, macos-lastest
+        os: [ ubuntu-latest ] # ubuntu-latest, windows-latest, macos-lastest
 
     steps:
       - name: Declarative Checkout SCM
         uses: actions/checkout@v3
 
       - name: SCM
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
           java-version: 11
+          distribution: 'adopt'
+          cache: maven
 
       - name: Populate ENV
         run: cp env/env.sample .env
 
       - name: Build with Maven
-        run: mvn clean verify
+        run: mvn --batch-mode --update-snapshots verify
 
       - name: Stash Report
         run: cp ./target/cucumber-reports/cucumber-html-reports/overview-features.html ./target/cucumber-reports/cucumber-html-reports/index.html
+
+      - run: mkdir dev && cp target/*.jar dev
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Package
+          path: dev
 
       - name: Declarative Post Actions
         uses: peaceiris/actions-gh-pages@v3
