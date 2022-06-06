@@ -112,7 +112,7 @@ public class UsersSteps extends TestInstrument implements En {
 
         /**
          * This step for Scenario Delete
-         * @Delete-User
+         * @DELETE_USER
          */
 
         And("^user click delete button$", () -> {
@@ -134,7 +134,5 @@ public class UsersSteps extends TestInstrument implements En {
         Then("^user confirmed data still available in datatable user$", () -> {
             paques.userManagementPage().userStillExist(dotenv.get("SEARCH_USERS_DATATABLE"));
         });
-
-        // End Scenario Delete User
     }
 }
