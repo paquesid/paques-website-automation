@@ -1,6 +1,8 @@
 package helper;
 
 import org.openqa.selenium.WebDriver;
+
+import pages.CreateRolePage;
 import pages.ForgotPasswordPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -37,5 +39,8 @@ public class CucumberPages {
 
     public UserManagementPage userManagementPage(){
         return new UserManagementPage(driver);
+    }
+    public CreateRolePage createRolePage(){
+        return new CreateRolePage(driver);
     }
 }

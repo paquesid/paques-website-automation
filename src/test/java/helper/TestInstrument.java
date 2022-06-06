@@ -57,9 +57,9 @@ public class TestInstrument {
 
 
 
-    public static WebElement enterTextByKeys(WebElement locator, String text, int timeout){
+    public static WebElement enterTextByKeys(WebElement locator, String text){
         boolean clear = true;
-        delay(timeout);
+        // delay(timeout);
         if(clear){
             locator.clear();
         }
@@ -77,7 +77,7 @@ public class TestInstrument {
 
     public static WebElement clickButton(WebElement locator) {
         try {
-            isElementExist(locator, 1000);
+            // isElementExist(locator, 1000);
             locator.click();
         } catch (ElementClickInterceptedException e) {
             LogUtils.info("element not exist : " + e.getCause());

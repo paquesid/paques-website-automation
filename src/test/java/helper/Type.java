@@ -49,5 +49,27 @@ public enum Type {
         public String toString(){
             return "lastName";
         }
+    },
+
+    ROLENAME {
+        @Override
+        public String toString(){
+            return "rolename";
+        }
+    },
+
+    ROLEDESCRIPTION {
+        @Override
+        public String toString(){
+            return "roledescription";
+        }
+
+    },
+
+    SCOPE {
+        @Override
+        public String toString(){
+            return "scope";
+        }
     }
 }

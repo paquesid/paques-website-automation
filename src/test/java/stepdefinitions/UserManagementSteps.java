@@ -96,5 +96,7 @@ public class UserManagementSteps extends TestInstrument implements En {
         When("^user click on edit button in user tab$", () -> {
             paques.userManagementPage().clickEditButton("dikabrenda");
         });
+
+        
     }
 }
