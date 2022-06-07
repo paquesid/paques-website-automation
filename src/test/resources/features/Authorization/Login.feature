@@ -4,7 +4,7 @@ Feature: Login PDS
     Background:
         Given user is on login page PDS
 
-    @skip-regression @negative-scenario 
+    @skip-regression @negative-scenario
     Scenario Outline: as a user, i want to login with an invalid credentials
         And user filled in invalid username
         And user filled in invalid password
