@@ -9,9 +9,5 @@ public class HomePageSteps extends TestInstrument implements En {
         And("^user click on setting button$", () -> {
             paques.homePage().clickSettingInHeader();
         });
-
-        And("^$", () -> {
-
-        });
     }
 }

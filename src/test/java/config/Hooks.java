@@ -1,6 +1,7 @@
 package config;
 
 import io.cucumber.java8.En;
+<<<<<<< HEAD
 // import io.cucumber.java8.Scenario;
 // import utils.LogUtils;
 
@@ -10,6 +11,9 @@ import io.cucumber.java8.En;
 // import org.apache.commons.io.FileUtils;
 // import org.openqa.selenium.OutputType;
 // import org.openqa.selenium.TakesScreenshot;
+=======
+import io.cucumber.java8.Scenario;
+>>>>>>> 26058eadce6f32b4e0d65acc379b3ede7c8574a7
 
 import helper.TestInstrument;
 
@@ -22,6 +26,7 @@ public class Hooks extends TestInstrument implements En {
             pageObj();
         });
 
+<<<<<<< HEAD
         // After(1, (Scenario scenario) -> {
         //     scenarioName = scenario.getName();
             
@@ -41,6 +46,10 @@ public class Hooks extends TestInstrument implements En {
         // });
 
         After(0, () -> {
+=======
+        After(0, (Scenario scenario) -> {
+            takeScreenShotsOnStepFailure(scenario);
+>>>>>>> 26058eadce6f32b4e0d65acc379b3ede7c8574a7
             tearDown();
         });
     }

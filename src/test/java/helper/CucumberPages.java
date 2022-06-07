@@ -6,7 +6,7 @@ import pages.CreateRolePage;
 import pages.ForgotPasswordPage;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.UserManagementPage;
+import pages.UsersPage;
 import pages.onBoardingPage;
 
 /**
@@ -37,8 +37,8 @@ public class CucumberPages {
         return new onBoardingPage(driver);
     }
 
-    public UserManagementPage userManagementPage(){
-        return new UserManagementPage(driver);
+    public UsersPage userManagementPage(){
+        return new UsersPage(driver);
     }
     public CreateRolePage createRolePage(){
         return new CreateRolePage(driver);
