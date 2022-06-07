@@ -17,7 +17,7 @@ Feature: create role
         When User click on Save button
         Then Result Message "New role successfully added" will be displayed
 
-    @b @negative-scenario
+    @regression @negative-scenario
     Scenario Outline: Mandatory fields
         And user input Role Name as "<value1>"
         And user input Role Description as "<value2>"

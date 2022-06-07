@@ -105,6 +105,7 @@ public class UsersSteps extends TestInstrument implements En {
             paques.userManagementPage().clickChangePasswordButton(dotenv.get("SEARCH_USERS_DATATABLE"));
         });
 
+<<<<<<< Updated upstream:src/test/java/stepdefinitions/UsersSteps.java
         Then("^user should be able to see form password$", () -> {
             paques.userManagementPage().getTitleFormChangePassword("Change Password User  Dika");
         });
@@ -135,6 +136,8 @@ public class UsersSteps extends TestInstrument implements En {
             paques.userManagementPage().userStillExist(dotenv.get("SEARCH_USERS_DATATABLE"));
         });
 
+=======
+>>>>>>> Stashed changes:src/test/java/stepdefinitions/UserManagementSteps.java
         
     }
 }
