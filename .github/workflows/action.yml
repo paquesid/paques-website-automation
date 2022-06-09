@@ -43,13 +43,15 @@ jobs:
           cache: maven
 
       - name: Host
-        run: sudo echo "192.168.210.170 dev.paques.dev" | sudo tee -a /etc/hosts
+        run: |
+          - sudo echo "192.168.210.170 dev.paques.dev" | sudo tee -a /etc/hosts
+          - sudo echo "ping dev.paques.dev"
 
       - name: Populate ENV
         run: cp env/env.sample .env
 
       - name: Build with Maven
-        run: mvn clean verify
+        run: mvn --batch-mode --update-snapshots verify
 
       - name: Stash Report
         run: cp ./target/cucumber-reports/cucumber-html-reports/overview-features.html ./target/cucumber-reports/cucumber-html-reports/index.html
