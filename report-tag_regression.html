@@ -77,7 +77,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Paques Web Automation Report</td>
               <td>1</td>
-            <td>06 Jun 2022, 15:40</td>
+            <td>09 Jun 2022, 09:09</td>
     </tr>
   </tbody>
 </table>
@@ -132,16 +132,16 @@ $(document).ready(function() {
           <td class="tagname">@regression</td>
                     <td >0</td>
           <td >0</td>
-          <td     class="skipped"   >14</td>
+          <td     class="skipped"   >44</td>
           <td >0</td>
           <td >0</td>
-          <td class="total">14</td>
+          <td class="total">44</td>
 
           <td >0</td>
-          <td  class="failed"    >3</td>
-          <td class="total">3</td>
+          <td  class="failed"    >7</td>
+          <td class="total">7</td>
 
-          <td class="duration" data-value="723000">0.000</td>
+          <td class="duration" data-value="2999800">0.002</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -174,7 +174,7 @@ $(document).ready(function() {
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_classpath-features-ForgotPassword-feature.html">Forgot Password PDS</a>
+      <a href="report-feature_classpath-features-Authorization-ForgotPassword-feature.html">Forgot Password PDS</a>
     </div>
   
   
@@ -223,7 +223,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
                         
-  <span class="lead-duration duration">2:13.933</span>
+  <span class="lead-duration duration">30.760</span>
 
           </div>
 
@@ -235,28 +235,15 @@ $(document).ready(function() {
           <a>Error message</a>
       </div>
       <div id="msg-3" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=102.0.5005.61)
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az453-596', ip: '10.1.0.74', os.name: 'Linux', os.arch: 'amd64', os.version: '5.13.0-1025-azure', java.version: '11.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e9949a15a950a715502332ced96bed0f, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /tmp/.com.google.Chrome.OoS7wa}, goog:chromeOptions: {debuggerAddress: localhost:40073}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:40073/devtoo..., se:cdpVersion: 102.0.5005.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e9949a15a950a715502332ced96bed0f
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:57)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:157)
+        <pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:76)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:314)
+	at helper.Base.startApplication(Base.java:94)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:163)
 	at config.Hooks.lambda$new$0(Hooks.java:13)
 </pre>
       </div>
@@ -396,7 +383,7 @@ Session ID: e9949a15a950a715502332ced96bed0f
             <span class="keyword indention">After</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:17)</span>
                         
-  <span class="lead-duration duration">0.002</span>
+  <span class="lead-duration duration">0.016</span>
 
           </div>
 
@@ -409,7 +396,7 @@ Session ID: e9949a15a950a715502332ced96bed0f
       </div>
       <div id="msg-6" class="collapse collapsable-details  in ">
         <pre>java.lang.NullPointerException
-	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:185)
+	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:191)
 	at config.Hooks.lambda$new$1(Hooks.java:18)
 </pre>
       </div>
@@ -432,7 +419,7 @@ Session ID: e9949a15a950a715502332ced96bed0f
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_classpath-features-ForgotPassword-feature.html">Forgot Password PDS</a>
+      <a href="report-feature_classpath-features-Authorization-ForgotPassword-feature.html">Forgot Password PDS</a>
     </div>
   
   
@@ -481,7 +468,7 @@ Session ID: e9949a15a950a715502332ced96bed0f
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
                         
-  <span class="lead-duration duration">2:11.011</span>
+  <span class="lead-duration duration">0.978</span>
 
           </div>
 
@@ -493,28 +480,15 @@ Session ID: e9949a15a950a715502332ced96bed0f
           <a>Error message</a>
       </div>
       <div id="msg-9" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=102.0.5005.61)
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az453-596', ip: '10.1.0.74', os.name: 'Linux', os.arch: 'amd64', os.version: '5.13.0-1025-azure', java.version: '11.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [654e305156e215b39334b1b46e40c0de, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /tmp/.com.google.Chrome.Zxb70N}, goog:chromeOptions: {debuggerAddress: localhost:46641}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:46641/devtoo..., se:cdpVersion: 102.0.5005.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 654e305156e215b39334b1b46e40c0de
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:57)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:157)
+        <pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:76)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:314)
+	at helper.Base.startApplication(Base.java:94)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:163)
 	at config.Hooks.lambda$new$0(Hooks.java:13)
 </pre>
       </div>
@@ -667,7 +641,7 @@ Session ID: 654e305156e215b39334b1b46e40c0de
       </div>
       <div id="msg-12" class="collapse collapsable-details  in ">
         <pre>java.lang.NullPointerException
-	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:185)
+	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:191)
 	at config.Hooks.lambda$new$1(Hooks.java:18)
 </pre>
       </div>
@@ -690,7 +664,7 @@ Session ID: 654e305156e215b39334b1b46e40c0de
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_classpath-features-Login-feature.html">Login PDS</a>
+      <a href="report-feature_classpath-features-Authorization-Login-feature.html">Login PDS</a>
     </div>
   
   
@@ -702,7 +676,7 @@ Session ID: 654e305156e215b39334b1b46e40c0de
       </div>
 
   
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-13">
@@ -739,7 +713,7 @@ Session ID: 654e305156e215b39334b1b46e40c0de
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
                         
-  <span class="lead-duration duration">2:11.025</span>
+  <span class="lead-duration duration">0.844</span>
 
           </div>
 
@@ -751,28 +725,15 @@ Session ID: 654e305156e215b39334b1b46e40c0de
           <a>Error message</a>
       </div>
       <div id="msg-15" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
-  (Session info: headless chrome=102.0.5005.61)
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'fv-az453-596', ip: '10.1.0.74', os.name: 'Linux', os.arch: 'amd64', os.version: '5.13.0-1025-azure', java.version: '11.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ec4d02d07e2581353e78c345e77cd658, get {url=https://dev.paques.dev:1111}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /tmp/.com.google.Chrome.P8l7em}, goog:chromeOptions: {debuggerAddress: localhost:44971}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:44971/devtoo..., se:cdpVersion: 102.0.5005.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: ec4d02d07e2581353e78c345e77cd658
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:327)
-	at helper.Base.startApplication(Base.java:57)
-	at helper.TestInstrument.setupBrowser(TestInstrument.java:157)
+        <pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:76)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:314)
+	at helper.Base.startApplication(Base.java:94)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:163)
 	at config.Hooks.lambda$new$0(Hooks.java:13)
 </pre>
       </div>
@@ -852,7 +813,7 @@ Session ID: ec4d02d07e2581353e78c345e77cd658
   <span class="keyword indention">And</span>
   <span class="name">user filled in capcha</span>
   
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
   </div>
 
@@ -967,7 +928,1283 @@ Session ID: ec4d02d07e2581353e78c345e77cd658
       </div>
       <div id="msg-18" class="collapse collapsable-details  in ">
         <pre>java.lang.NullPointerException
-	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:185)
+	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:191)
+	at config.Hooks.lambda$new$1(Hooks.java:18)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                  
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_classpath-features-UserManagement-Users-TC01_CreateUser-feature.html">User Management - Create Users</a>
+    </div>
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_Create-User.html">@Create-User</a>
+           <a href="report-tag_regression.html">@regression</a>
+           <a href="report-tag_positive-scenario.html">@positive-scenario</a>
+      </div>
+
+  
+  <span class="lead-duration duration">0.001</span>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-19">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">user want to create new user in PDS Application</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-19" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-20">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-20" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
+                        
+  <span class="lead-duration duration">0.760</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-21">
+          <a>Error message</a>
+      </div>
+      <div id="msg-21" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:76)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:314)
+	at helper.Base.startApplication(Base.java:94)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:163)
+	at config.Hooks.lambda$new$0(Hooks.java:13)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-22">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-22" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled username as &quot;dikabrenda01&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled email as &quot;dikabrenda01@mailnesia.com&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled password as &quot;Qwerty*123&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled re-password as &quot;Qwerty*123&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled fist name as &quot;Dika&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.001</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled last name as &quot;Brenda&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user selected group as automation in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on save button</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">user should be able to see a message &quot;New user successfully&quot;</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user signout the application</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#after-23">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-23" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:17)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-24">
+          <a>Error message</a>
+      </div>
+      <div id="msg-24" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:191)
+	at config.Hooks.lambda$new$1(Hooks.java:18)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                  
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_classpath-features-UserManagement-Users-TC02_UpdateUser-feature.html">User Management - Update Users</a>
+    </div>
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_Update-User.html">@Update-User</a>
+           <a href="report-tag_regression.html">@regression</a>
+           <a href="report-tag_positive-case.html">@positive-case</a>
+           <a href="report-tag_test.html">@test</a>
+      </div>
+
+  
+  <span class="lead-duration duration">0.000</span>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-25">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">user want to update email information in PDS Application</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-25" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-26">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-26" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
+                        
+  <span class="lead-duration duration">0.788</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-27">
+          <a>Error message</a>
+      </div>
+      <div id="msg-27" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:76)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:314)
+	at helper.Base.startApplication(Base.java:94)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:163)
+	at config.Hooks.lambda$new$0(Hooks.java:13)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-28">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-28" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Given</span>
+  <span class="name">user login with &quot;PDS_NONADMIN&quot;</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on setting button</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user click on user management button in the list</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">user is on tab &quot;User List&quot; activated</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on edit button in user tab</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">user should see form to update user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled email as &quot;qaengineer@mailnesia.com&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on save button</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">user should be able to see a message &quot;New user successfully added&quot;</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user signout the application</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#after-29">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-29" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:17)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-30">
+          <a>Error message</a>
+      </div>
+      <div id="msg-30" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:191)
+	at config.Hooks.lambda$new$1(Hooks.java:18)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                  
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_classpath-features-UserManagement-Users-TC03_ChangePasswordUser-feature.html">User Management - Change Password Users</a>
+    </div>
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_Change-Password.html">@Change-Password</a>
+           <a href="report-tag_regression.html">@regression</a>
+           <a href="report-tag_positive-scenario.html">@positive-scenario</a>
+           <a href="report-tag_test.html">@test</a>
+      </div>
+
+  
+  <span class="lead-duration duration">0.000</span>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-31">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">user want to update password in PDS Application</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-31" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-32">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-32" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
+                        
+  <span class="lead-duration duration">0.759</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-33">
+          <a>Error message</a>
+      </div>
+      <div id="msg-33" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:76)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:314)
+	at helper.Base.startApplication(Base.java:94)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:163)
+	at config.Hooks.lambda$new$0(Hooks.java:13)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-34">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-34" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled password as &quot;Qwerty*123&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled re-password as &quot;Qwerty*123&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on save button</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">user should be able to see a message &quot;New user successfully&quot;</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user signout the application</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#after-35">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-35" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:17)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-36">
+          <a>Error message</a>
+      </div>
+      <div id="msg-36" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:191)
+	at config.Hooks.lambda$new$1(Hooks.java:18)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                  
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_classpath-features-UserManagement-Users-TC03_ChangePasswordUser-feature.html">User Management - Change Password Users</a>
+    </div>
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_Change-Password.html">@Change-Password</a>
+           <a href="report-tag_regression.html">@regression</a>
+           <a href="report-tag_negative-scenario.html">@negative-scenario</a>
+      </div>
+
+  
+  <span class="lead-duration duration">0.000</span>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-37">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">user want to update password in PDS Application</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-37" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#before-38">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-38" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
+                        
+  <span class="lead-duration duration">0.850</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-39">
+          <a>Error message</a>
+      </div>
+      <div id="msg-39" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:76)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:314)
+	at helper.Base.startApplication(Base.java:94)
+	at helper.TestInstrument.setupBrowser(TestInstrument.java:163)
+	at config.Hooks.lambda$new$0(Hooks.java:13)
+</pre>
+      </div>
+    </div>
+  </div>
+
+          
+                    
+
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-40">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-40" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled password as &quot;Qwerty*123&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user filled re-password as &quot;Qwerty123&quot; in form create user</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on save button</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">user should be able to see an error &quot;Passwords do not Match&quot;</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user signout the application</span>
+  
+  <span class="lead-duration duration">0.000</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsable-control" data-target="#after-41">
+      
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-41" class="inner-level collapse collapsable-details  in ">
+              <div class="hook">
+          <div class="brief failed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:17)</span>
+                        
+  <span class="lead-duration duration">0.000</span>
+
+          </div>
+
+                      
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-42">
+          <a>Error message</a>
+      </div>
+      <div id="msg-42" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException
+	at helper.TestInstrument.takeScreenShotsOnStepFailure(TestInstrument.java:191)
 	at config.Hooks.lambda$new$1(Hooks.java:18)
 </pre>
       </div>

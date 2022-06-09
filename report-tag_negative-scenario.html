@@ -42,7 +42,7 @@ $(document).ready(function() {
 
 
   
-<title>Cucumber Reports (no 1) - Tag: @Login</title>
+<title>Cucumber Reports (no 1) - Tag: @negative-scenario</title>
 
 </head>
 <body>
@@ -129,19 +129,19 @@ $(document).ready(function() {
 
         <tbody>
         <tr>
-          <td class="tagname">@Login</td>
+          <td class="tagname">@negative-scenario</td>
                     <td >0</td>
           <td >0</td>
-          <td     class="skipped"   >6</td>
+          <td     class="skipped"   >5</td>
           <td >0</td>
           <td >0</td>
-          <td class="total">6</td>
+          <td class="total">5</td>
 
           <td >0</td>
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="1000400">0.001</td>
+          <td class="duration" data-value="0">0.000</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -174,26 +174,26 @@ $(document).ready(function() {
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_classpath-features-Authorization-Login-feature.html">Login PDS</a>
+      <a href="report-feature_classpath-features-UserManagement-Users-TC03_ChangePasswordUser-feature.html">User Management - Change Password Users</a>
     </div>
   
   
 <div class="tags indention">
       <b>Tags:</b>
-           <a href="report-tag_Login.html">@Login</a>
+           <a href="report-tag_Change-Password.html">@Change-Password</a>
            <a href="report-tag_regression.html">@regression</a>
-           <a href="report-tag_positive-scenario.html">@positive-scenario</a>
+           <a href="report-tag_negative-scenario.html">@negative-scenario</a>
       </div>
 
   
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">0.000</span>
 
 
     <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
     
 <div class="brief failed">
   <span class="keyword indention">Scenario</span>
-  <span class="name">as a user, i want to login with a valid credentials</span>
+  <span class="name">user want to update password in PDS Application</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -223,7 +223,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">config.Hooks.&lt;init&gt;(Hooks.java:12)</span>
                         
-  <span class="lead-duration duration">0.844</span>
+  <span class="lead-duration duration">0.850</span>
 
           </div>
 
@@ -279,7 +279,7 @@ $(document).ready(function() {
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
-  <span class="name">user filled in valid username</span>
+  <span class="name">user filled password as &quot;Qwerty*123&quot; in form create user</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -300,30 +300,9 @@ $(document).ready(function() {
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
-  <span class="name">user filled in valid password</span>
+  <span class="name">user filled re-password as &quot;Qwerty123&quot; in form create user</span>
   
   <span class="lead-duration duration">0.000</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">user filled in capcha</span>
-  
-  <span class="lead-duration duration">0.001</span>
 
   </div>
 
@@ -342,7 +321,7 @@ $(document).ready(function() {
         
 <div class="brief skipped">
   <span class="keyword indention">When</span>
-  <span class="name">user click button login</span>
+  <span class="name">user click on save button</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -363,7 +342,7 @@ $(document).ready(function() {
         
 <div class="brief skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">user should be able to login successfully</span>
+  <span class="name">user should be able to see an error &quot;Passwords do not Match&quot;</span>
   
   <span class="lead-duration duration">0.000</span>
 
@@ -384,7 +363,7 @@ $(document).ready(function() {
         
 <div class="brief skipped">
   <span class="keyword indention">And</span>
-  <span class="name">user click button start</span>
+  <span class="name">user signout the application</span>
   
   <span class="lead-duration duration">0.000</span>
 
