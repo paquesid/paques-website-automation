@@ -42,6 +42,9 @@ jobs:
           distribution: 'adopt'
           cache: maven
 
+      - name: Host
+        run: sudo echo "192.168.210.170 dev.paques.dev" | sudo tee -a /etc/hosts
+
       - name: Populate ENV
         run: cp env/env.sample .env
 
