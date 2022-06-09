@@ -40,7 +40,6 @@ jobs:
         with:
           java-version: 10
           distribution: 'adopt'
-          cache: maven
 
       - name: Populate ENV
         run: cp env/env.sample .env
