@@ -50,12 +50,6 @@ jobs:
       - name: Stash Report
         run: cp ./target/cucumber-reports/cucumber-html-reports/overview-features.html ./target/cucumber-reports/cucumber-html-reports/index.html
 
-      - run: mkdir dev && cp target/*.jar dev
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Package
-          path: dev
-
       - name: Declarative Post Actions
         uses: peaceiris/actions-gh-pages@v3
         with:
