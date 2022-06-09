@@ -17,7 +17,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 /**
@@ -27,14 +26,12 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Base {
 
     protected static Dotenv dotenv = Dotenv.load();
-    public static RemoteWebDriver driver;
 
     public static WebDriver startApplication(WebDriver driver, String browserName, String appURL) throws MalformedURLException {
         switch (browserName) {
             case "Chrome":
                 Map<String, String> hostRemappings  = new HashMap<String, String>();
                 hostRemappings.put("192.168.210.170", "dev.paques.dev");
-                // hostRemappings.put("key", "value")
         
                 BrowserMobProxy browserMobProxy = new BrowserMobProxyServer();
         
@@ -57,7 +54,7 @@ public class Base {
         
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito", "--headless", "--window-size=1325x744", "--proxy-server="+ seleniumProxy); // "--headless", "--window-size=1325x744"
+                options.addArguments("--incognito", "--headless", "--window-size=1325x744", "--proxy-server=" + seleniumProxy); // "--headless", "--window-size=1325x744"
                 options.setAcceptInsecureCerts(true);
                 // options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
                 // options.setCapability("proxy", seleniumProxy);
@@ -136,13 +133,4 @@ public class Base {
         options.setProxy(seleniumProxy);
         driver = new ChromeDriver(options);
     }
-
-    // public static void seleniumGrid() throws MalformedURLException{
-    //     URL url = new URL(dotenv.get("SELENIUM_GRID"));
-    //     DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-    //     capabilities.setBrowserName("chrome");
-    //     capabilities.setVersion("4");
-    //     driver = RemoteWebDriver(url, capabilities);
-        
-    // }
 }
