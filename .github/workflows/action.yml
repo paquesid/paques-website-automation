@@ -9,8 +9,8 @@ on:
     types:
       - opened
       - synchronize
-  schedule:
-    - cron: '0 12 * * 1-5'
+  # schedule:
+  #   - cron: '0 12 * * 1-5'
 
 env:
   CI: true
@@ -29,7 +29,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ ubuntu-latest ] # ubuntu-latest, windows-latest, macos-lastest
+        os: [ windows-latest ] # ubuntu-latest, windows-latest, macos-lastest
 
     steps:
       - name: Declarative Checkout SCM
@@ -46,7 +46,7 @@ jobs:
         run: cp env/env.sample .env
 
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+        run: mvn clean verify
 
       - name: Stash Report
         run: cp ./target/cucumber-reports/cucumber-html-reports/overview-features.html ./target/cucumber-reports/cucumber-html-reports/index.html

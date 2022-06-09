@@ -2,12 +2,22 @@ package helper;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
+import net.lightbody.bmp.BrowserMobProxy;
+import net.lightbody.bmp.BrowserMobProxyServer;
+import net.lightbody.bmp.client.ClientUtil;
+import net.lightbody.bmp.proxy.dns.AdvancedHostResolver;
+
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 /**
@@ -17,14 +27,41 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Base {
 
     protected static Dotenv dotenv = Dotenv.load();
+    public static RemoteWebDriver driver;
 
     public static WebDriver startApplication(WebDriver driver, String browserName, String appURL) throws MalformedURLException {
         switch (browserName) {
             case "Chrome":
+                Map<String, String> hostRemappings  = new HashMap<String, String>();
+                hostRemappings.put("192.168.210.170", "dev.paques.dev");
+                // hostRemappings.put("key", "value")
+        
+                BrowserMobProxy browserMobProxy = new BrowserMobProxyServer();
+        
+                //will be using Java DNS host resolver.
+                AdvancedHostResolver advancedHostResolver = ClientUtil.createNativeResolver();
+        
+                //clear existing DNS cache and host remapping.
+                advancedHostResolver.clearDNSCache();
+                advancedHostResolver.clearHostRemappings();
+        
+                //remapped host entries with our new one. Pointing to secondary server.
+                advancedHostResolver.remapHosts(hostRemappings);
+        
+                //set host name resolver and start proxy server.
+                browserMobProxy.setHostNameResolver(advancedHostResolver);
+                browserMobProxy.start(0);
+        
+                //get the Selenium proxy object using browserMobProxy
+                Proxy seleniumProxy = ClientUtil.createSeleniumProxy(browserMobProxy);
+        
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
+                options.addArguments("--incognito", "--headless", "--window-size=1325x744", "--proxy-server="+ seleniumProxy); // "--headless", "--window-size=1325x744"
                 options.setAcceptInsecureCerts(true);
+                // options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+                // options.setCapability("proxy", seleniumProxy);
+                // options.setProxy(seleniumProxy);
                 driver = new ChromeDriver(options);
                 break;
 
@@ -54,8 +91,11 @@ public class Base {
                 break;
 
             case "Production":
-                driver.get(dotenv.get("BASEURL"));
+                driver.get(dotenv.get("PDS_BASEURL"));
                 break;
+
+            case "PCC_DEV":
+                driver.get(dotenv.get("PCC_BASEURL"));
         
             default:
                 throw new RuntimeException("Unsupported Environtment : " + appURL);
@@ -65,4 +105,44 @@ public class Base {
 
         return driver;
     }
+
+    public static void setUpBrowserChrome(WebDriver driver){
+        //Create Map of original hostname, remapped hostname
+        Map<String, String> hostRemappings  = new HashMap<String, String>();
+        hostRemappings.put("192.168.210.170", "dev.paques.dev");
+
+        BrowserMobProxy browserMobProxy = new BrowserMobProxyServer();
+
+        //will be using Java DNS host resolver.
+        AdvancedHostResolver advancedHostResolver = ClientUtil.createNativeResolver();
+
+        //clear existing DNS cache and host remapping.
+        advancedHostResolver.clearDNSCache();
+        advancedHostResolver.clearHostRemappings();
+
+        //remapped host entries with our new one. Pointing to secondary server.
+        advancedHostResolver.remapHosts(hostRemappings);
+
+        //set host name resolver and start proxy server.
+        browserMobProxy.setHostNameResolver(advancedHostResolver);
+        browserMobProxy.start(0);
+
+        //get the Selenium proxy object using browserMobProxy
+        Proxy seleniumProxy = ClientUtil.createSeleniumProxy(browserMobProxy);
+
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito"); // "--headless", "--window-size=1325x744"
+        options.setProxy(seleniumProxy);
+        driver = new ChromeDriver(options);
+    }
+
+    // public static void seleniumGrid() throws MalformedURLException{
+    //     URL url = new URL(dotenv.get("SELENIUM_GRID"));
+    //     DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+    //     capabilities.setBrowserName("chrome");
+    //     capabilities.setVersion("4");
+    //     driver = RemoteWebDriver(url, capabilities);
+        
+    // }
 }
