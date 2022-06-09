@@ -38,7 +38,7 @@ jobs:
       - name: SCM
         uses: actions/setup-java@v3
         with:
-          java-version: 10
+          java-version: 11
           distribution: 'adopt'
 
       - name: Populate ENV
