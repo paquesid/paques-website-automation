@@ -30,35 +30,10 @@ public class Base {
     public static WebDriver startApplication(WebDriver driver, String browserName, String appURL) throws MalformedURLException {
         switch (browserName) {
             case "Chrome":
-                Map<String, String> hostRemappings  = new HashMap<String, String>();
-                hostRemappings.put("192.168.210.170", "dev.paques.dev");
-        
-                BrowserMobProxy browserMobProxy = new BrowserMobProxyServer();
-        
-                //will be using Java DNS host resolver.
-                AdvancedHostResolver advancedHostResolver = ClientUtil.createNativeResolver();
-        
-                //clear existing DNS cache and host remapping.
-                advancedHostResolver.clearDNSCache();
-                advancedHostResolver.clearHostRemappings();
-        
-                //remapped host entries with our new one. Pointing to secondary server.
-                advancedHostResolver.remapHosts(hostRemappings);
-        
-                //set host name resolver and start proxy server.
-                browserMobProxy.setHostNameResolver(advancedHostResolver);
-                browserMobProxy.start(0);
-        
-                //get the Selenium proxy object using browserMobProxy
-                Proxy seleniumProxy = ClientUtil.createSeleniumProxy(browserMobProxy);
-        
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito", "--headless", "--window-size=1325x744", "--proxy-server=" + seleniumProxy); // "--headless", "--window-size=1325x744"
+                options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
                 options.setAcceptInsecureCerts(true);
-                // options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-                // options.setCapability("proxy", seleniumProxy);
-                // options.setProxy(seleniumProxy);
                 driver = new ChromeDriver(options);
                 break;
 
