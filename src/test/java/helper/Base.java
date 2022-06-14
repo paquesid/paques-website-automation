@@ -2,17 +2,9 @@ package helper;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.Map;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
-import net.lightbody.bmp.BrowserMobProxy;
-import net.lightbody.bmp.BrowserMobProxyServer;
-import net.lightbody.bmp.client.ClientUtil;
-import net.lightbody.bmp.proxy.dns.AdvancedHostResolver;
-
-import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -76,36 +68,5 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(4));
 
         return driver;
-    }
-
-    public static void setUpBrowserChrome(WebDriver driver){
-        //Create Map of original hostname, remapped hostname
-        Map<String, String> hostRemappings  = new HashMap<String, String>();
-        hostRemappings.put("192.168.210.170", "dev.paques.dev");
-
-        BrowserMobProxy browserMobProxy = new BrowserMobProxyServer();
-
-        //will be using Java DNS host resolver.
-        AdvancedHostResolver advancedHostResolver = ClientUtil.createNativeResolver();
-
-        //clear existing DNS cache and host remapping.
-        advancedHostResolver.clearDNSCache();
-        advancedHostResolver.clearHostRemappings();
-
-        //remapped host entries with our new one. Pointing to secondary server.
-        advancedHostResolver.remapHosts(hostRemappings);
-
-        //set host name resolver and start proxy server.
-        browserMobProxy.setHostNameResolver(advancedHostResolver);
-        browserMobProxy.start(0);
-
-        //get the Selenium proxy object using browserMobProxy
-        Proxy seleniumProxy = ClientUtil.createSeleniumProxy(browserMobProxy);
-
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito"); // "--headless", "--window-size=1325x744"
-        options.setProxy(seleniumProxy);
-        driver = new ChromeDriver(options);
     }
 }
