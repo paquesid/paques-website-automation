@@ -1,7 +1,7 @@
 @Update-User
 Feature: User Management - Update Users
 
-    @regression @positive-case @test
+    @regression @positive-case
     Scenario: user want to update email information in PDS Application
         Given user login with "PDS_NONADMIN"
         When user click on setting button
