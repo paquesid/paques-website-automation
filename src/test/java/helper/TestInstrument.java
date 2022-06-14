@@ -140,14 +140,13 @@ public class TestInstrument {
 
     public static boolean isElementExist(WebElement locator, int timeout) {
         wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMinutes(timeout));
-            // .until(ExpectedConditions.elementToBeClickable(locator));
-        locator = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        locator = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
         return true;
     }
 
     public static boolean isAlertPresent(WebElement locator, int timeout) {
-        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMinutes(timeout))
-            .until(ExpectedConditions.alertIsPresent());
+        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMinutes(timeout));
+        locator = (WebElement) wait.until(ExpectedConditions.alertIsPresent());
         return true;
     }
 
