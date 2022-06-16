@@ -10,7 +10,7 @@ Feature: User Management - Change Password Users
         And user click change password button
         And user should be able to see form password
 
-    @regression @positive-scenario @test
+    @regression @positive-scenario
     Scenario: user want to update password in PDS Application
         And user filled password as "Qwerty*123" in form create user
         And user filled re-password as "Qwerty*123" in form create user
