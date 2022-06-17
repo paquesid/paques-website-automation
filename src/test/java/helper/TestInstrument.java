@@ -2,7 +2,6 @@ package helper;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -72,7 +71,7 @@ public class TestInstrument {
     public static void assertEquals(Object expected, Object actual) {
         try {
             Assert.assertEquals(expected, actual);
-        } catch (ElementNotVisibleException e) {
+        } catch (AssertionError e) {
             LogUtils.error("Element not Founded : " + e.getCause());
         }
     }
@@ -144,8 +143,14 @@ public class TestInstrument {
     }
 
     public static boolean isElementExist(WebElement locator, int timeout) {
-        wait = new WebDriverWait(driver, Duration.ofMinutes(timeout));
-        locator = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMinutes(timeout));
+        locator = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return true;
+    }
+
+    public static boolean isAlertPresent(WebElement locator, int timeout) {
+        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMinutes(timeout));
+        locator = (WebElement) wait.until(ExpectedConditions.alertIsPresent());
         return true;
     }
 

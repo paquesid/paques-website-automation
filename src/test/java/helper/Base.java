@@ -2,6 +2,7 @@ package helper;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
@@ -54,8 +55,11 @@ public class Base {
                 break;
 
             case "Production":
-                driver.get(dotenv.get("BASEURL"));
+                driver.get(dotenv.get("PDS_BASEURL"));
                 break;
+
+            case "PCC_DEV":
+                driver.get(dotenv.get("PCC_BASEURL"));
         
             default:
                 throw new RuntimeException("Unsupported Environtment : " + appURL);
