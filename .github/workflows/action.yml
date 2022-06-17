@@ -17,7 +17,7 @@ env:
 
 jobs:
   automation-test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Declarative Checkout SCM
@@ -29,7 +29,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ windows-latest ] # ubuntu-latest, windows-latest, macos-lastest
+        os: [ ubuntu-latest ] # ubuntu-latest, windows-latest, macos-lastest
 
     steps:
       - name: Declarative Checkout SCM
