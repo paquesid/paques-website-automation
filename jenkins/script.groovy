@@ -1,5 +1,6 @@
 def CheckoutSCM(){
-    bat "docker run -p 3000:3000 dikabrenda/cypress_project:v3 ."
+    echo "Checkout SCM ..."
+    // bat "docker run -p 3000:3000 dikabrenda/cypress_project:v3 ."
 }
 
 def AtBranch() {
@@ -11,7 +12,7 @@ def PopulateEnv(){
 }
 
 def TestApps(){
-    bat 'mvn clean verify -Dcucumber.filter.tags="@regression"'
+    bat 'mvn --batch-mode --update-snapshots verify'
 }
 
 def InitialSession(){
