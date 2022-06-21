@@ -3,7 +3,7 @@ CODE_CHANGES = getGitChanges()
 
 pipeline{
     agent {
-        label "any"
+        label 'any'
     }
     options {
         ansiColor('xterm')
