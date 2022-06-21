@@ -18,11 +18,6 @@ pipeline{
             }
         }
         stage("SCM") {
-            when {
-                expression {
-                    BRANCH_NAME == 'master' && CODE_CHANGES = true
-                }
-            }
             steps {
                 script {
                     gv.CheckoutSCM()
@@ -30,11 +25,6 @@ pipeline{
             }
         }
         stage("Populate ENV") {
-            when {
-                expression {
-                    BRANCH_NAME == 'dev'
-                }
-            }
             steps {
                 script {
                     gv.PopulateEnv()
