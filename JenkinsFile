@@ -20,7 +20,7 @@ pipeline{
         stage("SCM") {
             when {
                 expression {
-                    BRANCH_NAME == 'dev' && CODE_CHANGES = true
+                    BRANCH_NAME == 'master' && CODE_CHANGES = true
                 }
             }
             steps {
@@ -45,13 +45,6 @@ pipeline{
             steps {
                 script {
                     gv.TestApps()
-                }
-            }
-        }
-        stage("Stash Report") {
-            steps {
-                script {
-                    gv.PublishReport()
                 }
             }
         }

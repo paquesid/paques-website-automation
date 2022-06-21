@@ -38,7 +38,8 @@ def PublishReport(){
 }
 
 def CucumberReport(){
-    cucumber '**/cucumber.json'
+    cucumber buildStatus: "UNSTABLE"
+    fileIncludePattern: '**/cucumber.json'
 }
 
 def SendToTelegram(){
