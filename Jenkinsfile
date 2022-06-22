@@ -1,9 +1,7 @@
 pipeline {
     agent any
     options {
-        ansiColor('xterm') {
-            ansiblePlaybook colorized: true, installation: 'ansible2.5.11'
-        }
+        ansiColor('xterm')
     }
     stages {
         stage("SCM") {
