@@ -1,9 +1,7 @@
 def gv
 
 pipeline{
-    agent {
-        label 'any'
-    }
+    agent any
     options {
         ansiColor('xterm')
     }
