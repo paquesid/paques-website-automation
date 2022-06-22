@@ -1,46 +1,39 @@
-def gv
-
-pipeline{
+pipeline {
     agent any
     options {
         ansiColor('xterm')
     }
 
     stages {
-        stage("Initial") {
-            steps {
-                script {
-                    gv = load 'jenkins/script.groovy'
-                }
-            }
-        }
         stage("SCM") {
             steps {
-                script {
-                    gv.CheckoutSCM()
-                }
+                echo "Checkout SCM ..."
             }
         }
         stage("Populate ENV") {
             steps {
-                script {
-                    gv.PopulateEnv()
-                }
+                bat "cp env/sample.env .env"
             }
         }
         stage("Test") {
             steps {
-                script {
-                    gv.TestApps()
-                }
+                bat 'mvn --batch-mode --update-snapshots verify'
             }
         }
     }
-    post{
-        always{
-            script {
-                gv.PublishReport()
-            }
+    post {
+        always {
+            cucumber buildStatus: 'null', 
+            customCssFiles: '', 
+            customJsFiles: '', 
+            failedFeaturesNumber: -1, 
+            failedScenariosNumber: -1, 
+            failedStepsNumber: -1, 
+            fileIncludePattern: 'target/cucumber.json', 
+            pendingStepsNumber: -1, 
+            skippedStepsNumber: -1, 
+            sortingMethod: 'ALPHABETICAL', 
+            undefinedStepsNumber: -1
         }
     }
 }
