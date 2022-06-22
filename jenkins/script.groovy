@@ -30,7 +30,7 @@ def PublishReport(){
     failedFeaturesNumber: -1, 
     failedScenariosNumber: -1, 
     failedStepsNumber: -1, 
-    fileIncludePattern: '**/*.json', 
+    fileIncludePattern: 'target/cucumber.json',
     pendingStepsNumber: -1, 
     skippedStepsNumber: -1, 
     sortingMethod: 'ALPHABETICAL', 
