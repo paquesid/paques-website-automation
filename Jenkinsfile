@@ -1,5 +1,4 @@
 def gv
-CODE_CHANGES = getGitChanges()
 
 pipeline{
     agent {
