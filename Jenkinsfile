@@ -1,59 +1,39 @@
-def gv
-CODE_CHANGES = getGitChanges()
-
-pipeline{
-    agent {
-        label 'any'
-    }
+pipeline {
+    agent any
     options {
         ansiColor('xterm')
     }
 
     stages {
-        stage("Initial") {
-            steps {
-                script {
-                    gv = load 'jenkins/script.groovy'
-                }
-            }
-        }
         stage("SCM") {
-            when {
-                expression {
-                    BRANCH_NAME == 'master' && CODE_CHANGES = true
-                }
-            }
             steps {
-                script {
-                    gv.CheckoutSCM()
-                }
+                echo "Checkout SCM ..."
             }
         }
         stage("Populate ENV") {
-            when {
-                expression {
-                    BRANCH_NAME == 'dev'
-                }
-            }
             steps {
-                script {
-                    gv.PopulateEnv()
-                }
+                bat "copy env\\env.sample .env"
             }
         }
         stage("Test") {
             steps {
-                script {
-                    gv.TestApps()
-                }
+                bat 'mvn --batch-mode --update-snapshots verify'
             }
         }
     }
-    post{
-        always{
-            script {
-                gv.CucumberReport()
-            }
+    post {
+        always {
+            cucumber buildStatus: 'null', 
+            customCssFiles: '', 
+            customJsFiles: '', 
+            failedFeaturesNumber: -1, 
+            failedScenariosNumber: -1, 
+            failedStepsNumber: -1, 
+            fileIncludePattern: 'target/cucumber.json', 
+            pendingStepsNumber: -1, 
+            skippedStepsNumber: -1, 
+            sortingMethod: 'ALPHABETICAL', 
+            undefinedStepsNumber: -1
         }
     }
 }
