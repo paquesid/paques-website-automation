@@ -42,7 +42,7 @@ pipeline{
     post{
         always{
             script {
-                gv.CucumberReport()
+                gv.PublishReport()
             }
         }
     }
