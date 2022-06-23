@@ -1,4 +1,4 @@
-@Change-Password
+@Change-Password-User
 Feature: User Management - Change Password Users
 
     #Pre-Condition
