@@ -227,6 +227,5 @@ public class UsersPage extends UsersElement{
                 LogUtils.error("please check parameters ..");
                 break;
         }
-
     }
 }

@@ -23,7 +23,7 @@ Feature: User Management - Create Users
         Then user should be able to see a message "New user successfully"
         And user signout the application
 
-    @abc @negative-Scenario
+    @regression @negative-Scenario
     Scenario Outline: user cannot create new user with an empty data in PDS Application
         And user filled username as "<username>" in form create user
         And user filled email as "<email>" in form create user

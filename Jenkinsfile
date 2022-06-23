@@ -3,11 +3,12 @@ pipeline {
     options {
         ansiColor('xterm')
     }
-
     stages {
         stage("SCM") {
             steps {
-                echo "Checkout SCM ..."
+                git branch: 'qa-dikabrenda', 
+                credentialsId: '0105c6c0-ed90-4433-8ddd-3728c87f861d', 
+                url: 'https://github.com/paquesid/paques-website-automation.git'
             }
         }
         stage("Populate ENV") {
