@@ -8,7 +8,7 @@ Feature: User Management - Delete Users
         And user click on user management button in the list
         Then user is on tab "User List" activated
 
-    @regression @positive-scenario
+    @skip-regression @positive-scenario
     Scenario: user want to cancel delete user in PDS Application
         And user click delete button
         And user should see form delete user
