@@ -25,3 +25,49 @@
 ## How to run?
 - copy env `cp env/env.sample .env`
 - run test `mvn clean verify -Dcucumber.filter.tags="@regression"`
+
+
+## Project Structure
+For your convenient please put the file based on the project structure.
+
+```
+├── java
+|     └── config                                       
+|     │      └── Hooks
+|     |
+|     └── data                        
+|     │      └── PDS Data              
+|     │      └── PCC Data
+|     │      └── PAMEDI Data
+│     │
+|     └── elements                          # Store Elements ex: *id*, *css*, *xpath*             
+|     │      └── PDS WebElement             # Define PDS Element
+|     │      └── PCC WebElement             # Define PCC Element
+|     │      └── PAMEDI WebElement          # Define PAMEDI Element
+│     │
+|     └── helper 
+|     │      └── Test Base
+|     │      └── Test Instrument
+|     │      └── Cucumber Page
+|     |
+|     └── pages
+|     |      └── PDS Page
+|     |      └── PCC Page
+|     |      └── PAMEDI Page
+|     |
+|     └── stepDefinitions
+|     |      └── PDS Steps
+|     |      └── PCC Steps
+|     |      └── PAMEDI Steps
+|     |
+|     └── testRunner
+|            └── Cucumber Runner
+|
+|
+|
+├── resources
+|       └── feature  
+|               └── PDS feature file         # Scenario Test PDS
+|               └── PCC feature file         # Scenario Test PCC
+|               └── PAMEDI feature file      # Scenario Test PAMEDI
+```
