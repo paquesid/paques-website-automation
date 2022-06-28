@@ -36,6 +36,12 @@ BDD memiliki tujuan utama untuk meningkatkan komunikasi dan kolaborasi antara se
 
 > **Then** — menjelaskan outcome dari tindakan yang dilakukan oleh user
 
+<br>
+
+![1_Pdur5iTRiaiO_WRc-ppyUQ](https://user-images.githubusercontent.com/103411461/176115403-fae1f25a-4c9b-4fd4-849c-9236062d6b65.png)
+
+
+
 
 
 <br>
