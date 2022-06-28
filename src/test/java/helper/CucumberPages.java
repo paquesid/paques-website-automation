@@ -1,6 +1,8 @@
 package helper;
 
 import org.openqa.selenium.WebDriver;
+
+import pages.DataProcessingPage;
 import pages.ForgotPasswordPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -37,5 +39,9 @@ public class CucumberPages {
 
     public UsersPage userManagementPage(){
         return new UsersPage(driver);
+    }
+
+    public DataProcessingPage dataProcessingPage(){
+        return new DataProcessingPage(driver);
     }
 }
