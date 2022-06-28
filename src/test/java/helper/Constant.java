@@ -8,8 +8,8 @@ public interface Constant {
     String WEBDRIVER_CHROME = dotenv.get("WEBDRIVER_CHROME");
 
     // Credentials
-    String USERNAME = dotenv.get("PDS_USERNAME");
-    String PASSWORD = dotenv.get("PDS_PASSWORD");
+    String USERNAME = dotenv.get("PDS_NONADMIN_USERNAME");
+    String PASSWORD = dotenv.get("PDS_NONADMIN_PASSWORD");
     String CHROME = "Chrome";
     
     // Environtment
