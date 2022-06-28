@@ -40,20 +40,23 @@ BDD memiliki tujuan utama untuk meningkatkan komunikasi dan kolaborasi antara se
 
 ![1_Pdur5iTRiaiO_WRc-ppyUQ](https://user-images.githubusercontent.com/103411461/176115403-fae1f25a-4c9b-4fd4-849c-9236062d6b65.png)
 
-
-
-
-
 <br>
 <br>
 
 ## Installation on Windows
 
-## Guideline
-- [Install Git](https://git-scm.com/downloads)
-- [Install Java @11.0.14](https://www.oracle.com/java/technologies/downloads/)
-- [Install Apache Maven @3.8.5](https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.zip)
-- [Install VSCode](https://code.visualstudio.com/download)
+- [`Install Git`](https://git-scm.com/downloads)
+- [`Install Java @11.0.14`](https://www.oracle.com/java/technologies/downloads/)
+- [`Install Apache Maven @3.8.5`](https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.zip)
+- [`Install VSCode`](https://code.visualstudio.com/download)
+
+## Installation on Linux
+
+- `sudo apt-get update`
+- `sudo apt install git`
+- `sudo apt install openjdk-11-jdk`
+- `sudo apt install maven`
+- [`sudo apt install code`](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/)
 
 ## Prerequisite
 - Setup env variable `JAVA_HOME` & `MAVEN_HOME`
@@ -70,6 +73,8 @@ BDD memiliki tujuan utama untuk meningkatkan komunikasi dan kolaborasi antara se
     "liveServer.settings.port": 5501
 }
 ```
+
+<br>
 
 ## How to run?
 - copy env `cp env/env.sample .env`
