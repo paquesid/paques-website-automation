@@ -65,11 +65,7 @@ public class TestInstrument {
     }
 
     public static void assertEquals(Object expected, Object actual) {
-        try {
-            Assert.assertEquals(expected, actual);
-        } catch (AssertionError e) {
-            LogUtils.error("Element not Founded : " + e.getCause());
-        }
+        Assert.assertEquals(expected, actual);
     }
 
     public static WebElement clickButton(WebElement locator) {
