@@ -48,11 +48,17 @@ public class DataProcessingElement {
      * @COMMANDS-PROPERTIES
      */
 
-    @FindBy(css = "#search_data_tabular0_filename")
+    @FindBy(id = "search_from_file0_filename")
     protected WebElement DATAPROCESSING_FILEPATH_SEARCHBOX_TEXT;
 
     @FindBy(css = "#search_data_tabular0_separator")
     protected WebElement DATAPROCESSING_SEPARATOR_SEARCHBOX_TEXT;
+
+    @FindBy(css = ".menu-toggle.text-uppercase.toggled[aria-controls='collapseOne_1']")
+    protected WebElement DATAPROCESSING_QUERY_INFORMATION_BUTTON;
+
+    @FindBy(xpath = "//option[normalize-space()='Default']")
+    protected WebElement DATAPROCESSING_OPTION_DEFAULT_DROPDOWN;
 
     @FindBy(css = ".form-control.show-tick.ms.select2.ng-pristine.ng-valid.ng-star-inserted.ng-touched")
     protected WebElement DATAPROCESSING_SELECT_DROPDOWN;
@@ -102,8 +108,8 @@ public class DataProcessingElement {
     @FindBy(css = "div[class='footer text-center py-3'] button[class='btn btn-info btn-outline btn-sm py-0 px-2']")
     protected WebElement DATAPROCESSING_ADVANCE_PQL_BUTTON;
 
-    @FindBy(css = ".view-lines")
-    protected WebElement DATAPROCESSING_ADVANCE_PQL_LINE;
+    @FindBy(css = ".lines-content.monaco-editor-background")
+    protected WebElement DATAPROCESSING_ADVANCE_PQL_TEXT;
 
     /**
      * @DATATABLE
