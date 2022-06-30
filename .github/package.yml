@@ -30,7 +30,7 @@ jobs:
           distribution: 'adopt'
           cache: maven
 
-      - name: Deploy
+      - name: publish package
         run: mvn -batch-mode deploy -Dmaven.test.skip
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
