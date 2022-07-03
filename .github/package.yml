@@ -1,0 +1,36 @@
+name: Cucumber-job
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths-ignore:
+        - '**.md'
+
+env:
+  CI: true
+
+jobs:
+
+  build-ubuntu:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+
+    steps:
+      - name: Declarative Checkout SCM
+        uses: actions/checkout@v3
+
+      - name: SCM
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: 'adopt'
+          cache: maven
+
+      - name: publish package
+        run: mvn -batch-mode deploy -Dmaven.test.skip
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

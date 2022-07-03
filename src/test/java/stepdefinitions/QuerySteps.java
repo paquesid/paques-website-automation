@@ -4,9 +4,9 @@ import helper.QueryCommands;
 import helper.TestInstrument;
 import io.cucumber.java8.En;
 
-public class CreateQuerySteps extends TestInstrument implements En {
+public class QuerySteps extends TestInstrument implements En {
     
-    public CreateQuerySteps(){
+    public QuerySteps(){
         And("^user click on data processing$", () -> {
             paques.homePage().goToDataProcessing();
         });
@@ -33,6 +33,10 @@ public class CreateQuerySteps extends TestInstrument implements En {
             paques.dataProcessingPage().setSeparatorQueryCommands(separator);
         });
 
+        And("^user see the option value of option is \"([^\"]*)\"", (String defaultValue) -> {
+            paques.dataProcessingPage().getDefaultOptionValue(defaultValue);
+        });
+
         And("^user choose \"([^\"]*)\" in section command property$", (String value) -> {
             paques.dataProcessingPage().setDropdownOptionQueryCommands(value);
         });
@@ -55,6 +59,19 @@ public class CreateQuerySteps extends TestInstrument implements En {
 
         Then("^user see first row as a header in datatable$", () -> {
             paques.dataProcessingPage().getFirstRowDataTable(dotenv.get("PDS_EXPECTED_QUERY_DATATABLE"));
+        });
+
+        Then("^user see the header datatable as \"([^\"]*)\"$", (String headerDataTable) -> {
+            paques.dataProcessingPage().getHeaderDataTable(headerDataTable);
+        });
+
+        And("^user load data to editor$", () -> {
+            paques.dataProcessingPage().clickPaquesAdvanceQuery();
+            paques.dataProcessingPage().clickEditPaquesAdvanceQuery();
+        });
+
+        When("^user create query using PQL \"([^\"]*)\"$", (String queryPQL) -> {
+            paques.dataProcessingPage().setPaquesQueryLanguage(queryPQL);
         });
     }
 }

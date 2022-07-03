@@ -93,6 +93,13 @@ public class DataProcessingPage extends DataProcessingElement {
         enterText(DATAPROCESSING_SEPARATOR_SEARCHBOX_TEXT, separator);
     }
 
+    public void getDefaultOptionValue(String defaultValue){
+        if(isElementExist(DATAPROCESSING_OPTION_DEFAULT_DROPDOWN, 2)) {
+            String actual = DATAPROCESSING_OPTION_DEFAULT_DROPDOWN.getText();
+            assertEquals(defaultValue, actual);
+        }
+    }
+
     public void setDropdownOptionQueryCommands(String value){
         try {
             String actual = DATAPROCESSING_OPTION_FIRST_ROW_TEXT.getText();
@@ -133,16 +140,14 @@ public class DataProcessingPage extends DataProcessingElement {
 
      public void clickEditPaquesAdvanceQuery(){
         clickButton(DATAPROCESSING_ADVANCE_PQL_BUTTON);
-        if(isElementExist(DATAPROCESSING_OKE_MODAL_BUTTON, 2000)){
+        if(isElementExist(DATAPROCESSING_OKE_MODAL_BUTTON, 2)){
             clickButton(DATAPROCESSING_OKE_MODAL_BUTTON);
         }
      }
 
      public void setPaquesQueryLanguage(String query) {
-        // enterText(DATAPROCESSING_ADVANCE_PQL_LINE, query);
-        if(isElementExist(DATAPROCESSING_ADVANCE_PQL_LINE, 2000)){
-            // clickButton(DATAPROCESSING_ADVANCE_PQL_LINE);
-            inputText(DATAPROCESSING_ADVANCE_PQL_LINE, query);
+        if(isElementExist(DATAPROCESSING_ADVANCE_PQL_TEXT, 2)){
+            enterText(DATAPROCESSING_ADVANCE_PQL_TEXT, query);
             delay(4000);
         }
      }
@@ -162,9 +167,16 @@ public class DataProcessingPage extends DataProcessingElement {
     }
 
     public void getFirstRowDataTable(String expected){
-        if(isElementExist(DATAPROCESSING_DATATABLE_POLICENUMBER_TEXT, 2000)){
+        if(isElementExist(DATAPROCESSING_DATATABLE_POLICENUMBER_TEXT, 2)){
             String actual = DATAPROCESSING_DATATABLE_POLICENUMBER_TEXT.getText().trim();
             assertEquals(actual, expected);
+        }
+    }
+
+    public void getHeaderDataTable(String expected){
+        if(isElementExist(DATAPROCESSINGPAGE_RESULT_EVENT_TEXT, 2)){
+            String actual = DATAPROCESSINGPAGE_RESULT_EVENT_TEXT.getText().trim();
+            assertEquals(expected, actual);
         }
     }
 }
