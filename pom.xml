@@ -17,6 +17,33 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <profiles>
+        <profile>
+          <id>github</id>
+          <repositories>
+            <repository>
+              <id>central</id>
+              <url>https://repo1.maven.org/maven2</url>
+            </repository>
+            <repository>
+              <id>github</id>
+              <url>https://maven.pkg.github.com/paquesid/paques-website-automation</url>
+              <snapshots>   
+                <enabled>true</enabled>
+              </snapshots>
+            </repository>
+          </repositories>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+          <id>github</id>
+          <name>Dika Brenda Angkasa</name>
+          <url>https://maven.pkg.github.com/paquesid/paques-website-automation</url>
+        </repository>
+     </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -37,6 +64,19 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220320</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -128,6 +168,12 @@
             <version>2.17.2</version>
         </dependency>
 
+        <!-- <dependency>
+            <groupId>com.paques</groupId>
+            <artifactId>paques</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency> -->
+
     </dependencies>
 
     <build>
@@ -138,6 +184,7 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <!-- <plugin>
