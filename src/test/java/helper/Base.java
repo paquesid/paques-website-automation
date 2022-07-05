@@ -23,7 +23,7 @@ public class Base {
             case "Chrome":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito", "--headless", "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
+                options.addArguments("--incognito"); // "--headless", "--window-size=1325x744"
                 options.setAcceptInsecureCerts(true);
                 driver = new ChromeDriver(options);
                 break;
