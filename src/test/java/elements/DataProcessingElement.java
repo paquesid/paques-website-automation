@@ -3,6 +3,10 @@ package elements;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * Created by Dika Brenda Angkasa on 05/07/2022
+ */
+
 public class DataProcessingElement {
 
     /**
@@ -108,7 +112,7 @@ public class DataProcessingElement {
     @FindBy(css = "div[class='footer text-center py-3'] button[class='btn btn-info btn-outline btn-sm py-0 px-2']")
     protected WebElement DATAPROCESSING_ADVANCE_PQL_BUTTON;
 
-    @FindBy(css = ".lines-content.monaco-editor-background")
+    @FindBy(css = ".template-editor.ng-valid.ng-dirty.ng-touched")
     protected WebElement DATAPROCESSING_ADVANCE_PQL_TEXT;
 
     /**
@@ -118,4 +122,18 @@ public class DataProcessingElement {
     private final String dropdownValue = "";
     @FindBy(css = dropdownValue)
     protected WebElement DATAPROCESSING_DROPDOWN_VALUE;
+
+    /**
+     * @META-DATA-SETTING
+     */
+
+    //  private final String metaData = "Metadata Setting";
+    @FindBy(xpath = "//button[normalize-space()='Metadata Setting']")
+    protected WebElement DATAPROCESSING_METADATA_SETTING_BTN;
+
+    @FindBy(id = "mat-checkbox-81")
+    protected WebElement DATAPROCESSING_DATETIME_CHECKBOX;
+
+    @FindBy(xpath = "//h5[normalize-space()='Process failed']")
+    protected WebElement DATAPROCESSING_POPUP_MESSAGE_TXT;
 }
