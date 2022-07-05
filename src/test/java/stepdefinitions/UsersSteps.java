@@ -94,7 +94,7 @@ public class UsersSteps extends TestInstrument implements En {
         });
 
         When("^user click on edit button in user tab$", () -> {
-            paques.userManagementPage().clickEditButton(dotenv.get("SEARCH_USERS_DATATABLE"));
+            paques.userManagementPage().clickEditButton(dotenv.get("PDS_SEARCH_USERS_DATATABLE"));
         });
 
         Then("^user should see form to update user$", () -> {
@@ -102,7 +102,7 @@ public class UsersSteps extends TestInstrument implements En {
         });
 
         When("^user click change password button$", () -> {
-            paques.userManagementPage().clickChangePasswordButton(dotenv.get("SEARCH_USERS_DATATABLE"));
+            paques.userManagementPage().clickChangePasswordButton(dotenv.get("PDS_SEARCH_USERS_DATATABLE"));
         });
 
         Then("^user should be able to see form password$", () -> {
@@ -116,7 +116,7 @@ public class UsersSteps extends TestInstrument implements En {
          */
 
         And("^user click delete button$", () -> {
-            paques.userManagementPage().clickDeleteButton(dotenv.get("SEARCH_USERS_DATATABLE"));
+            paques.userManagementPage().clickDeleteButton(dotenv.get("PDS_SEARCH_USERS_DATATABLE"));
         });
 
         And("^user should see form delete user$", () -> {
@@ -132,7 +132,7 @@ public class UsersSteps extends TestInstrument implements En {
         });
 
         Then("^user confirmed data still available in datatable user$", () -> {
-            paques.userManagementPage().userStillExist(dotenv.get("SEARCH_USERS_DATATABLE"));
+            paques.userManagementPage().userStillExist(dotenv.get("PDS_SEARCH_USERS_DATATABLE"));
         });
     }
 }

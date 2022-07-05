@@ -23,8 +23,13 @@ public class Base {
             case "Chrome":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito"); // "--headless", "--window-size=1325x744"
-                options.setAcceptInsecureCerts(true);
+                options.addArguments(
+                    "--incognito",
+                    "--ignore-ssl-errors=yes",
+                    "--ignore-certificate-errors",
+                    "--headless",
+                    "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
+                // options.setAcceptInsecureCerts(true);
                 driver = new ChromeDriver(options);
                 break;
 
@@ -54,8 +59,11 @@ public class Base {
                 break;
 
             case "Production":
-                driver.get(dotenv.get("BASEURL"));
+                driver.get(dotenv.get("PDS_BASEURL"));
                 break;
+
+            case "PCC_DEV":
+                driver.get(dotenv.get("PCC_BASEURL"));
         
             default:
                 throw new RuntimeException("Unsupported Environtment : " + appURL);

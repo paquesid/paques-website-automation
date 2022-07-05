@@ -49,5 +49,17 @@ public enum Type {
         public String toString(){
             return "lastName";
         }
-    }
+    }, 
+    GROUPNAME {
+        @Override
+        public String toString(){
+            return "";
+        }
+    }, 
+    ROLENAME {
+        @Override
+        public String toString(){
+            return "";
+        }
+    }, ROLEDESCRIPTION, SCOPE
 }

@@ -7,7 +7,7 @@ public class TelegramBot extends TestInstrument implements En {
     
     public TelegramBot(){
         Given("^telegram send a message \"([^\"]*)\" every weekday$", (String message) -> {
-            // paques.telegramStep().setTelegramForStandUp(message);
+            paques.telegramStep().setTelegramForStandUp(message);
         });
     }
 }

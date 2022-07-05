@@ -88,7 +88,7 @@ public class UsersElement {
 
      /**
       * this element for cases in Change Password in user datatable
-      * @Change-Password
+      * @CHANGE-PASSWORD
       */
 
     @FindBy(css = ".zmdi.zmdi-key")

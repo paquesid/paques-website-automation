@@ -2,8 +2,10 @@ package helper;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +30,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Dika Brenda Angkasa on 23/05/2022
@@ -42,23 +45,25 @@ public class TestInstrument {
     public static WebElement element;
     public static Actions action;
     public static Select select;
+    private static boolean clear = false;
     public Dotenv dotenv = Dotenv.load();
 
+    /**
+     * @param locator parameter element locator
+     * @param text parameter input text in Frontend application
+     * @return 
+     */
+    
     public static WebElement enterText(WebElement locator, String text) {
-        boolean clear = true;
-        if(clear){
+        if(!clear){
             locator.clear();
         }
         locator.sendKeys(text);
         return locator;
     }
 
-
-
     public static WebElement enterTextByKeys(WebElement locator, String text){
-        boolean clear = true;
-        // delay(timeout);
-        if(clear){
+        if(!clear){
             locator.clear();
         }
         locator.sendKeys(text, Keys.ENTER);
@@ -66,50 +71,48 @@ public class TestInstrument {
     }
 
     public static void assertEquals(Object expected, Object actual) {
-        try {
-            Assert.assertEquals(expected, actual);
-        } catch (AssertionError e) {
-            LogUtils.error("Element not Founded : " + e.getCause());
-        }
+        Assert.assertEquals(expected, actual);
     }
 
     public static WebElement clickButton(WebElement locator) {
-        try {
-            // isElementExist(locator, 1000);
-            locator.click();
-        } catch (ElementClickInterceptedException e) {
-            LogUtils.info("element not exist : " + e.getCause());
+        if(locator.equals(null)){
+            throw new ElementNotInteractableException("please check this element locator : " + locator);
+        } else {
+            if(isElementExist(locator, 2)){
+                locator.click();
+            }
+            return locator;
         }
-        return locator;
     }
 
-    public static WebElement clickButtonByKeys(WebElement locator){
-        try {
-            isElementExist(locator, 1000);
-            locator.click();
-            locator.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
-        } catch (Exception e) {
-            LogUtils.info("element not exist : " + e.getCause());
+    public static WebElement clickButtonByKeys(WebElement locator) {
+        if(locator.equals(null)){
+            throw new ElementNotInteractableException("please check this element locator : " + locator);
+        } else {
+            if(isElementExist(locator, 2)){
+                locator.click();
+                locator.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+            }
+            return locator;
         }
-        return locator;
     }
 
     public static WebElement doubleClickButton(WebElement locator) {
-        try {
-            for(int i = 0; i < 2; i++) {
-                if(isElementExist(locator, 2)) {
+        if(locator.equals(null)){
+            throw new Error("please check this element locator : " + locator);
+        } else {
+            if(isElementExist(locator, 2)){
+                for(int i = 0; i < 2; i++){
                     locator.click();
                 }
             }
-        } catch (AssertionError e) {
-            LogUtils.info("element not exist : " + e.getCause());
+            return locator;
         }
-        return locator;
     }
 
-    public static void delay(long milis) {
+    public static void delay(long timeout) {
         try {
-            Thread.sleep(milis);
+            TimeUnit.MINUTES.sleep(timeout);
         } catch (InterruptedException e) {
             LogUtils.info("Waiting ... : " + e.getCause());
         }
@@ -119,6 +122,18 @@ public class TestInstrument {
         delay(timeout);
     	JavascriptExecutor js = ((JavascriptExecutor) driver);
     	js.executeScript("arguments[0].scrollIntoView(true);", elementLocator);
+    }
+
+    public static void scrollIntoElement(WebElement elementLocator, int timeout){
+        if(elementLocator.equals(null)){
+            throw new NotFoundException("please check this element : " + elementLocator);
+        } else {
+            if(isElementExist(elementLocator, timeout)){
+                action = new Actions(driver);
+                action.moveToElement(elementLocator);
+                action.build().perform();
+            }
+        }
     }
 
     public static void selectDropDownValue(WebElement locator, String type, String value){
@@ -160,7 +175,12 @@ public class TestInstrument {
     }
 
     public WebDriver setupBrowser() throws MalformedURLException {
-        driver = Base.startApplication(driver, CHROME, PRODUCTION);
+        if(PRODUCTION.equalsIgnoreCase("production") && CHROME.equalsIgnoreCase("chrome")){
+            driver = Base.startApplication(driver, CHROME, PRODUCTION);
+        } else {
+            System.out.println("API");
+        }
+        
         return driver;
     }
 
@@ -195,7 +215,7 @@ public class TestInstrument {
 
     public void tearDown(){
         if (driver != null){
-            driver.quit();
+            driver.close();
         }
     }
 

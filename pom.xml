@@ -17,6 +17,33 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <profiles>
+        <profile>
+          <id>github</id>
+          <repositories>
+            <repository>
+              <id>central</id>
+              <url>https://repo1.maven.org/maven2</url>
+            </repository>
+            <repository>
+              <id>github</id>
+              <url>https://maven.pkg.github.com/paquesid/paques-website-automation</url>
+              <snapshots>   
+                <enabled>true</enabled>
+              </snapshots>
+            </repository>
+          </repositories>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+          <id>github</id>
+          <name>Dika Brenda Angkasa</name>
+          <url>https://maven.pkg.github.com/paquesid/paques-website-automation</url>
+        </repository>
+     </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -38,9 +65,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220320</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.1.1</version>
+            <version>5.2.0</version>
         </dependency>
 
         <dependency>
@@ -95,7 +134,19 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.2</version>
+            <version>4.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.77.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
         </dependency>
 
         <dependency>
@@ -116,6 +167,12 @@
             <version>2.17.2</version>
         </dependency>
 
+        <!-- <dependency>
+            <groupId>com.paques</groupId>
+            <artifactId>paques</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency> -->
+
     </dependencies>
 
     <build>
@@ -126,6 +183,7 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -154,6 +212,7 @@
                             <!-- <jsonFiles>
                                     <param>${project.build.directory}/cucumber.json</param>
                             </jsonFiles> -->
+                            <checkBuildResult>false</checkBuildResult>
                         </configuration>
                     </execution>
                 </executions>
