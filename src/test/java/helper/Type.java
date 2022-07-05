@@ -49,6 +49,7 @@ public enum Type {
         public String toString(){
             return "lastName";
         }
+<<<<<<< HEAD
     }, 
     GROUPNAME {
         @Override
@@ -62,4 +63,7 @@ public enum Type {
             return "";
         }
     }, ROLEDESCRIPTION, SCOPE
+=======
+    }
+>>>>>>> 52784e8397daeab6c516ce44189a635d07b43c73
 }

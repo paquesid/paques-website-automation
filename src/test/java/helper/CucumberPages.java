@@ -2,10 +2,15 @@ package helper;
 
 import org.openqa.selenium.WebDriver;
 
+<<<<<<< HEAD
 import pages.CreateRolePage;
 import pages.DataProcessingPage;
 import pages.ForgotPasswordPage;
 import pages.GroupPage;
+=======
+import pages.DataProcessingPage;
+import pages.ForgotPasswordPage;
+>>>>>>> 52784e8397daeab6c516ce44189a635d07b43c73
 import pages.HomePage;
 import pages.LoginPage;
 import pages.UsersPage;
@@ -51,6 +56,7 @@ public class CucumberPages {
     public TelegramStep telegramStep(){
         return new TelegramStep(driver);
     }
+<<<<<<< HEAD
 
     public CreateRolePage createRolePage(){
         return new CreateRolePage(driver);
@@ -59,4 +65,6 @@ public class CucumberPages {
     public GroupPage groupPage(){
         return new GroupPage(driver);
     }
+=======
+>>>>>>> 52784e8397daeab6c516ce44189a635d07b43c73
 }
