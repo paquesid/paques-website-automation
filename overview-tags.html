@@ -49,28 +49,28 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels:  [ "@Change-Password",  "@Create-User",  "@Forgot-Password",  "@Login",  "@Update-User",  "@negative-scenario",  "@positive-case",  "@positive-scenario",  "@regression", ] ,
+        labels:  [] ,
         datasets: [
             {
                 label: "Passed",
                 backgroundColor: "#92DD96",
-                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ]             },
+                data:  []             },
             {
                 label: "Failed",
                 backgroundColor: "#F2928C",
-                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ]             },
+                data:  []             },
             {
                 label: "Skipped",
                 backgroundColor: "#8AF",
-                data:  [ 100.00,  100.00,  100.00,  100.00,  100.00,  100.00,  100.00,  100.00,  100.00, ]             },
+                data:  []             },
             {
                 label: "Pending",
                 backgroundColor: "#F5F28F",
-                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ]             },
+                data:  []             },
             {
                 label: "Undefined",
                 backgroundColor: "#F5B975",
-                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ]             }
+                data:  []             }
         ]
     };
 
@@ -131,7 +131,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Paques Web Automation Report</td>
               <td>1</td>
-            <td>20 Jun 2022, 03:38</td>
+            <td>11 Jul 2022, 06:24</td>
     </tr>
   </tbody>
 </table>
@@ -150,237 +150,12 @@ $(document).ready(function() {
 </div>
 
 
-  <div class="container-fluid" id="charts">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <canvas id="tags-chart" height="50"></canvas>
-      </div>
-    </div>
-  </div>
 
 <br>
 <div class="container-fluid" id="report">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-              
-<table id="tablesorter" class="stats-table table-hover">
-  
-<thead>
-  <tr class="header dont-sort">
-        <th></th>
-    <th colspan="6">Steps</th>
-    <th colspan="3">Scenarios</th>
-    <th colspan="2">Features</th>
-  </tr>
-  <tr>
-    <th>Tag</th>
-        <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="skipped">Skipped</th>
-    <th class="pending">Pending</th>
-    <th class="undefined">Undefined</th>
-    <th class="total">Total</th>
-
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="total">Total</th>
-
-    <th>Duration</th>
-    <th>Status</th>
-  </tr>
-</thead>
-
-
-  <tbody>
-          <tr>
-        <td class="tagname"><a href="report-tag_Change-Password.html">@Change-Password</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >10</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">10</td>
-
-        <td >0</td>
-        <td  class="failed"    >2</td>
-        <td class="total">2</td>
-
-        <td class="duration" data-value="109000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_Create-User.html">@Create-User</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >10</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">10</td>
-
-        <td >0</td>
-        <td  class="failed"    >1</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="118000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_Forgot-Password.html">@Forgot-Password</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >8</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">8</td>
-
-        <td >0</td>
-        <td  class="failed"    >2</td>
-        <td class="total">2</td>
-
-        <td class="duration" data-value="426000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_Login.html">@Login</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >6</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">6</td>
-
-        <td >0</td>
-        <td  class="failed"    >1</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="86000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_Update-User.html">@Update-User</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >10</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">10</td>
-
-        <td >0</td>
-        <td  class="failed"    >1</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="133000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_negative-scenario.html">@negative-scenario</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >5</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">5</td>
-
-        <td >0</td>
-        <td  class="failed"    >1</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="63000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_positive-case.html">@positive-case</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >10</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">10</td>
-
-        <td >0</td>
-        <td  class="failed"    >1</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="133000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_positive-scenario.html">@positive-scenario</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >29</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">29</td>
-
-        <td >0</td>
-        <td  class="failed"    >5</td>
-        <td class="total">5</td>
-
-        <td class="duration" data-value="676000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-tag_regression.html">@regression</a></td>
-        
-        <td >0</td>
-        <td >0</td>
-        <td     class="skipped"   >44</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">44</td>
-
-        <td >0</td>
-        <td  class="failed"    >7</td>
-        <td class="total">7</td>
-
-        <td class="duration" data-value="872000">0.000</td>
-        <td class="failed">Failed</td>
-      </tr>
-      </tbody>
-
-  <tfoot class="total">
-    <tr>
-      <td></td>
-            <td>0</td>
-      <td>0</td>
-      <td>132</td>
-      <td>0</td>
-      <td>0</td>
-      <td>132</td>
-
-      <td>0</td>
-      <td>21</td>
-      <td>21</td>
-
-      <td class="duration">0.002</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td></td>
-            <td>0.00%</td>
-      <td>0.00%</td>
-      <td>100.00%</td>
-      <td>0.00%</td>
-      <td>0.00%</td>
-      <td></td>
-      <td>0.00%</td>
-      <td>100.00%</td>
-      <td></td>
-      <td></td>
-      <td>0.00%</td>
-    </tr>
-  </tfoot>
-</table>
-
+              <p>You have no tags in your cucumber report</p>
           </div>
   </div>
 </div>
