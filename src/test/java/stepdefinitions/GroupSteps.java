@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import helper.TestInstrument;
+import io.cucumber.java.en.Then;
 import io.cucumber.java8.En;
 import helper.Type;
 
@@ -62,9 +63,13 @@ public class GroupSteps extends TestInstrument implements En {
          * Edit Page
          */
  
+        Then("^user is on tab group \"([^\"]*)\" activated$", () -> {
+            paques.groupPage().getTextTitleGroup("Group List");
+        });
 
         When("^user click on Edit Group icon$", () -> {
             paques.groupPage().clickEditGroup("Grp2108");
+            // paques.groupPage().searchGroup("Grp2108");
         });
 
         Then("^user should see form to update group$", () -> {

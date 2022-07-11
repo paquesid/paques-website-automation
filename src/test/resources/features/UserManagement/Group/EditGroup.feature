@@ -7,7 +7,7 @@ Feature: User Management - EDit Group
         When user click on setting button
         And user click on user management button in the list
         When user click on group tab in user tab
-        Then user is on tab group "Group List" activated
+        # Then user is on tab group "Group List" activated
         When user click on Edit Group icon
         Then user should see form to update group
         And user edit Group Description as "group update" 

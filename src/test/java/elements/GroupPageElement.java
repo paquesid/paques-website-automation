@@ -16,11 +16,11 @@ public class GroupPageElement {
     protected
     WebElement GROUPPAGE_TITLE;
 
-    @FindBy(css = "ul[class='nav nav-tabs'] li:nth-child(2) a:nth-child(1")
+    @FindBy(xpath = "//*[normalize-space()='Groups']")
     protected
     WebElement GROUPPAGE_TAB;
     
-    @FindBy(css = "div[id='tab2'] div[class='row'] button[type='button']")
+    @FindBy(xpath = "//button[normalize-space()='Create Group']")
     protected
     WebElement GROUPPAGE_CREATE_BUTTON;
 

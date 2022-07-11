@@ -26,7 +26,9 @@ public class GroupPage extends GroupPageElement{
     } 
 
     public void clickGroupTab() {
-        delay(2000); // delay for flaky test
+        clickButton(GROUPPAGE_TAB);
+        refreshPage();
+        delay(2000);
         clickButton(GROUPPAGE_TAB);
     }
 
@@ -94,14 +96,14 @@ public class GroupPage extends GroupPageElement{
             searchGroup(name);
             // delay(2000);
         } catch (AssertionError e) {
-            LogUtils.error("cannot search role", e);
+            e.printStackTrace();
         } finally {
             clickButton(GROUPPAGE_EDIT_ICON);
         }
     }
 
     public boolean getTitleFormUpdateGroup(String expected){
-        if(isElementExist(GROUPPAGE_EDIT_TITLE, 10)){
+        if(isElementExist(GROUPPAGE_EDIT_TITLE, 4000)){
             String actual = GROUPPAGE_EDIT_TITLE.getText();
             assertEquals(expected, actual);
         }
