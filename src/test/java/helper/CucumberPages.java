@@ -8,7 +8,6 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.UsersPage;
 import pages.onBoardingPage;
-import telegram.TelegramStep;
 
 /**
  * Created by Dika Brenda Angkasa on 23/05/2022
@@ -44,9 +43,5 @@ public class CucumberPages {
 
     public DataProcessingPage dataProcessingPage(){
         return new DataProcessingPage(driver);
-    }
-
-    public TelegramStep telegramStep(){
-        return new TelegramStep(driver);
     }
 }
