@@ -42,11 +42,27 @@ public class DataProcessingElement {
      * @QUERY-COMMANDS
      */
 
-    @FindBy(css = "#pq-cmd-10")
+    @FindBy(id = "pq-cmd-10")
     protected WebElement DATAPROCESSING_SEARCHFILE_QUERYCOMMANDS_BUTTON;
 
-    @FindBy(css = "#pq-cmd-12")
+    @FindBy(id = "pq-cmd-12")
     protected WebElement DATAPROCESSING_DATATABULAR_QUERYCOMMANDS_BUTTON;
+
+    @FindBy(id = "pq-cmd-30")
+    protected WebElement DATAPROCESSING_EXTRACT_SPLIT_QUERYCOMMANDS_BUTTON;
+
+    @FindBy(id = "pq-cmd-61")
+    protected WebElement DATAPROCESSING_LIMIT_QUERYCOMMANDS_BUTTON;
+
+    /**
+     * @IN-OUT
+     */
+
+    @FindBy(id = "out-search_data_tabular_2022070710425521")
+    protected WebElement DATAPROCESSING_DATATABULAR_OUTLINE_BUTTON;
+
+    @FindBy(id = "in-limit_2022070710425961")
+    protected WebElement DATAPROCESSING_LIMIT_INLINE_BUTTON;
 
     /**
      * @COMMANDS-PROPERTIES
@@ -136,4 +152,11 @@ public class DataProcessingElement {
 
     @FindBy(xpath = "//h5[normalize-space()='Process failed']")
     protected WebElement DATAPROCESSING_POPUP_MESSAGE_TXT;
+
+    /**
+     * @SCHEDULLER
+     */
+
+     @FindBy(id = "selectedSchedulerMode")
+     protected WebElement DATAPROCESSING_SELECTED_SCHEDULLER_TXT;
 }
