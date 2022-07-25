@@ -19,4 +19,4 @@ Feature: Executed Scheduller
         When user set scheduller from time "5 minutes"
         And user set scheduler time from today
         And user click on save button at navbar
-        Then user success to set the query will be executed automatically
+        Then user should be able to see a message "Process Completed" will be displayed

@@ -1,10 +1,12 @@
 package pages;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import elements.DataProcessingElement;
+import helper.Dropdown;
 
 import static helper.TestInstrument.*;
 
@@ -201,4 +203,37 @@ public class DataProcessingPage extends DataProcessingElement {
             assertEquals(expected, actual);
         }
     }
+
+    /**
+     * this for executed scheduler
+     */
+
+     public void clickSectionQueryInformation(){
+        if(isElementExist(DATAPROCESSING_QUERY_INFORMATION_BUTTON, 2)){
+            clickButton(DATAPROCESSING_QUERY_INFORMATION_BUTTON);
+        }
+     }
+
+     public void chooseScheduler(String value){
+        if(isElementExist(DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN, 4)){
+            try {
+                selectDropDownValue(DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN, Dropdown.VALUE.toString(), value);
+            } catch (ElementClickInterceptedException e) {
+                e.printStackTrace();
+            }
+        }
+     }
+
+     public void setSchedulerToday(){
+        if(isElementExist(DATAPROCESSING_START_TIME_DATEPICKER, 6)){
+            try {
+                getCurrentDay();
+                if(isElementExist(DATAPROCESSING_DATEPICKER_OKE_BUTTON, 6)){
+                    clickButton(DATAPROCESSING_DATEPICKER_OKE_BUTTON);
+                }
+            } catch (ElementClickInterceptedException e) {
+                throw new Error("please check element" + e.getCause());
+            }
+        }
+     }
 }
