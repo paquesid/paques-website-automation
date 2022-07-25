@@ -5,7 +5,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import elements.DataProcessingElement;
-import utils.LogUtils;
 
 import static helper.TestInstrument.*;
 
@@ -65,7 +64,7 @@ public class DataProcessingPage extends DataProcessingElement {
             searchDataSource(sourceName);
             clickButtonSearchSource();
         } catch (AssertionError e) {
-            LogUtils.error("message", e);
+            throw new AssertionError(e);
         }
     }
 
@@ -90,7 +89,7 @@ public class DataProcessingPage extends DataProcessingElement {
     }
 
     public void setFilePathQueryCommands(String filePath){
-        enterText(DATAPROCESSING_FILEPATH_SEARCHBOX_TEXT, filePath);
+        enterText(DATAPROCESSING_FILEPATH_DATATABULAR_SEARCHBOX_TEXT, filePath);
     }
 
     public void setSeparatorQueryCommands(String separator){

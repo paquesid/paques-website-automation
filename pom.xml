@@ -69,6 +69,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            
         </dependencies>
     </dependencyManagement>
 
@@ -182,7 +183,6 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
-                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -216,14 +216,6 @@
                             <projectName>Paques Web Automation Report</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                            <!-- <inputDirectory>${project.build.directory}/cucumber-json</inputDirectory> -->
-                            <!-- <jsonFiles>
-                                    <param>**/*.json</param>
-                            </jsonFiles> -->
-                            <skippedFails>true</skippedFails>
-                            <enableFlashCharts>true</enableFlashCharts>
-                            <parallelTesting>false</parallelTesting>
-                            <checkBuildResult>false</checkBuildResult>
                         </configuration>
                     </execution>
                 </executions>
