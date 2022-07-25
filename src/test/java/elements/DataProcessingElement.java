@@ -74,9 +74,6 @@ public class DataProcessingElement {
     @FindBy(css = "#search_data_tabular0_separator")
     protected WebElement DATAPROCESSING_SEPARATOR_SEARCHBOX_TEXT;
 
-    @FindBy(css = ".menu-toggle.text-uppercase.toggled[aria-controls='collapseOne_1']")
-    protected WebElement DATAPROCESSING_QUERY_INFORMATION_BUTTON;
-
     @FindBy(xpath = "//option[normalize-space()='Default']")
     protected WebElement DATAPROCESSING_OPTION_DEFAULT_DROPDOWN;
 
@@ -153,10 +150,21 @@ public class DataProcessingElement {
     @FindBy(xpath = "//h5[normalize-space()='Process failed']")
     protected WebElement DATAPROCESSING_POPUP_MESSAGE_TXT;
 
+    
     /**
      * @SCHEDULLER
+     * @DESCRIPTION this func to hands-on element executed date picker
      */
 
+     @FindBy(css = ".menu-toggle.text-uppercase.toggled[aria-controls='collapseOne_1']")
+     protected WebElement DATAPROCESSING_QUERY_INFORMATION_BUTTON;
+
      @FindBy(id = "selectedSchedulerMode")
-     protected WebElement DATAPROCESSING_SELECTED_SCHEDULLER_TXT;
+     protected WebElement DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN;
+
+     @FindBy(id = "start_time")
+     protected WebElement DATAPROCESSING_START_TIME_DATEPICKER;
+
+     @FindBy(css = "div[id='dtp_ZMQiK'] button[class='dtp-btn-ok btn btn-flat btn-sm']")
+     protected WebElement DATAPROCESSING_DATEPICKER_OKE_BUTTON;
 }
