@@ -89,7 +89,7 @@ public class DataProcessingPage extends DataProcessingElement {
     }
 
     public void setFilePathQueryCommands(String filePath){
-        enterText(DATAPROCESSING_FILEPATH_SEARCHBOX_TEXT, filePath);
+        enterText(DATAPROCESSING_FILEPATH_DATATABULAR_SEARCHBOX_TEXT, filePath);
     }
 
     public void setSeparatorQueryCommands(String separator){

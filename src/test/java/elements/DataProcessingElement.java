@@ -68,8 +68,8 @@ public class DataProcessingElement {
      * @COMMANDS-PROPERTIES
      */
 
-    @FindBy(id = "search_from_file0_filename")
-    protected WebElement DATAPROCESSING_FILEPATH_SEARCHBOX_TEXT;
+    @FindBy(id = "search_data_tabular0_filename")
+    protected WebElement DATAPROCESSING_FILEPATH_DATATABULAR_SEARCHBOX_TEXT;
 
     @FindBy(css = "#search_data_tabular0_separator")
     protected WebElement DATAPROCESSING_SEPARATOR_SEARCHBOX_TEXT;
