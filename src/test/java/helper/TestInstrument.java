@@ -83,6 +83,17 @@ public class TestInstrument {
         }
     }
 
+    public static Boolean clickCheckBox(WebElement locator){
+        Boolean target = locator.isDisplayed();
+        if(target.equals(true)){
+            locator.click();
+        } else {
+            throw new Error("Check this a locator : " + locator);
+        }
+        
+        return target;
+    }
+
     public static WebElement clickButtonByKeys(WebElement locator) {
         if(locator.equals(null)){
             throw new ElementNotInteractableException("please check this element locator : " + locator);
