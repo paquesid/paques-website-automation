@@ -18,8 +18,6 @@ import org.testng.Assert;
 
 import io.cucumber.java8.Scenario;
 import io.github.cdimascio.dotenv.Dotenv;
-import utils.LogUtils;
-
 import static helper.Constant.*;
 
 import java.io.File;
@@ -112,9 +110,9 @@ public class TestInstrument {
 
     public static void delay(long timeout) {
         try {
-            TimeUnit.MINUTES.sleep(timeout);
+            TimeUnit.SECONDS.sleep(timeout * 1000);
         } catch (InterruptedException e) {
-            LogUtils.info("Waiting ... : " + e.getCause());
+            throw new Error("waiting... : " + e.getCause());
         }
     }
 
@@ -149,19 +147,18 @@ public class TestInstrument {
                 select.selectByVisibleText(value);
                 break;
             default:
-                LogUtils.error("please pass the correct selection criteria ..");
-                break;
+                throw new Error("please pass the correct selection criteria ..");
         }
     }
 
     public static boolean isElementExist(WebElement locator, int timeout) {
-        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMinutes(timeout));
+        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofSeconds(timeout * 1000));
         locator = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
         return true;
     }
 
     public static boolean isAlertPresent(WebElement locator, int timeout) {
-        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMinutes(timeout));
+        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofSeconds(timeout * 1000));
         locator = (WebElement) wait.until(ExpectedConditions.alertIsPresent());
         return true;
     }
@@ -175,13 +172,7 @@ public class TestInstrument {
     }
 
     public WebDriver setupBrowser() throws MalformedURLException {
-        if(PRODUCTION.equalsIgnoreCase("production") && CHROME.equalsIgnoreCase("chrome")){
-            driver = Base.startApplication(driver, CHROME, PRODUCTION);
-        } else {
-            System.out.println("API");
-        }
-        
-        return driver;
+        return driver = Base.startApplication(driver, CHROME, PRODUCTION);
     }
 
     public void pageObj(){
@@ -199,9 +190,8 @@ public class TestInstrument {
             try {
                 scenario.attach(screenshot, "image/png", "failed screenshot");
                 FileUtils.copyFile(Objects.requireNonNull(srcFile), imageFile);
-                LogUtils.info("Screenshot has taken");
             } catch (Exception e) {
-                LogUtils.error("Exception while taking screenshot", e);
+                e.printStackTrace();
             }
         }
     }
@@ -265,12 +255,12 @@ public class TestInstrument {
             String to = target.getText();
             action.dragAndDrop(source, target).perform();
             if(to.equals("Dropped!")){
-                LogUtils.info("Source dropped to target as expected");
+                System.out.println("Source dropped to target as expected");
             } else {
-                LogUtils.info("Source couldn't be dropped to target as expected");
+                System.out.println("Source couldn't be dropped to target as expected");
             }
         } catch (ElementClickInterceptedException e) {
-            LogUtils.error("element not founded : " + e.getCause());
+            throw new Error("element not founded : " + e.getCause());
         }
     }
 
@@ -292,7 +282,7 @@ public class TestInstrument {
                 .dragAndDropBy(source, xOfsetTarget, yOfsetTarget)
                 .perform();
         } else {
-            LogUtils.info("Source couldn't be dropped to target as expected");
+            throw new Error("Source couldn't be dropped to target as expected");
         }
     }
 }
