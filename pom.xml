@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.paques</groupId>
@@ -11,10 +11,11 @@
     <packaging>jar</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <maven.compile.encoding>UTF-8</maven.compile.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <profiles>
@@ -46,6 +47,13 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.paques</groupId>
+                <artifactId>paques</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -53,6 +61,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>io.cucumber</groupId>
                 <artifactId>cucumber-bom</artifactId>
@@ -64,65 +73,47 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20220320</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.2.0</version>
-        </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.2.0</version>
+            <version>5.0.3</version>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java8</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -134,19 +125,13 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.2.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.77.Final</version>
+            <version>4.3.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>31.1-jre</version>
+            <version>31.0.1-jre</version>
         </dependency>
 
         <dependency>
@@ -161,17 +146,31 @@
             <version>2.8.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.17.2</version>
-        </dependency>
-
         <!-- <dependency>
-            <groupId>com.paques</groupId>
-            <artifactId>paques</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>0.10.2.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>                
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>          
+            </exclusions>
         </dependency> -->
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.2.0</version>
+        </dependency>
 
     </dependencies>
 
@@ -183,6 +182,14 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
@@ -209,9 +216,13 @@
                             <projectName>Paques Web Automation Report</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                            <!-- <inputDirectory>${project.build.directory}/cucumber-json</inputDirectory> -->
                             <!-- <jsonFiles>
-                                    <param>${project.build.directory}/cucumber.json</param>
+                                    <param>**/*.json</param>
                             </jsonFiles> -->
+                            <skippedFails>true</skippedFails>
+                            <enableFlashCharts>true</enableFlashCharts>
+                            <parallelTesting>false</parallelTesting>
                             <checkBuildResult>false</checkBuildResult>
                         </configuration>
                     </execution>
