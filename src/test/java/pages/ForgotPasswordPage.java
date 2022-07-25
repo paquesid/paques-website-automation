@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import elements.ForgotPasswordElement;
-import utils.LogUtils;
 import static helper.TestInstrument.*;
 
 /**
@@ -35,7 +34,7 @@ public class ForgotPasswordPage extends ForgotPasswordElement {
             String actual = FORGOT_PASSWORD_SUCCESS_TEXT.getText();
             assertEquals(expected, actual);
         } catch (ElementNotInteractableException e) {
-            LogUtils.error("element not exist : " + e.getCause());
+            e.printStackTrace();
         } finally {
             clickButton(FORGOT_PASSWORD_OKE_MODAL_BUTTON);
         }
