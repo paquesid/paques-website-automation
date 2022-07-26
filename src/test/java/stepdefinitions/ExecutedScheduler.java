@@ -11,7 +11,7 @@ public class ExecutedScheduler extends TestInstrument implements En {
             paques.dataProcessingPage().clickSectionQueryInformation();
         });
 
-        When("^user set scheduller from time \"([^\"]*)\"$$", (String TimeScheduler) -> {
+        When("^user set scheduller from time \"([^\"]*)\" minutes$", (String TimeScheduler) -> {
             paques.dataProcessingPage().chooseScheduler(TimeScheduler);
         });
 
