@@ -205,19 +205,34 @@ public class DataProcessingPage extends DataProcessingElement {
     }
 
     /**
+     * {@summary}
      * this for executed scheduler
      */
 
+     public void closeQueryEditor(){
+        if(isElementExist(DATAPROCESSING_CLOSE_QUERY_EDITOR_BUTTON, 4)){
+            clickButton(DATAPROCESSING_CLOSE_QUERY_EDITOR_BUTTON);
+        }
+     }
+
      public void clickSectionQueryInformation(){
+        closeQueryEditor();
+        scrollIntoView(DATAPROCESSING_QUERY_INFORMATION_BUTTON, driver, 4);
         if(isElementExist(DATAPROCESSING_QUERY_INFORMATION_BUTTON, 2)){
             clickButton(DATAPROCESSING_QUERY_INFORMATION_BUTTON);
         }
      }
 
-     public void chooseScheduler(String value){
+     public void spawnScheduler(){
+        scrollIntoElement(DATAPROCESSING_SPAWN_SCHEDULER_BUTTON, 4);
+        clickButton(DATAPROCESSING_SPAWN_SCHEDULER_BUTTON);
+     }
+
+     public void chooseScheduler(String TimeScheduler){
         if(isElementExist(DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN, 4)){
             try {
-                selectDropDownValue(DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN, Dropdown.VALUE.toString(), value);
+                spawnScheduler();
+                selectDropDownValue(DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN, Dropdown.VALUE.toString(), TimeScheduler);
             } catch (ElementClickInterceptedException e) {
                 e.printStackTrace();
             }
