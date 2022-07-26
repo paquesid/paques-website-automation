@@ -1,8 +1,8 @@
-@Scheduller
+@Scheduler
 Feature: Executed Scheduller
 
-    ## Pre-Condition
-    Background:
+    @sanity @positive-Scenario
+    Scenario: user want to executed scheduller in PDS Application
         Given user login with "PDS_NONADMIN"
         And user click on data processing
         And user create query using query command with "Data Tabular"
@@ -12,11 +12,8 @@ Feature: Executed Scheduller
         And user filled in row limit as "20" in section command property
         When user click on run button at navbar
         Then user see first row as a header in datatable
-
-    @sanity @positive-Scenario
-    Scenario: user want to executed scheduller in PDS Application
         And user click on section query information tab
-        When user set scheduller from time "5 minutes"
+        When user set scheduller from time "5" minutes
         And user set scheduler time from today
         And user click on save button at navbar
         Then user should be able to see a message "Process Completed" will be displayed
