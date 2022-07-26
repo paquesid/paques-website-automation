@@ -156,8 +156,14 @@ public class DataProcessingElement {
      * @DESCRIPTION this func to hands-on element executed date picker
      */
 
-     @FindBy(css = ".menu-toggle.text-uppercase.toggled[aria-controls='collapseOne_1']")
+     @FindBy(xpath = "//*[text()='Close']")
+     protected WebElement DATAPROCESSING_CLOSE_QUERY_EDITOR_BUTTON;
+
+     @FindBy(id = "headingOne_1")
      protected WebElement DATAPROCESSING_QUERY_INFORMATION_BUTTON;
+
+     @FindBy(css = "label[for='chck0']")
+     protected WebElement DATAPROCESSING_SPAWN_SCHEDULER_BUTTON;
 
      @FindBy(id = "selectedSchedulerMode")
      protected WebElement DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN;
