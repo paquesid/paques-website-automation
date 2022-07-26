@@ -128,8 +128,9 @@ public class TestInstrument {
         } else {
             if(isElementExist(elementLocator, timeout)){
                 action = new Actions(driver);
-                action.moveToElement(elementLocator);
-                action.build().perform();
+                action.moveToElement(elementLocator)
+                    .build()
+                    .perform();
             }
         }
     }
