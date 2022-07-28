@@ -2,8 +2,10 @@ package helper;
 
 import org.openqa.selenium.WebDriver;
 
+import pages.CreateRolePage;
 import pages.DataProcessingPage;
 import pages.ForgotPasswordPage;
+import pages.GroupPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.UsersPage;
@@ -43,5 +45,13 @@ public class CucumberPages {
 
     public DataProcessingPage dataProcessingPage(){
         return new DataProcessingPage(driver);
+    }
+
+    public CreateRolePage createRolePage(){
+        return new CreateRolePage(driver);
+    }
+
+    public GroupPage groupPage(){
+        return new GroupPage(driver);
     }
 }

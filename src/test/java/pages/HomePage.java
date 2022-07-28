@@ -21,7 +21,7 @@ public class HomePage extends HomePageElement {
     
     public void dismissModalInHomePage(){
         try {
-            isElementExist(HOMEPAGE_MODAL_TEXT, 10);
+            isElementExist(HOMEPAGE_MODAL_TEXT, 6000);
             String text = HOMEPAGE_MODAL_TEXT.getText();
             if(text.equals("Let’s get started!")){
                 clickButton(HOMEPAGE_MODAL_DISMISS_BUTTON);

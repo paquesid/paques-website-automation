@@ -2,7 +2,6 @@ package helper;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
