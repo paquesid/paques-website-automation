@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import elements.UsersElement;
-import utils.LogUtils;
 import static helper.TestInstrument.*;
 
 /**
@@ -74,7 +73,7 @@ public class UsersPage extends UsersElement{
         try {
             searchUser(name);
         } catch (Exception e) {
-            LogUtils.error("cannot search user", e);
+            e.printStackTrace();
         } finally {
             clickButton(USERMANAGEMENTPAGE_CHANGE_PASSWORD_BUTTON);
         }
@@ -84,7 +83,7 @@ public class UsersPage extends UsersElement{
         try {
             searchUser(name);
         } catch (AssertionError e) {
-            LogUtils.error("cannot search user", e);
+            e.printStackTrace();
         } finally {
             clickButton(USERMANAGEMENTPAGE_UPDATE_BUTTON);
         }
@@ -94,7 +93,7 @@ public class UsersPage extends UsersElement{
         try {
             searchUser(name);
         } catch (AssertionError e) {
-            LogUtils.error("cannot search user", e);
+            e.printStackTrace();
         } finally {
             clickButton(USERMANAGEMENTPAGE_DELETE_BUTTON);
         }
@@ -145,7 +144,7 @@ public class UsersPage extends UsersElement{
                 clickButtonByKeys(USERMANAGEMENTPAGE_GROUP_DROPDOWN);
             }
         } catch (AssertionError e) {
-            LogUtils.error("element not clickable ", e);
+            e.printStackTrace();
         }
     }
 
@@ -180,7 +179,7 @@ public class UsersPage extends UsersElement{
                 assertEquals(message, actual);
             }
         } catch (AssertionError e) {
-            LogUtils.info("element not displayed : " + e.getCause());
+            e.printStackTrace();
         } finally {
             clickButton(USERMANAGEMENTPAGE_MODAL_OKE_BUTTON);
         }
@@ -224,8 +223,7 @@ public class UsersPage extends UsersElement{
                 break;
 
             default:
-                LogUtils.error("please check parameters ..");
-                break;
+                throw new Error("please check parameters ..");
         }
     }
 }

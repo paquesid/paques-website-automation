@@ -28,8 +28,8 @@ public class Base {
                     "--ignore-ssl-errors=yes",
                     "--ignore-certificate-errors",
                     "--headless",
-                    "--window-size=1325x744"); // "--headless", "--window-size=1325x744"
-                // options.setAcceptInsecureCerts(true);
+                    "--window-size=1325x744"
+                );
                 driver = new ChromeDriver(options);
                 break;
 

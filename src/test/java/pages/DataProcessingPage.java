@@ -5,9 +5,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import elements.DataProcessingElement;
-import utils.LogUtils;
 
 import static helper.TestInstrument.*;
+
+/**
+ * Created by Dika Brenda Angkasa on 05/07/2022
+ */
 
 public class DataProcessingPage extends DataProcessingElement {
     
@@ -61,7 +64,7 @@ public class DataProcessingPage extends DataProcessingElement {
             searchDataSource(sourceName);
             clickButtonSearchSource();
         } catch (AssertionError e) {
-            LogUtils.error("message", e);
+            throw new AssertionError(e);
         }
     }
 
@@ -86,7 +89,7 @@ public class DataProcessingPage extends DataProcessingElement {
     }
 
     public void setFilePathQueryCommands(String filePath){
-        enterText(DATAPROCESSING_FILEPATH_SEARCHBOX_TEXT, filePath);
+        enterText(DATAPROCESSING_FILEPATH_DATATABULAR_SEARCHBOX_TEXT, filePath);
     }
 
     public void setSeparatorQueryCommands(String separator){
@@ -176,6 +179,25 @@ public class DataProcessingPage extends DataProcessingElement {
     public void getHeaderDataTable(String expected){
         if(isElementExist(DATAPROCESSINGPAGE_RESULT_EVENT_TEXT, 2)){
             String actual = DATAPROCESSINGPAGE_RESULT_EVENT_TEXT.getText().trim();
+            assertEquals(expected, actual);
+        }
+    }
+
+    public void clickMetaDataSetting(){
+        if(isElementExist(DATAPROCESSING_METADATA_SETTING_BTN, 2)){
+            clickButton(DATAPROCESSING_METADATA_SETTING_BTN);
+        }
+    }
+
+    public void checklistDateTimeMetaData(){
+        if(isElementExist(DATAPROCESSING_DATETIME_CHECKBOX, 2)){
+            clickButton(DATAPROCESSING_DATETIME_CHECKBOX);
+        }
+    }
+
+    public void getTextErrorMessage(String expected){
+        if(isElementExist(DATAPROCESSING_POPUP_MESSAGE_TXT, 2)){
+            String actual = DATAPROCESSING_POPUP_MESSAGE_TXT.getText();
             assertEquals(expected, actual);
         }
     }

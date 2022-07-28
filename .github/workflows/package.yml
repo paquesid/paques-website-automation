@@ -27,7 +27,6 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-          cache: maven
 
       - name: publish package
         run: mvn -batch-mode deploy -Dmaven.test.skip
