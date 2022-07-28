@@ -1,7 +1,6 @@
 package stepdefinitions;
 
 import helper.TestInstrument;
-import io.cucumber.java.en.Then;
 import io.cucumber.java8.En;
 import helper.Type;
 

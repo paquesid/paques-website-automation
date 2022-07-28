@@ -6,7 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import elements.GroupPageElement;
 import static helper.TestInstrument.*;
-import utils.LogUtils;
 
 public class GroupPage extends GroupPageElement{
 
@@ -76,8 +75,7 @@ public class GroupPage extends GroupPageElement{
                 break;
     
             default:
-                LogUtils.error("please check parameters ..");
-                break;
+                throw new Error("please check parameter");
         }
 
     }

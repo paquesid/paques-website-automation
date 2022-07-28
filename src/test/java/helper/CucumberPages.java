@@ -6,8 +6,6 @@ import pages.CreateRolePage;
 import pages.DataProcessingPage;
 import pages.ForgotPasswordPage;
 import pages.GroupPage;
-import pages.DataProcessingPage;
-import pages.ForgotPasswordPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.UsersPage;
