@@ -3,6 +3,10 @@ package elements;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * Created by Dika Brenda Angkasa on 05/07/2022
+ */
+
 public class DataProcessingElement {
 
     /**
@@ -38,21 +42,43 @@ public class DataProcessingElement {
      * @QUERY-COMMANDS
      */
 
-    @FindBy(css = "#pq-cmd-10")
+    @FindBy(id = "pq-cmd-10")
     protected WebElement DATAPROCESSING_SEARCHFILE_QUERYCOMMANDS_BUTTON;
 
-    @FindBy(css = "#pq-cmd-12")
+    @FindBy(id = "pq-cmd-12")
     protected WebElement DATAPROCESSING_DATATABULAR_QUERYCOMMANDS_BUTTON;
+
+    @FindBy(id = "pq-cmd-30")
+    protected WebElement DATAPROCESSING_EXTRACT_SPLIT_QUERYCOMMANDS_BUTTON;
+
+    @FindBy(id = "pq-cmd-61")
+    protected WebElement DATAPROCESSING_LIMIT_QUERYCOMMANDS_BUTTON;
+
+    /**
+     * @IN-OUT
+     */
+
+    @FindBy(id = "out-search_data_tabular_2022070710425521")
+    protected WebElement DATAPROCESSING_DATATABULAR_OUTLINE_BUTTON;
+
+    @FindBy(id = "in-limit_2022070710425961")
+    protected WebElement DATAPROCESSING_LIMIT_INLINE_BUTTON;
 
     /**
      * @COMMANDS-PROPERTIES
      */
 
-    @FindBy(css = "#search_data_tabular0_filename")
+    @FindBy(id = "search_from_file0_filename")
     protected WebElement DATAPROCESSING_FILEPATH_SEARCHBOX_TEXT;
 
     @FindBy(css = "#search_data_tabular0_separator")
     protected WebElement DATAPROCESSING_SEPARATOR_SEARCHBOX_TEXT;
+
+    @FindBy(css = ".menu-toggle.text-uppercase.toggled[aria-controls='collapseOne_1']")
+    protected WebElement DATAPROCESSING_QUERY_INFORMATION_BUTTON;
+
+    @FindBy(xpath = "//option[normalize-space()='Default']")
+    protected WebElement DATAPROCESSING_OPTION_DEFAULT_DROPDOWN;
 
     @FindBy(css = ".form-control.show-tick.ms.select2.ng-pristine.ng-valid.ng-star-inserted.ng-touched")
     protected WebElement DATAPROCESSING_SELECT_DROPDOWN;
@@ -102,8 +128,8 @@ public class DataProcessingElement {
     @FindBy(css = "div[class='footer text-center py-3'] button[class='btn btn-info btn-outline btn-sm py-0 px-2']")
     protected WebElement DATAPROCESSING_ADVANCE_PQL_BUTTON;
 
-    @FindBy(css = ".view-lines")
-    protected WebElement DATAPROCESSING_ADVANCE_PQL_LINE;
+    @FindBy(css = ".template-editor.ng-valid.ng-dirty.ng-touched")
+    protected WebElement DATAPROCESSING_ADVANCE_PQL_TEXT;
 
     /**
      * @DATATABLE
@@ -112,4 +138,25 @@ public class DataProcessingElement {
     private final String dropdownValue = "";
     @FindBy(css = dropdownValue)
     protected WebElement DATAPROCESSING_DROPDOWN_VALUE;
+
+    /**
+     * @META-DATA-SETTING
+     */
+
+    //  private final String metaData = "Metadata Setting";
+    @FindBy(xpath = "//button[normalize-space()='Metadata Setting']")
+    protected WebElement DATAPROCESSING_METADATA_SETTING_BTN;
+
+    @FindBy(id = "mat-checkbox-81")
+    protected WebElement DATAPROCESSING_DATETIME_CHECKBOX;
+
+    @FindBy(xpath = "//h5[normalize-space()='Process failed']")
+    protected WebElement DATAPROCESSING_POPUP_MESSAGE_TXT;
+
+    /**
+     * @SCHEDULLER
+     */
+
+     @FindBy(id = "selectedSchedulerMode")
+     protected WebElement DATAPROCESSING_SELECTED_SCHEDULLER_TXT;
 }

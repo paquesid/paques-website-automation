@@ -9,6 +9,10 @@ import utils.LogUtils;
 
 import static helper.TestInstrument.*;
 
+/**
+ * Created by Dika Brenda Angkasa on 05/07/2022
+ */
+
 public class DataProcessingPage extends DataProcessingElement {
     
     protected WebDriver driver;
@@ -93,6 +97,13 @@ public class DataProcessingPage extends DataProcessingElement {
         enterText(DATAPROCESSING_SEPARATOR_SEARCHBOX_TEXT, separator);
     }
 
+    public void getDefaultOptionValue(String defaultValue){
+        if(isElementExist(DATAPROCESSING_OPTION_DEFAULT_DROPDOWN, 2)) {
+            String actual = DATAPROCESSING_OPTION_DEFAULT_DROPDOWN.getText();
+            assertEquals(defaultValue, actual);
+        }
+    }
+
     public void setDropdownOptionQueryCommands(String value){
         try {
             String actual = DATAPROCESSING_OPTION_FIRST_ROW_TEXT.getText();
@@ -133,16 +144,14 @@ public class DataProcessingPage extends DataProcessingElement {
 
      public void clickEditPaquesAdvanceQuery(){
         clickButton(DATAPROCESSING_ADVANCE_PQL_BUTTON);
-        if(isElementExist(DATAPROCESSING_OKE_MODAL_BUTTON, 2000)){
+        if(isElementExist(DATAPROCESSING_OKE_MODAL_BUTTON, 2)){
             clickButton(DATAPROCESSING_OKE_MODAL_BUTTON);
         }
      }
 
      public void setPaquesQueryLanguage(String query) {
-        // enterText(DATAPROCESSING_ADVANCE_PQL_LINE, query);
-        if(isElementExist(DATAPROCESSING_ADVANCE_PQL_LINE, 2000)){
-            // clickButton(DATAPROCESSING_ADVANCE_PQL_LINE);
-            inputText(DATAPROCESSING_ADVANCE_PQL_LINE, query);
+        if(isElementExist(DATAPROCESSING_ADVANCE_PQL_TEXT, 2)){
+            enterText(DATAPROCESSING_ADVANCE_PQL_TEXT, query);
             delay(4000);
         }
      }
@@ -162,9 +171,35 @@ public class DataProcessingPage extends DataProcessingElement {
     }
 
     public void getFirstRowDataTable(String expected){
-        if(isElementExist(DATAPROCESSING_DATATABLE_POLICENUMBER_TEXT, 2000)){
+        if(isElementExist(DATAPROCESSING_DATATABLE_POLICENUMBER_TEXT, 2)){
             String actual = DATAPROCESSING_DATATABLE_POLICENUMBER_TEXT.getText().trim();
             assertEquals(actual, expected);
+        }
+    }
+
+    public void getHeaderDataTable(String expected){
+        if(isElementExist(DATAPROCESSINGPAGE_RESULT_EVENT_TEXT, 2)){
+            String actual = DATAPROCESSINGPAGE_RESULT_EVENT_TEXT.getText().trim();
+            assertEquals(expected, actual);
+        }
+    }
+
+    public void clickMetaDataSetting(){
+        if(isElementExist(DATAPROCESSING_METADATA_SETTING_BTN, 2)){
+            clickButton(DATAPROCESSING_METADATA_SETTING_BTN);
+        }
+    }
+
+    public void checklistDateTimeMetaData(){
+        if(isElementExist(DATAPROCESSING_DATETIME_CHECKBOX, 2)){
+            clickButton(DATAPROCESSING_DATETIME_CHECKBOX);
+        }
+    }
+
+    public void getTextErrorMessage(String expected){
+        if(isElementExist(DATAPROCESSING_POPUP_MESSAGE_TXT, 2)){
+            String actual = DATAPROCESSING_POPUP_MESSAGE_TXT.getText();
+            assertEquals(expected, actual);
         }
     }
 }
