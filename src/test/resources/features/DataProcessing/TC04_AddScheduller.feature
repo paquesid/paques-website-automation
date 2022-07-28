@@ -1,8 +1,8 @@
-@edit-metadata
-Feature: Edit Metadata
+@Scheduler
+Feature: Executed Scheduller
 
-    @regression @positive-scenario
-    Scenario: user edit metadata
+    @sanity @positive-Scenario
+    Scenario: user want to executed scheduller in PDS Application
         Given user login with "PDS_NONADMIN"
         And user click on data processing
         And user create query using query command with "Data Tabular"
@@ -12,14 +12,8 @@ Feature: Edit Metadata
         And user filled in row limit as "20" in section command property
         When user click on run button at navbar
         Then user see first row as a header in datatable
-        And user click metadata setting
-        When user check Date time flag to yes
+        And user click on section query information tab
+        When user set scheduller from time "5" minutes
+        And user set scheduler time from today
         And user click on save button at navbar
-        Then user should be able to see a popup message "Process Completed"
-
-#     @regression @negative-scenario
-#     Scenario: Edit Metadata not match with data
-#     And user click metadata setting
-#     When user check Date time flag to yes
-#     And user click on save button at navbar
-#     Then user should be able to see a popup message "Process failed"
+        Then user should be able to see a message "Process Completed" will be displayed

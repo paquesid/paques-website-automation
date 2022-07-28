@@ -1,10 +1,12 @@
 package pages;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import elements.DataProcessingElement;
+import helper.Dropdown;
 
 import static helper.TestInstrument.*;
 
@@ -201,4 +203,52 @@ public class DataProcessingPage extends DataProcessingElement {
             assertEquals(expected, actual);
         }
     }
+
+    /**
+     * {@summary}
+     * this for executed scheduler
+     */
+
+     public void closeQueryEditor(){
+        if(isElementExist(DATAPROCESSING_CLOSE_QUERY_EDITOR_BUTTON, 4)){
+            clickButton(DATAPROCESSING_CLOSE_QUERY_EDITOR_BUTTON);
+        }
+     }
+
+     public void clickSectionQueryInformation(){
+        closeQueryEditor();
+        scrollIntoView(DATAPROCESSING_QUERY_INFORMATION_BUTTON, driver, 4);
+        if(isElementExist(DATAPROCESSING_QUERY_INFORMATION_BUTTON, 2)){
+            clickButton(DATAPROCESSING_QUERY_INFORMATION_BUTTON);
+        }
+     }
+
+     public void spawnScheduler(){
+        scrollIntoElement(DATAPROCESSING_SPAWN_SCHEDULER_BUTTON, 4);
+        clickButton(DATAPROCESSING_SPAWN_SCHEDULER_BUTTON);
+     }
+
+     public void chooseScheduler(String TimeScheduler){
+        if(isElementExist(DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN, 4)){
+            try {
+                spawnScheduler();
+                selectDropDownValue(DATAPROCESSING_SELECTED_SCHEDULER_DROPDOWN, Dropdown.VALUE.toString(), TimeScheduler);
+            } catch (ElementClickInterceptedException e) {
+                e.printStackTrace();
+            }
+        }
+     }
+
+     public void setSchedulerToday(){
+        if(isElementExist(DATAPROCESSING_START_TIME_DATEPICKER, 6)){
+            try {
+                getCurrentDay();
+                if(isElementExist(DATAPROCESSING_DATEPICKER_OKE_BUTTON, 6)){
+                    clickButton(DATAPROCESSING_DATEPICKER_OKE_BUTTON);
+                }
+            } catch (ElementClickInterceptedException e) {
+                throw new Error("please check element" + e.getCause());
+            }
+        }
+     }
 }
