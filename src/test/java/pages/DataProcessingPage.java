@@ -251,4 +251,30 @@ public class DataProcessingPage extends DataProcessingElement {
             }
         }
      }
+
+     /**
+      * @CREATE-FOLDER
+      * @author Dika Brenda Angkasa
+      * {@summary} Create New Folder in Data Source
+      */
+
+      public void clickFolderIcon(){
+        if(isElementExist(DATAPROCESSING_CREATE_FOLDER_BUTTON, 2)){
+            clickButton(DATAPROCESSING_CREATE_FOLDER_BUTTON);
+        }
+      }
+
+      public void setFolderName(String folderName){
+        if(isElementExist(DATAPROCESSING_NEW_FOLDER_MODAL_TEXT, 4)){
+            enterText(DATAPROCESSING_INPUT_FOLDER_NAME_TEXT, folderName);
+        }
+      }
+
+      public void clickSaveNewFolder(String save){
+        if(save.equalsIgnoreCase("save")){
+            clickButton(DATAPROCESSING_NEW_FOLDER_SAVE_BUTTON);
+        } else {
+            clickButton(DATAPROCESSING_NEW_FOLDER_CANCEL_BUTTON);
+        }
+      }
 }
