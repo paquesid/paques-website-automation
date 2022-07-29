@@ -173,4 +173,25 @@ public class DataProcessingElement {
 
      @FindBy(css = "div[id='dtp_ZMQiK'] button[class='dtp-btn-ok btn btn-flat btn-sm']")
      protected WebElement DATAPROCESSING_DATEPICKER_OKE_BUTTON;
+
+     /**
+      * @CREATE-FOLDER
+      * @author Dika Brenda Angkasa
+      * {@summary} Create New Folder in Data Source
+      */
+
+      @FindBy(css = "button[data-original-title='Create Folder']")
+      protected WebElement DATAPROCESSING_CREATE_FOLDER_BUTTON;
+
+      @FindBy(css = "input[placeholder='Folder Name']")
+      protected WebElement DATAPROCESSING_INPUT_FOLDER_NAME_TEXT;
+
+      @FindBy(css = ".modal-title")
+      protected WebElement DATAPROCESSING_NEW_FOLDER_MODAL_TEXT;
+
+      @FindBy(css = "button[class='btn btn-info btn-outline btn-sm f-12']")
+      protected WebElement DATAPROCESSING_NEW_FOLDER_SAVE_BUTTON;
+
+      @FindBy(css = ".btn.btn-neutral.btn-simple.btn-sm.close.px-0")
+      protected WebElement DATAPROCESSING_NEW_FOLDER_CANCEL_BUTTON;
 }
