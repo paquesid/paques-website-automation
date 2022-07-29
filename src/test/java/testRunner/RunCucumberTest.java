@@ -14,8 +14,6 @@ import io.cucumber.junit.CucumberOptions;
                 "rerun:rerun/failed_scenarios.txt",
                 "json:target/cucumber.json",
         },
-        dryRun = false,
-        monochrome = false,
         glue = {
                 "config",
                 "stepdefinitions"

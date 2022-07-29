@@ -6,6 +6,7 @@ import helper.Type;
 
 
 public class GroupSteps extends TestInstrument implements En {
+
     public GroupSteps(){
 
         When("^user click on group tab in user tab$", ()->{
@@ -68,7 +69,6 @@ public class GroupSteps extends TestInstrument implements En {
 
         When("^user click on Edit Group icon$", () -> {
             paques.groupPage().clickEditGroup("Grp2108");
-            // paques.groupPage().searchGroup("Grp2108");
         });
 
         Then("^user should see form to update group$", () -> {

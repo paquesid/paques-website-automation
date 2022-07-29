@@ -10,7 +10,7 @@ public class Hooks extends TestInstrument implements En {
     public Hooks() {
 
         Before(0, () -> {
-            setupBrowser();
+            setupBrowser("chrome");
             pageObj();
         });
 

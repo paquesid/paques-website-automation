@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RoleElement {
+    
     @FindBy(xpath = "//a[normalize-space()='Roles']")
     protected
     WebElement ROLEPAGE_ROLETAB;
