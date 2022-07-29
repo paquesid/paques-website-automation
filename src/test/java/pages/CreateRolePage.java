@@ -9,6 +9,7 @@ import elements.RoleElement;
 import static helper.TestInstrument.*;
 
 public class CreateRolePage extends RoleElement {
+    
     protected WebDriver driver;
 
     public CreateRolePage(WebDriver driver) {

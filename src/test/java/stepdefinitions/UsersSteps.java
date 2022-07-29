@@ -11,9 +11,6 @@ import io.cucumber.java8.En;
  */
 
 public class UsersSteps extends TestInstrument implements En {
-
-    // private static Random random = new Random();
-    // private static int num = random.nextInt(10001);
     
     public UsersSteps(){
         And("^user is on tab \"([^\"]*)\" activated$", (String activated) -> {

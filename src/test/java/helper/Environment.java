@@ -2,24 +2,24 @@ package helper;
 
 public enum Environment {
     
-    DEV {
+    PDS {
         @Override
         public String toString(){
-            return "dev";
+            return "PDS";
         }
     },
 
-    STAGING {
+    PCC {
         @Override
         public String toString(){
-            return "staging";
+            return "PCC";
         }
     },
 
-    PRODUCTION {
+    PAMEDI {
         @Override
         public String toString(){
-            return "production";
+            return "PAMEDI";
         }
     }
 }

@@ -1,5 +1,4 @@
 package pages;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -7,21 +6,20 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import elements.GroupPageElement;
 import static helper.TestInstrument.*;
 
-public class GroupPage extends GroupPageElement{
-
+public class GroupPage extends GroupPageElement {
 
     protected WebDriver driver;
+    
     public GroupPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 20), this);
     }
 
-    public boolean getTextTitleGroup(String expected){
-        if(isElementExist(GROUPPAGE_TITLE, 10)){
+    public void getTextTitleGroup(String expected){
+        if(isElementExist(GROUPPAGE_TITLE, 2)){
             String actual = GROUPPAGE_TITLE.getText();
             assertEquals(expected, actual);
         }
-        return true;
     } 
 
     public void clickGroupTab() {
@@ -35,12 +33,11 @@ public class GroupPage extends GroupPageElement{
         clickButton(GROUPPAGE_CREATE_BUTTON);
     }
     
-    public boolean getTextTitleCreateGroup(String expected){
-        if(isElementExist(GROUPPAGE_CREATEGROUP_TITLE, 10)){
+    public void getTextTitleCreateGroup(String expected){
+        if(isElementExist(GROUPPAGE_CREATEGROUP_TITLE, 2)){
             String actual = GROUPPAGE_CREATEGROUP_TITLE.getText();
             assertEquals(expected, actual);
         }
-        return true;
     }
 
     public void setGroupName(String groupName){
@@ -100,12 +97,11 @@ public class GroupPage extends GroupPageElement{
         }
     }
 
-    public boolean getTitleFormUpdateGroup(String expected){
-        if(isElementExist(GROUPPAGE_EDIT_TITLE, 4000)){
+    public void getTitleFormUpdateGroup(String expected){
+        if(isElementExist(GROUPPAGE_EDIT_TITLE, 2)){
             String actual = GROUPPAGE_EDIT_TITLE.getText();
             assertEquals(expected, actual);
         }
-        return true;
     }
 
     public void editGroupDescription(String GroupDescription){
@@ -113,7 +109,7 @@ public class GroupPage extends GroupPageElement{
     }
 
     public void resultMessageEditGroup(String expected) {
-        if(isElementExist(GROUPPAGE_EDIT_RESULT, 10)){
+        if(isElementExist(GROUPPAGE_EDIT_RESULT, 2)){
             String actual = GROUPPAGE_EDIT_RESULT.getText();
             assertEquals(expected, actual);
         }

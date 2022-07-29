@@ -32,36 +32,32 @@ public class UsersPage extends UsersElement{
         clickButton(USERMANAGEMENTPAGE_CREATE_USER_BUTTON);
     }
 
-    public boolean getTitleFormCreateUser(String expected){
+    public void getTitleFormCreateUser(String expected){
         if(isElementExist(USERMANAGEMENTPAGE_FORM_CREATEUSER_TITLE, 10)){
             String actual = USERMANAGEMENTPAGE_FORM_CREATEUSER_TITLE.getText();
             assertEquals(expected, actual);
         }
-        return true;
     }
 
-    public boolean getTitleFormUpdateUser(String expected){
+    public void getTitleFormUpdateUser(String expected){
         if(isElementExist(USERMANAGEMENTPAGE_FORM_UPDATEUSER_TITLE, 10)){
             String actual = USERMANAGEMENTPAGE_FORM_UPDATEUSER_TITLE.getText();
             assertEquals(expected, actual);
         }
-        return true;
     }
 
-    public boolean getTitleFormChangePassword(String expected){
-        if(isElementExist(USERMANAGEMENTPAGE_CHANGE_PASSWORD_TITLE, 2000)){
+    public void getTitleFormChangePassword(String expected){
+        if(isElementExist(USERMANAGEMENTPAGE_CHANGE_PASSWORD_TITLE, 2)){
             String actual = USERMANAGEMENTPAGE_CHANGE_PASSWORD_TITLE.getText();
             assertEquals(expected, actual);
         }
-        return true;
     }
 
-    public boolean getTitleFormDeleteUser(String expected){
-        if(isElementExist(USERMANAGEMENTPAGE_TITLE_DELETE_TEXT, 2000)){
+    public void getTitleFormDeleteUser(String expected){
+        if(isElementExist(USERMANAGEMENTPAGE_TITLE_DELETE_TEXT, 2)){
             String actual = USERMANAGEMENTPAGE_TITLE_DELETE_TEXT.getText();
             assertEquals(expected, actual);
         }
-        return true;
     }
 
     public void searchUser(String name){

@@ -121,7 +121,7 @@ public class TestInstrument {
 
     public static void delay(long timeout) {
         try {
-            TimeUnit.SECONDS.sleep(timeout * 1000);
+            TimeUnit.MILLISECONDS.sleep(timeout * 1000);
         } catch (InterruptedException e) {
             throw new Error("waiting... : " + e.getCause());
         }
@@ -164,13 +164,13 @@ public class TestInstrument {
     }
 
     public static boolean isElementExist(WebElement locator, int timeout) {
-        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofSeconds(timeout * 1000));
+        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMillis(timeout * 1000));
         locator = (WebElement) wait.until(ExpectedConditions.elementToBeClickable(locator));
         return true;
     }
 
     public static boolean isAlertPresent(WebElement locator, int timeout) {
-        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofSeconds(timeout * 1000));
+        wait = (WebDriverWait) new WebDriverWait(driver, Duration.ofMillis(timeout * 1000));
         locator = (WebElement) wait.until(ExpectedConditions.alertIsPresent());
         return true;
     }
@@ -183,8 +183,15 @@ public class TestInstrument {
         driver.navigate().back();
     }
 
-    public WebDriver setupBrowser() throws MalformedURLException {
-        return driver = Base.startApplication(driver, CHROME, PRODUCTION);
+    public WebDriver setupBrowser(String browserName) {
+        try {
+            if(browserName.equalsIgnoreCase("chrome")){
+                return driver = Base.startApplication(driver, CHROME, Environment.PDS.toString());
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return driver;
     }
 
     public void pageObj(){

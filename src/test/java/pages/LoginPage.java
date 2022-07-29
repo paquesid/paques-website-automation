@@ -61,7 +61,7 @@ public class LoginPage extends LoginPagesElement {
 
     public void logOut(int timeout){
         doubleClickButton(LOGINPAGE_USER_IMAGE);
-            if(isElementExist(LOGINPAGE_LOGOUT_BUTTON, 2000)){
+            if(isElementExist(LOGINPAGE_LOGOUT_BUTTON, 2)){
                 clickButton(LOGINPAGE_LOGOUT_BUTTON);
                 delay(timeout);
             }
