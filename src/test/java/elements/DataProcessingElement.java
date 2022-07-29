@@ -31,8 +31,11 @@ public class DataProcessingElement {
     @FindBy(xpath = "//span[normalize-space()='DATA SOURCE']")
     protected WebElement DATAPROCESSINGPAGE_DATASOURCE_BUTTON;
 
-    @FindBy(css = "input[class='form-control ng-pristine ng-valid ng-touched']")
+    @FindBy(css = "div[class='col-sm-10 pr-2'] div[class='input-group']")
     protected WebElement DATAPROCESSINGPAGE_SEARCHSOURCE_SEARCHBAR;
+
+    @FindBy(css = "div[class='col-sm-10 pr-2'] a[class='input-group-text p-0 pt-1']")
+    protected WebElement DATAPROCESSINGPAGE_SEARCHSOURCE_TEXT;
 
     @FindBy(css = "div[class='col-sm-10 pr-2'] span[class='input-group-addon mx-2']")
     protected WebElement DATAPROCESSINGPAGE_SEARCHSOURCE_BUTTON;
@@ -173,4 +176,28 @@ public class DataProcessingElement {
 
      @FindBy(css = "div[id='dtp_ZMQiK'] button[class='dtp-btn-ok btn btn-flat btn-sm']")
      protected WebElement DATAPROCESSING_DATEPICKER_OKE_BUTTON;
+
+     /**
+      * @CREATE-FOLDER
+      * @author Dika Brenda Angkasa
+      * {@summary} Create New Folder in Data Source
+      */
+
+      @FindBy(css = "button[data-original-title='Create Folder']")
+      protected WebElement DATAPROCESSING_CREATE_FOLDER_BUTTON;
+
+      @FindBy(css = "input[placeholder='Folder Name']")
+      protected WebElement DATAPROCESSING_INPUT_FOLDER_NAME_TEXT;
+
+      @FindBy(css = ".modal-title")
+      protected WebElement DATAPROCESSING_NEW_FOLDER_MODAL_TEXT;
+
+      @FindBy(css = "button[class='btn btn-info btn-outline btn-sm f-12']")
+      protected WebElement DATAPROCESSING_NEW_FOLDER_SAVE_BUTTON;
+
+      @FindBy(css = ".btn.btn-neutral.btn-simple.btn-sm.close.px-0")
+      protected WebElement DATAPROCESSING_NEW_FOLDER_CANCEL_BUTTON;
+
+      @FindBy(xpath = "//label[normalize-space()='Automation_Test']")
+      protected WebElement DATAPROCESSING_EXPECTED_FOLDER_TEXT;
 }
