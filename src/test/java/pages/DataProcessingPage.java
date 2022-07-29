@@ -52,8 +52,10 @@ public class DataProcessingPage extends DataProcessingElement {
         clickButton(DATAPROCESSINGPAGE_DATASOURCE_BUTTON);
     }
 
-    public void searchDataSource(String sourceName){
-        enterText(DATAPROCESSINGPAGE_SEARCHSOURCE_SEARCHBAR, sourceName);
+    private void searchDataSource(String sourceName){
+        // enterText(DATAPROCESSINGPAGE_SEARCHSOURCE_SEARCHBAR, sourceName);
+        clickButton(DATAPROCESSINGPAGE_SEARCHSOURCE_SEARCHBAR);
+        enterTextByKeys(DATAPROCESSINGPAGE_SEARCHSOURCE_TEXT, sourceName);
     }
 
     public void clickButtonSearchSource(){
@@ -270,11 +272,24 @@ public class DataProcessingPage extends DataProcessingElement {
         }
       }
 
-      public void clickSaveNewFolder(String save){
-        if(save.equalsIgnoreCase("save")){
+      public void clickSaveNewFolder(String action){
+        if(action.equalsIgnoreCase("save")){
             clickButton(DATAPROCESSING_NEW_FOLDER_SAVE_BUTTON);
-        } else {
+        } else if (action.equalsIgnoreCase("cancel")) {
             clickButton(DATAPROCESSING_NEW_FOLDER_CANCEL_BUTTON);
         }
+      }
+
+      public void resultSaveNewFolder(String expected){
+        // delay(4); // this delay to ensure folder has created successfully
+        searchDataSource("Automation_Test");
+        String actual = DATAPROCESSING_EXPECTED_FOLDER_TEXT.getText();
+        assertEquals(expected, actual);
+        // if(isElementExist(DATAPROCESSING_EXPECTED_FOLDER_TEXT, 6)){
+            
+        // } else {
+        //     throw new Error("still waiting ..");
+        // }
+        
       }
 }

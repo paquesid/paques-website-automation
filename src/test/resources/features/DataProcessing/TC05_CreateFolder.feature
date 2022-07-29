@@ -8,6 +8,6 @@ Feature: Create Folder
     @sanity @positive-scenario
     Scenario: user can create folder from data source in PDS Application
         And user click on create folder icon
-        When user input folder name as "Automation Test"
-        And user click on save button to save new folder
+        When user input folder name as "Automation_Test"
+        And user click on "save" button to save new folder
         Then user should be able to created new folder
