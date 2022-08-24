@@ -50,20 +50,17 @@ public class Base {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(4));
 
         switch (appURL) {
-            case "Dev":
-                driver.get(dotenv.get("ENV_DEV"));
-                break;
-
-            case "Staging":
-                driver.get(dotenv.get("ENV_STAGING"));
-                break;
-
-            case "Production":
+            case "PDS":
                 driver.get(dotenv.get("PDS_BASEURL"));
                 break;
 
-            case "PCC_DEV":
+            case "PCC":
                 driver.get(dotenv.get("PCC_BASEURL"));
+                break;
+
+            case "PAMEDI":
+                driver.get(dotenv.get("PAMEDI_BASEURL"));
+                break;
         
             default:
                 throw new RuntimeException("Unsupported Environtment : " + appURL);
